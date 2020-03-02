@@ -1,0 +1,22 @@
+@import url(../css/subcate.css);
+
+.id_pro {
+    
+    margin-left: 15%;
+    position: relative;
+    top: 37px;
+}
+
+#lbloferta {
+    margin-left: 32%;
+}
+
+#titulo_sale{
+    text-align: center;
+    margin-left: 25%;
+}
+
+.dif {
+    background: #fff;
+    height: 5px;
+}

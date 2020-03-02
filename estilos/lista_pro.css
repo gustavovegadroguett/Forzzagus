@@ -1,0 +1,247 @@
+@import url(../estilos/estilos.css);
+
+
+
+img{
+    max-width: 100%;
+    
+}
+.main-contenido-lista {
+    margin-top: -30px;
+    
+}
+
+header{
+    top: 0;
+}
+
+.contenedor-division{
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+}
+
+
+.contenido-calugas-pro{
+    width: 100%;
+    display: inline-flex;
+    
+}
+
+.seccion-sql-pro{
+    margin: auto;
+    width: 90%;
+    display: inline-block;
+    justify-content: center;
+    max-width: 1150px;
+    padding: 5px;
+}
+
+
+
+.caluga-uno-pro{
+    width: 24%;
+    margin: auto;
+    height: 270px;
+    padding-bottom: 20px;
+    padding: 5px;
+    position: relative;
+    max-width: 300px;
+    margin-top: 10px;
+    transition: 0.5s;
+    float: left;
+    border: 1px solid #fff;
+    left: 1%;
+    
+}
+
+.caluga-uno-pro:hover {
+    transition: 0.3s;
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0);
+
+}
+
+
+.item-price-pro {
+    /* border: 1px dashed #ff9900; */
+   
+    width: 100%;
+    height: 190px;
+    margin-top: -1px;
+    /* display: flex; */
+
+}
+
+.sub-item-pro {
+  
+    background: #ff9900;
+    border-bottom: 3px solid #ff9900;
+    background: #f2f2f2;
+    width: 96%;
+    margin: auto;
+    padding-top: 3px;
+    height: 73px;
+    position: absolute;
+    opacity: .9;
+    /* border: 1px dashed #f00; */
+    
+}
+
+.sub-item-pro h2 {
+    margin-top: 1px;
+    font-size: 0.8em;
+    text-align: center;
+    color: #1E2126;
+
+}
+
+.sub-item-pro h3 {
+    font-size: 0.7em;
+    text-align: center;
+    color: #1E2126;
+}
+
+.sub-item-pro p {
+    text-align: center;
+    color: #1E2126;
+    font-size: 0.7em;
+    text-decoration: line-through;
+}
+
+.container-portada-mision{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: 470px;
+    background-image: url(../img/pro.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    top: -25px;
+    /* filter:brightness(0.3); */
+    /* background-color: rgba(0,0,0,0.8); */
+    
+}
+
+.container-detalle{
+    position: relative;
+    margin: auto;
+    top: 120px;
+    width:100%;
+    height: 190px;
+    max-width: 1150px;
+    display: block;
+     background: linear-gradient(to right,
+            rgb(0, 0, 0),
+            rgba(98, 98, 98, 0.76),
+            rgba(0, 0, 0, 0.123)); 
+    opacity: .8;
+}
+
+.container-detalle .detalle{
+    width: 450px;
+    padding: 10px 20px;
+    
+}
+
+.detalle h1{
+    margin-top: 20px;
+    font-size: 3.4em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.detalle p{
+    line-height: 1.5;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1E2126;
+}
+
+.detalle span{
+    margin-top: 30px;
+    border: 1px solid #ff9900;
+    width: 300px;
+    margin: auto;
+    display: flex;
+}
+
+@media screen and (max-width:470px) {
+    .container-detalle{
+       
+        top: 100px;
+        width:100%;
+        height: 100px;
+        display: flex;
+
+    }
+
+    .container-detalle .detalle{
+        margin: auto;
+        width: 200px;
+        padding: 0px;
+        
+    }
+
+    .detalle h1{
+        margin-top: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .detalle span{
+        margin-top: 0px;
+        border: 1px solid #ff9900;
+        width: 150px;
+     
+    }
+
+    .container-portada-mision{
+        height: 280px;
+        background-size: cover;
+        /* filter:brightness(0.3); */
+        /* background-color: rgba(0,0,0,0.8); */
+        
+    }
+
+    .titulo .subtitulo {
+        font-size: 1.0em;
+        text-align: left;
+        margin-left: 12%;
+    }
+
+    
+
+    hr{
+        width: 50%;
+    }
+
+    .contenido-calugas-pro{
+        /* border: 1px dashed #000; */
+        width: 100%;
+    }
+
+    .seccion-sql-pro {
+        width: 80%;
+        
+        
+        
+       
+    }
+
+    .caluga-uno-pro {
+        margin: auto;
+        width: 90%;
+        margin-left: 4%;
+
+    }
+
+    .main-contenido-lista {
+        margin-top: 60px;
+    }
+
+
+
+}
+
+
+
+

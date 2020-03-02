@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../estilos/inicio.css">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
+    <title>Inicio de Sesión</title>
+</head>
+
+<body>
+    <div class="contenido-img">
+        <img src="../img/carga_container.jpg" alt="">
+
+        <form action="../scripts/iniciar-sesion.php" enctype="multipart/form-data" method="POST" id="form_principal">
+            <div class="form-group">
+                <h3 class="col-sm-offset-2 col-sm-8 text-center" id="titulo">Inicio de Sesión</h3>
+            </div>
+            <br>
+            <hr>
+            <br>
+
+            <div class="form-group" id="contenedor_user">
+                <label for="user_login" id="lbluser">Usuario</label>
+
+                <input id="user_login" name="txtUsuario" type="text" autocomplete="off" maxlength="20"
+                    class="form-control" autofocus required>
+
+            </div>
+
+            <div class="form-group" id="contenedor_pass">
+                <label for="pass_login" id="lblpass">Contraseña</label>
+
+                <input id="pass_login" name="txtClave" type="password" autocomplete="off" maxlength="20"
+                    class="form-control" autofocus required>
+
+            </div>
+            <div class="form-group" id="div_img">
+                <i class="fas fa-hard-hat" id="icon-login"></i>
+            </div>
+            <div>
+                <!-- <label for="registro" id="lblregistro"><a href="registro_forzza.php">Registro usuario nuevo</a></label> -->
+            </div>
+
+
+            <div class="contenido-btn">
+                <button id="btn_login" type="submit" class="btn btn-success">Iniciar Sesión</button>
+
+            </div>
+        </form>
+
+        <div class="derechos">
+            <div class="sub-derechos">
+                <p> &#64; Todos los derechos reservados 2019 - Integear-Tech</p>
+                <a href="#"><p>Politica de Privacidad | Terminos y condiciones</p></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

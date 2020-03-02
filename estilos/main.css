@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+header {
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    /* background: linear-gradient(to right,
+            rgb(0, 0, 0),
+            rgb(0, 0, 0),
+            rgb(61, 0, 0));  */
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 100;
+    border: 1px solid #000;
+    margin-top: 30px;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+
+
+}
+
+/* #carrito {
+    color: rgb(255, 187, 0);
+    text-decoration: none;
+    position: absolute;
+
+
+}
+
+#cart_count {
+    background: #000;
+} */
+
+.header-top {
+    top: 0;
+    width: 100%;
+    height: 40px;
+
+    background: linear-gradient(to right,
+            rgb(0, 0, 0),
+            rgb(20, 20, 20),
+            #1E2126);
+    position: fixed;
+    display: flex;
+
+}
+
+.container-top {
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    max-width: 1150px;
+
+}
+
+
+.contenedor-header {
+    z-index: 100;
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+
+}
+
+.row-top {
+    display: flex;
+    width: 100%;
+    padding: 3px;
+}
+
+.cont-info-header {
+    width: 45%;
+    float: left;
+    display: flex;
+}
+
+.header-left ul li {
+    float: left;
+    padding: 3px;
+    margin-left: 15px;
+    list-style: none;
+}
+
+.header-left ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cont-social-header {
+    width: 55%;
+    display: flex;
+}
+
+.header-top-right {
+    width: 100%;
+    display: flex;
+    padding: 3px;
+
+}
+
+.header-right-div {
+    display: flex;
+    width: 100px;
+    margin-left: 80%;
+}
+
+.social-profile ul li {
+    margin: auto;
+    list-style: none;
+    float: left;
+    margin-left: 15px;
+    justify-content: right;
+
+}
+
+.social-profile a {
+    color: #ff9900;
+    font-size: 1.4em;
+
+}
+
+.icon-whatsapp {
+    color: #ff9900;
+}
+
+.icon-envelop {
+    color: #ff9900;
+}
+
+.contenedor-logo-title {
+    display: flex;
+
+}
+
+
+
+.contenedor-logo-title img {
+    width: 140px;
+    height: 70px;
+    margin-top: 0px;
+    margin-left: 20px;
+
+}
+
+#btn-menu {
+    display: none;
+
+}
+
+header label {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.menu {
+    margin-top: 10px;
+
+
+}
+
+.menu ul {
+    background: #1E2126;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    margin: auto;
+
+}
+
+
+.menu ul li .sub-ul li a {
+    background: #ff9900;
+    color: #1E2126;
+    margin-left: 15px;
+}
+
+.menu ul li .sub-ul li a:hover {
+    background: #1e2126;
+    color: #ff9900;
+}
+
+
+.submenu a {
+    transition: 300ms;
+
+}
+
+.submenu ul {
+    width: 228px;
+}
+
+
+.menu ul ul {
+    display: none;
+
+
+}
+
+.menu a {
+    border: 1px solid #000;
+    display: block;
+    padding: 15px 20px;
+    color: #ff9900;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+
+
+}
+
+/* .submenu ul li{
+    background: transparent;
+} */
+
+.submenu ul li a {
+
+    padding: 8px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 300;
+
+}
+
+.menu a:hover {
+    box-shadow: 0 1px 0 0 rgb(109, 3, 3);
+    background: #ff9900;
+    transition: 0.5s;
+    color: #000;
+
+}
+
+.menu a span {
+    margin-left: 10px;
+}
+
+.menu ul li:hover ul {
+    display: block;
+    position: absolute;
+
+}
+
+.login>img {
+    position: absolute;
+    margin-right: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:1000px) {
+
+    header {
+        margin: auto;
+        width: 100%;
+        height: 120px;
+        /* background: linear-gradient(to right,
+                rgb(0, 0, 0),
+                rgb(0, 0, 0),
+                rgb(61, 0, 0));  */
+        background: #000;
+        color: #fff;
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        z-index: 100;
+        border: 1px solid #000;
+        margin-top: -1px;
+        box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+
+
+    }
+
+    .contenedor-header {
+
+        padding-right: 20px;
+    }
+
+
+
+    header label {
+        display: block;
+    }
+
+    .icon-menu {
+        margin-top: 10px;
+        border: 1px solid #ff9900;
+        padding: 3px;
+        border-radius: 3px;
+
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+        color: #ff9900;
+
+
+    }
+
+    .icon-menu:hover {
+        background: #ff9900;
+        color: #1E2126;
+        transition: 400ms;
+    }
+
+    .contenedor-logo-title {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .contenedor-logo-title img {
+        width: 80px;
+        height: 40px;
+
+    }
+
+
+    .icon-user {
+        display: block;
+        cursor: pointer;
+
+        color: rgb(255, 187, 0);
+        padding-bottom: 0px;
+
+    }
+
+    /* .icon-cart{
+        display: block;
+        cursor: pointer;
+        margin-top: 25px;
+        color: rgb(255, 187, 0);
+    } */
+
+    .menu {
+        position: absolute;
+        right: -2px;
+        width: 40%;
+        top: 109px;
+        height: 100vh;
+        z-index: -100;
+        transform: translateX(100%);
+        transition: all 0.4s;
+        overflow-y: scroll;
+
+
+    }
+
+    .menu a {
+        color: #1E2126;
+    }
+
+    .menu ul {
+        /* flex-direction: column; */
+        background: rgb(255, 187, 0);
+        display: block;
+
+
+    }
+
+    .menu a:hover {
+
+        color: #ff9900;
+        transition: 0.5s;
+        background: #1e2126;
+
+    }
+
+    .menu ul li:hover ul {
+        display: none;
+        position: static;
+    }
+
+    .menu a span {
+        position: absolute;
+        right: 5px;
+    }
+
+    #btn-menu:checked~.menu {
+        transform: translateY(0%);
+    }
+
+    .mene ul ul {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .menu ul ul a {
+        padding: 10px 30px;
+    }
+
+    .menu ul li .sub-ul li a {
+        background: #1E2126;
+        color: #ff9900;
+
+    }
+
+    .menu ul li .sub-ul li a:hover {
+        color: #ff9900;
+        background: #1E2126;
+    }
+
+    .submenu ul li a {
+
+        padding: 8px 20px;
+
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+}

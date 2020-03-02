@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    
+}
+
+.cont-slider{
+    height: 400px;
+    width: 100%;
+    background: #fff; 
+
+}
+
+.cont-img-slide{
+    /* border: 1px solid red; */
+    width: 40%;
+    display: flex;
+    margin-left: 5%;
+    background: #fff;
+    /* border: 1px dashed #1E2126; */
+    left: 40px;
+    position: relative;
+    padding: 10px 20px;
+    
+    
+}
+
+#img-slide{
+   
+    margin: auto;
+    
+}
+
+
+.caluga-superior {
+    text-decoration: none;
+}
+
+.carousel-caption{
+    /* border: 1px solid red; */
+    height: 400px;
+    width: 40%;
+    top: 0;
+    margin-left: 35%;
+    display: flex;
+    opacity: .9;
+    
+    
+    
+}
+
+
+.carousel-inner a{
+    text-decoration: none;
+    color: #1E2126;
+    
+    
+}
+
+.porcentaje{
+    width: 350px;
+    height: 350px;
+    /* box-shadow: 0 0 10px 0 rgb(0, 0, 0); */
+    padding: 35px;
+  
+   
+}
+
+
+
+.porcentaje p{
+    padding-top: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: 'Russo One', sans-serif;
+}
+
+.porcentaje h2{
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+#img-slide{
+    margin-top: 0;
+    height: 370px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+
+.sub-item-slide{
+    margin: auto;
+    /* border: 1px dashed #ff9900; */
+    right: 20px;
+    position: relative;
+    
+}
+
+.carousel-indicators{
+    top: 105%;
+    color: #1E2126;
+    border: 1px solid #1E2126;
+    
+    
+}
+
+#indicador{
+    background: #1E2126;
+    color: #1E2126;
+}
+
+.cont-frame{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    
+}
+.cont-frame iframe{
+    /* position: absolute; */
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.right .carousel-control{
+    background: #fff;
+}
+
+@media screen and (max-width:380px) {
+    
+
+    .container{
+        width: 100%;
+        background: #000;
+        display: none;
+        
+    }
+    
+    #cont-slider{
+        height: 10px;
+        width: 100%;
+        background: #000; 
+        display: none;
+    
+    }
+
+    .cont-frame {
+        display: none;
+        height: 10px;
+    }
+
+   
+
+    .seccion-slider{
+        display: none;
+        height: 0px;
+       
+    }
+
+}
+
+
+
+
+
+
