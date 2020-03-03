@@ -42,7 +42,7 @@ include("./conexiones/db.php");
     <?php  echo '<meta   content="img/imagenesforzza'.$foto.'" property ="og:image" og:image:width ="700px"  og:image:height ="300px"  />'?>
 
     <!--<img src="img/categoria1.jpg" alt="" id="imagen">-->
-    <!----><?php }?>
+                            <!----><?php }?>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,11 +53,13 @@ include("./conexiones/db.php");
     <link rel="stylesheet" href="estilos/footer.css">
     <link rel="stylesheet" href="estilos/main_forzza.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
     <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="./js/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
     <script src="./js/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
+    <script src="action.js"></script>
    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
@@ -65,6 +67,7 @@ include("./conexiones/db.php");
     <link rel="stylesheet" href="css/estilos.css">
 
     <link rel="stylesheet" href="./css/floating-wpp.min.css">
+
 
 </head>
 
@@ -163,7 +166,11 @@ include("./conexiones/db.php");
                             <h4 id="h4">Comparte nuestros productos en Facebook</h4>
                         </div>
                         <div class="comprar">
-                        <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a>
+                        <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
+                        
+                        <a href="#" pid="<?php echo $codigo ?>" id="add_cart"><button id="btn_carrito">Agregar al carrito</button></a> 
+                        
+                       
                         </div>
 
                         <hr style="background: rgb(169, 169, 169);width: 300px; margin: auto;">

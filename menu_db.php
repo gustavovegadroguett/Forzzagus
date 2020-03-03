@@ -1,7 +1,9 @@
 <?php
 $dbcon = new MySQLi("forzza.cl","vistas_forzza","vistas.%","vashir_forzza");
 header("Content-Type: text/html;charset=utf-8");
+
 ?>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <header class="page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap" style="height: 177px;">
@@ -145,6 +147,26 @@ header("Content-Type: text/html;charset=utf-8");
                                
                                 <li><a href="contacto.php" id="link_a">Contacto</a>
                                 </li>
+                                <li><div class="dropdown">
+									<font size="4" color="red"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span font="red">Your Cart</span>
+										<div class="badge qty">0</div>
+									</a>
+                                    </font>
+									<font size="4" color="red"> <div class="cart-dropdown"  >
+										<div class="cart-list" id="cart_product">
+																				
+										</div>
+										<div class="cart-btns">
+												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
+											
+										</div>
+									</div>
+									</font>	
+									</div>
+                                </li>    
+                                    
                             </ul>
                             
                            
