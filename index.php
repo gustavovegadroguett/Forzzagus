@@ -21,6 +21,7 @@ error_reporting(0);
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="estilos/slick.css">
+
     <!-- scroll reveal-->
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
@@ -30,17 +31,18 @@ error_reporting(0);
 
 <body>
 
-    <?php  include 'menu_db.php';?>
+    <?php  include 'header.php';?>
 
 
     <main class="main-about">
+    <br><br><br>
         <div class="container-all">
             <input type="radio" id="1" name="image-slide" hidden>
             <input type="radio" id="2" name="image-slide" hidden>
             <input type="radio" id="3" name="image-slide" hidden>
 
 
-
+            
             <div class="slide-banner">
 
                 <div class="item-slide">

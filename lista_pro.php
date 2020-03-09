@@ -50,8 +50,8 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
 
 <body>
    
-<?php  include 'menu_db.php';?>
-
+<?php  include 'header.php';?>
+    <br><br><br>
     <div class="container-portada-mision">
         <div class="capa-gradiente">
 
@@ -84,7 +84,8 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
                 $result = $stmt->get_result();
                 if($result->num_rows==0) 
                 echo 'No hay producto';
-                 while($row = $result->fetch_assoc()){
+                 while($row = $result->fetch_assoc())
+                 {
  
                 // , ".$row['Pro_Imagen']."
                 //captura el precio
@@ -93,11 +94,11 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
                 $separadormiles = number_format($numero, 0, '', '.');
                 //imprime lo que se debe mostrar para el producto
 
-    ?>
+                 ?>
                 <div class="caluga-uno-pro">
                     <a href="vista_pre.php?oe=<?php echo $row['code'];?>" class="caluga-superior">
                         <div class="item-price-pro">
-                            <img src="<?php echo "img/imagenesforzza".$row['ruta'] ?>" alt="">
+                            <img src="<?php echo "img".$row['ruta'] ?>" alt="">
                         </div>
 
                         <div class="sub-item-pro">
@@ -111,10 +112,10 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
                 </div>
                 <?php
                           
-                        }
-                            mysqli_close($con);
+                  }
+                   mysqli_close($con);
                       
-                        ?>
+                    ?>
 
 
 
@@ -177,6 +178,11 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
             </div>
         </div>
 
+      
+      
+      
+      
+      <!--  -------------------------------------------------FOOTER---------------------------------------------- -->
         <?php  include 'footer.php';?>
 
         </div>
@@ -223,7 +229,7 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
        <script type="text/javascript" src="./js/floating-wpp.min.js"></script>
     <script type="text/javascript">
             $(function() {
-                $('#WAButton').floatingWhatsApp({
+                $('#WAButton').floatingWhatsApp({   
                     phone: '56956697219', //WhatsApp Business phone number
                     headerTitle: 'Chatea con nosotros en Whatsapp', //Popup Title
                     popupMessage: 'Hola, En que podemos ayudarte ?', //Popup Message

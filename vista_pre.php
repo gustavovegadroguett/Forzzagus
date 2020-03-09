@@ -1,7 +1,8 @@
 <?php
 include("./conexiones/db.php");
 ?>
-
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+<script  src="action.js"></script>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -59,9 +60,10 @@ include("./conexiones/db.php");
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="./js/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
     <script src="./js/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
-    <script src="action.js"></script>
+    <script src="js/carrito.js"></script>
    
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/estilos.css">
@@ -73,13 +75,13 @@ include("./conexiones/db.php");
 
 
 <body>
-    <?php  include 'menu_db.php';?>
+    <?php  include 'header.php';?>
 
     <div class="container-portada-mision">
         <div class="capa-gradiente"></div>
         <div class="container-detalle">
             <div class="detalle">
-                <h1>Nuestro Stock</h1>
+                <h1>Productos.</h1>
                 <!-- <p>Av. salitrera victoria Mz.E Sitio 43B Iquique</p>
                 <p>Telefono : 09 9298 4569</p>
                 <p>Nuestros horarios: 09:00 - 14:00, 15:30 - 19:00</p> -->
@@ -95,7 +97,7 @@ include("./conexiones/db.php");
         </div>
 
         <div class="titulo">
-            <h2 class="subtitulo">Su producto seleccionado </h2>
+            <h2 class="subtitulo">Producto seleccionado </h2>
         </div>
         <hr>
         <div class="contenido-calugas-vista">
@@ -127,7 +129,7 @@ include("./conexiones/db.php");
                             while($row = $result->fetch_assoc()){
                                         ?>
 
-                            <?php echo '<img src="img/imagenesforzza'.$row['ruta']. '"class="zoom" / >'; ?>
+                            <?php echo '<img src="images'.$row['ruta']. '"class="zoom" / >'; ?>
 
                             <!--<img src="img/categoria1.jpg" alt="" id="imagen">-->
                             <!---->
@@ -143,7 +145,7 @@ include("./conexiones/db.php");
                             });
                         </script>
                         <div class="lista-imagen">
-                            <?php echo '<img src="img/imagenesforzza'.$row['ruta']. '"class="zoom" / >'; ?>
+                            <?php echo '<img src="images'.$row['ruta']. '"class="zoom" / >'; ?>
                             <!-- <img src="img/categoria3.jpg" alt="">
                                 <img src="img/categoria4.jpg" alt=""> -->
                         </div>
@@ -155,8 +157,9 @@ include("./conexiones/db.php");
                             <h4><?php echo $row['code']; ?></h4>
                             <h4><?php echo  $row['name']; ?></h4>
                             <h4><?php echo $row['marca']; ?></h4>
-
+                            
                             <?php 
+                    $codigo= $row['code'];
                     $numero = $row['price'];
                     // separardor de miles
                     $separadormiles = number_format($numero, 0, '', '.');?>
@@ -166,10 +169,13 @@ include("./conexiones/db.php");
                             <h4 id="h4">Comparte nuestros productos en Facebook</h4>
                         </div>
                         <div class="comprar">
+                       
                         <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
                         
-                        <a href="#" pid="<?php echo $codigo ?>" id="add_cart"><button id="btn_carrito">Agregar al carrito</button></a> 
-                        
+                        <button href='#'  pid=' $codigo ' id='product' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Agregar al carrito.</button> 
+                        <!--  <div class='add-to-cart'>
+										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
+                         </div> -->
                        
                         </div>
 
