@@ -1,7 +1,10 @@
 <?php
 session_start();
+$_SESSION["uid"]=-1;
+
 $ip_add = getenv("REMOTE_ADDR");
 include "db.php";
+
 
 
 //-------------------- Relleno de categorias con su cantidad de productos por categorias. ---------------------------
@@ -230,11 +233,11 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			";
 		}
 }
-	//-------------------------------SE AREGA CARRO A LA BASE DE DATOS Y DESPLIEGA EN EL DROPDOWN---------------------------------
+	
+//-------------------------------SE AREGA CARRO A LA BASE DE DATOS Y DESPLIEGA EN EL DROPDOWN---------------------------------
 
-	if(isset($_POST["addToCart"]))
-	{
-		$_SESSION['uid']=-1;
+	if(isset($_POST["addToCart"]))	{	// capturas datos desde linea 42 de carrito.js  data : {addToCart:1,proId:pid,},
+		
 
 		$p_id = $_POST["proId"];
 		
@@ -244,7 +247,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		$user_id = $_SESSION["uid"];
 
     //	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-    $sql = "SELECT * FROM cart WHERE car.p_id = '$p_id' ";
+    	$sql = "SELECT * FROM cart WHERE car.p_id = '$p_id' ";
         $run_query = mysqli_query($con,$sql);
        
 
@@ -308,10 +311,12 @@ if (isset($_POST["count_item"])) {
 	//When user is logged in then we will count number of item in cart by using user session id
 	//$_SESSION['uid']=-1;
 	
-    if (isset($_SESSION["uid"])) {
-		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
-	}else{
+    if (isset($_SESSION["uid"]) && $_SESSION["uid"]!= -1) {
+		
+	$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
+	}else {
 		//When user is not logged in then we will count number of item in cart by using users unique ip address
+		
 		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE ip_add = '$ip_add' AND user_id < 0";
 	}
 	
@@ -324,23 +329,30 @@ if (isset($_POST["count_item"])) {
 
 //----------------------------------------Aca rellena el carrito con los elementos guardados en la base de datos.
 
-if (isset($_POST["Common"])) {
+if (isset($_POST["ingreso"])) {
 
-	if (isset($_SESSION["uid"])) {
+	
+	
+	
+	//if (isset($_SESSION["uid"])) {
+		if (isset($_SESSION["uid"]) && $_SESSION["uid"]!= -1) {
 		//When user is logged in this query will execute
-		echo 'cae por aca en action linea 322?';
-		$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,descripcion_pro_forzz,ruta_forzz, id,qty FROM cart INNER JOIN productos_forzz as prod on cart.p_id = prod.sku_producto_id INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE prod.sku_producto_id=cart.p_id AND cart.user_id='$_SESSION[uid]'";
+		
+		$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,descripcion_pro_forzz,ruta_forzz, id,qty 
+		FROM cart INNER JOIN productos_forzz as prod on cart.p_id = prod.sku_producto_id 
+		INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE prod.sku_producto_id=cart.p_id AND cart.user_id='$_SESSION[uid]'";
 	}else{
 		//When user is not logged in this query will execute
 		
 		//$sql = "SELECT a.sku_producto_id,a.nombre_prod_forzz,a.precio_prod_forzz,a.id_img_forzz,b.id,b.qty FROM productos_forzz a,cart b WHERE a.sku_producto_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
-		$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,descripcion_pro_forzz,ruta_forzz, id,qty FROM cart INNER JOIN productos_forzz as prod on cart.p_id = prod.sku_producto_id INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz where prod.sku_producto_id=cart.p_id AND cart.ip_add = '$ip_add'and cart.user_id <0" ;
+		$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,descripcion_pro_forzz,ruta_forzz, id,qty 
+		FROM productos_forzz as prod
+		 INNER JOIN cart on cart.p_id = prod.sku_producto_id INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz 
+		 where prod.sku_producto_id=cart.p_id AND cart.ip_add = '$ip_add'and cart.user_id <0" ;
 		
 	}
     $query = mysqli_query($con,$sql);
-    if (!$query) {
-		printf("Error: %s\n", mysqli_error($con));
-		exit();}
+  
 
     //------------------------------------------RELLENA EL CARRO CON TODOS LOS REGISTROS DESDE LA BASE DE DATOS.------------
 	if (isset($_POST["getCartItem"])) {
@@ -365,34 +377,32 @@ if (isset($_POST["Common"])) {
                     <div class="product-widget">
 												<div class="product-img">
 												
-													<img src="img/'.$product_image.'" class="zoom" / >
+													<img src="images'.$product_image.'"  / >
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">'.$product_title.'</a></h3>
 													<h4 class="product-price"><span class="qty">'.$n.'</span>$'.$product_price.'</h4>
 												</div>
 												
-											</div>'
+											</div>';                  
                     
                     
-                    ;
 				
 			}
             
             echo '<div class="cart-summary">
 				    <small class="qty">'.$n.' Item(s) selected</small>
 				    <h5>$'.$total_price.'</h5>
-				</div>'
-            ?>
-				
-				
-			<?php
+				</div>';
+            
 			
 			exit();
+			
+			
 		}
 	}
 	
-    // ---------------------------------------------------------   CONTENIDO DEL CARRITO------------------------------------------------------
+    // ---------------------------------------------------------   CONTENIDO DEL CARRITO VERTIDO EN CART.PHP------------------------------------------------------
     
     if (isset($_POST["checkOutDetails"])) {
 			$num;

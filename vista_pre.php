@@ -172,7 +172,7 @@ include("./conexiones/db.php");
                        
                         <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
                         
-                        <i class='fa fa-shopping-cart'><button href='#'  pid=' $codigo ' id='product' class='add-to-cart-btn'> Agregar al carrito.</button> </i>
+                        <i class='fa fa-shopping-cart'><button href='#'  pid= <?php echo $codigo; ?> id='product' class='add-to-cart-btn'> Agregar al carrito.</button> </i>
                         <!--  <div class='add-to-cart'>
 										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
                          </div> -->
@@ -183,7 +183,7 @@ include("./conexiones/db.php");
 
                         <div class="social-link">
                             <div class="titulo-social ">
-                                <h2 id="h2">y síguenos en nuestras redes sociales</h2>
+                                <h2 id="h2">y síguenos . nuestras redes sociales</h2>
                             </div>
                             <div class="iconos-social">
                             <a href="https://www.facebook.com/Forzza-2177292765724014/?__tn__=%2Cd%2CP-R&eid=ARC6bhMaQvDCIHe2H4agC2e_M-hstD80tBsKGJSX2XWEIHmfPebt4kSvJ9i0vu5AHV4bAQWItUYV3MQB"><img src="img/iconos/facebook.png"></a>

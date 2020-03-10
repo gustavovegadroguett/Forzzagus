@@ -5,6 +5,9 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style4.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+	
 
 <!-- partial:index.partial.html -->
 <nav>
@@ -17,14 +20,13 @@
    
     </div>
     
-    
 
-<div class="divbuscardor">
+  <div class="divbuscardor">
 <!--<img src="img/logo_frozza.png" alt="Cloudy Sky">-->
  <!--<div class="contebus">--><input type="text"  placeholder="  BUSCADOR"><!-- style="width : 452px; height : 48"</div> -->
 </div>
     <div class="quelepasalupita">
-    <img src="img/lupa.png" alt="Cloudy Sky">
+      <img src="img/lupa.png" alt="Cloudy Sky">
     
     </div>
 
@@ -35,62 +37,37 @@
 
    <!--  <div class="topcorner">-->
     <div class="navbar-rightx">
-    <a href="#" id="cart">
-    <img src="img/carrito.png" alt="Cloudy Sky">
-    </i><span class="badge">0</span></a>
+      <a href="#" id="cart">
+      <img src="img/carrito.png" alt="Cloudy Sky">
+      </i><span class="badge">0</span></a>
 
     <div class="shopping-cart">
-    <div class="shopping-cart-header">
-    <img src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
-          <div class="shopping-cart-total">
-            <span class="lighter-text">Total:</span>
-            <span class="main-color-text total">$0</span>
-          </div>
+      <div class="shopping-cart-header">
+        <img src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
+            <div class="shopping-cart-total">
+              <span class="lighter-text">Total:</span>
+              <span class="main-color-text total">$0</span>
+            </div>
       </div>
-      <center>
-      <ul class="shopping-cart-items">
-     
-            <li class="clearfix">
- 
-                <img src="img/logo_frozza.png" alt="item1" />
-                
-                <span class="item-detail">Pack 100</span>
-                <span class="item-price">$49.50</span>
-                <span class="item-quantity">Cantidad: 01</span>
-            </li>
-            
-            <li class="clearfix">
-                <img src="https://www.qispackaging.com.au/getmetafile/306f6d39-792f-4c8c-b101-9c6aef675758/XMWHREIN.aspx" alt="item1" />
-                <span class="item-name">XMWHREIN</span>
-                <span class="item-detail">Pack 100</span>
-                <span class="item-price">$34.06</span>
-                <span class="item-quantity">Quantity: 10</span>
-            </li>
-
-            <li class="clearfix">
-                <img src="https://www.qispackaging.com.au/getmetafile/b2f41988-a7b4-432c-b9c2-25bcb9afbcc3/XMJBRR.aspx" alt="item1" />
-                <span class="item-name">XMJBRR</span>
-                <span class="item-detail">Pack 25</span>
-                <span class="item-price">$14.21</span>
-                <span class="item-quantity">Quantity: 5</span>
-            </li>
-            <li class="clearfix">
-                <img src="https://www.qispackaging.com.au/getmetafile/b2f41988-a7b4-432c-b9c2-25bcb9afbcc3/XMJBRR.aspx" alt="item1" />
-                <span class="item-name">XMJBRR</span>
-                <span class="item-detail">Pack 25</span>
-                <span class="item-price">$14.21</span>
-                <span class="item-quantity">Quantity: 5</span>
-            </li>
-        </ul>
         
-          <center><a href="#" class="button"><p>Realizar compra</p></a></center>
+      
+          <div class="cart-dropdown" id="pruebaCarro">
+            <div class="cart-list" id="cart_product">
 
+            </div>
+          
+        
+          
+            <div class="cart-btns">
+                <a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
+              
+            </div></div>
+              
+         
 
-    </div>
-
-    </div>
+      </div>
 <!--</div>-->
-  </div> 
+  
 
 
  

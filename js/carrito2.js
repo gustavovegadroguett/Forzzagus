@@ -1,4 +1,6 @@
-
+$(document).ready(function(){
+  
+});
 (function(){
     $(document).click(function() {
        var $item = $(".shopping-cart");
@@ -6,6 +8,7 @@
          $item.removeClass("active");
        }
      });
+
      
      $('.shopping-cart').each(function() {
        var delay = $(this).index() * 50 + 'ms';
@@ -37,7 +40,7 @@
 
      $("body").delegate("#product","click",function(event){		
       var pid = $(this).attr("pid");
-      
+      alert (pid);
       event.preventDefault();
       
       $(".overlay").show();
@@ -49,7 +52,6 @@
           
           count_item();
           getCartItem();
-          alert("entro aca po! nuevoo asdasd aeiurnbiergiuerg");
           $('#product_msg').html(data);
           $('.overlay').hide();
         }
@@ -72,15 +74,15 @@
 	//Fetch Cart item from Database to dropdown menu
 	getCartItem();
 	function getCartItem(){
-    var uid=$(this).parent().parent().pid;
-		$.ajax({
+    
+    $.ajax({
      
 			url : "action.php",
 			method : "POST",
-			data : {Common:1,getCartItem:1},
+			data : {ingreso:1,getCartItem:1},
 			success : function(data){
-				$("#cart_product").html(data);
-                net_total();
+				$(".cart-list").html(data);
+          net_total();
                 
 			}
 		})
@@ -102,6 +104,19 @@
 		})
 		$('.net_total').html("Total : $ " +net_total);
   }
+  function checkOutDetails(){
+    $('.overlay').show();
+     $.ajax({
+       url : "action.php",
+       method : "POST",
+       data : {Common:1,checkOutDetails:1},
+       success : function(data){
+         $('.overlay').hide();
+         $("#cart_checkout").html(data);
+           net_total();
+       }
+     })
+   }
   
   
    })
