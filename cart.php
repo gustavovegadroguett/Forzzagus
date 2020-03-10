@@ -1,5 +1,5 @@
 <?php
-include "menu_db.php";
+//include "menu_db.php";
 ?>
 
 
@@ -10,6 +10,6 @@ include "menu_db.php";
 </div>
 </section>	
 <?php
-include "newslettter.php";
+//include "newslettter.php";
 include "footer.php";
 ?>

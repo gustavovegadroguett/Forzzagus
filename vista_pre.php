@@ -2,7 +2,7 @@
 include("./conexiones/db.php");
 ?>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-<script  src="action.js"></script>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -60,7 +60,7 @@ include("./conexiones/db.php");
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="./js/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
     <script src="./js/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
-    <script src="js/carrito.js"></script>
+    
    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -172,7 +172,7 @@ include("./conexiones/db.php");
                        
                         <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
                         
-                        <button href='#'  pid=' $codigo ' id='product' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i> Agregar al carrito.</button> 
+                        <i class='fa fa-shopping-cart'><button href='#'  pid=' $codigo ' id='product' class='add-to-cart-btn'> Agregar al carrito.</button> </i>
                         <!--  <div class='add-to-cart'>
 										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
                          </div> -->
