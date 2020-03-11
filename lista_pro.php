@@ -35,8 +35,7 @@ WHERE tipo_producto_forzz.id_tipo_pro_forzz = ?";
     <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
 
-    <script src="./js/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
-    <script src="./js/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
+    
     
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">

@@ -1,53 +1,22 @@
 <?php
 
-include("./conexiones/db.php");
+include("db.php");
 header("Content-Type: text/html;charset=utf-8");
 error_reporting(0);
-//$x = $_GET['x'];
-//$c = $_GET['c'];
 
 
-$sql =/*"SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion 
-FROM productos_forzz 
-INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id 
-INNER JOIN categoria_pro_forzz on productos_forzz.sku_producto_id = categoria_pro_forzz.sku_pro_forzz 
-WHERE id_sub_pro_forzz = ?";*/
 
-//query 2 
-"SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion 
+$sql ="SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion 
 FROM productos_forzz 
 INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id 
 INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_producto_forzz.sku_producto_tipo ";
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Forzza</title>
-    <link rel="stylesheet" href="estilos/lista_pro.css">
-    <link rel="stylesheet" href="estilos/slider.css">
-    <link rel="stylesheet" href="estilos/footer.css">
-    <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
-
-    <script src="./js/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
-    <script src="./js/cdn-cgi/apps/body/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
 
 <body>
    
-<?php  include 'menu_db.php';?>
+<?php  include 'header.php';?>
 
     <div class="container-portada-mision">
         <div class="capa-gradiente">
@@ -95,7 +64,7 @@ INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_product
                 <div class="caluga-uno-pro">
                     <a href="vista_pre.php?oe=<?php echo $row['code'];?>" class="caluga-superior">
                         <div class="item-price-pro">
-                            <img src="<?php echo "img/imagenesforzza".$row['ruta'] ?>" alt="">
+                            <img src="<?php echo "images".$row['ruta'] ?>" alt="">
                         </div>
 
                         <div class="sub-item-pro">

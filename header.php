@@ -1,12 +1,21 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CodePen - Shopping Cart Dropdown</title>
+  <title>Forzza</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style4.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
+<link rel="stylesheet" href="estilos/lista_pro.css">
+<link rel="stylesheet" href="estilos/footer.css">
+<script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/estilos.css">
 	
 
 <!-- partial:index.partial.html -->

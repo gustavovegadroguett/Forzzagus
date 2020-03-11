@@ -241,10 +241,11 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 		$p_id = $_POST["proId"];
 		
-
+		
 		if(isset($_SESSION["uid"])){
 
 		$user_id = $_SESSION["uid"];
+		
 
     //	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
     	$sql = "SELECT * FROM cart WHERE cart.p_id = '$p_id'  ";
@@ -256,7 +257,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		$count = mysqli_num_rows($run_query);
 		if($count > 0){
 			
-			echo "<script type='text/javascript'>alert('Producto ya ingresado en su carrito, EDITE en su carrito');</script>";
+			
 
 		} else {
 			$sql = "INSERT INTO `cart`
