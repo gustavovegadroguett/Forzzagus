@@ -247,7 +247,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		$user_id = $_SESSION["uid"];
 
     //	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-    	$sql = "SELECT * FROM cart WHERE car.p_id = '$p_id' ";
+    	$sql = "SELECT * FROM cart WHERE cart.p_id = '$p_id'  ";
         $run_query = mysqli_query($con,$sql);
        
 
@@ -255,12 +255,9 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 		$count = mysqli_num_rows($run_query);
 		if($count > 0){
-			echo "
-				<div class='alert alert-warning'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is already added into the cart Continue Shopping..!</b>
-				</div>
-			";//not in video
+			
+			echo "<script type='text/javascript'>alert('Producto ya ingresado en su carrito, EDITE en su carrito');</script>";
+
 		} else {
 			$sql = "INSERT INTO `cart`
 			(`p_id`, `ip_add`, `user_id`, `qty`) 
@@ -402,13 +399,13 @@ if (isset($_POST["ingreso"])) {
 		}
 	}
 	
-    // ---------------------------------------------------------   CONTENIDO DEL CARRITO VERTIDO EN CART.PHP------------------------------------------------------
+    // --------------------------------------   CONTENIDO DEL CARRITO VERTIDO EN CART.PHP----------------------------------------
     
     if (isset($_POST["checkOutDetails"])) {
 			$num;
 		if ($num=mysqli_num_rows($query) > 0) {
 			//display user cart item with "Ready to checkout" button if user is not login
-			echo $num;
+			
 			echo '<div class="main ">
 			<div class="table-responsive">
 			<form method="post" action="login_form.php">
@@ -445,8 +442,8 @@ if (isset($_POST["ingreso"])) {
 							<td data-th="Product" >
 								<div class="row">
 								
-									<div class="col-sm-4 "><img src="img'.$product_image.'" style="height: 70px;width:75px;"/>
-									<h4 class="nomargin product-name header-cart-item-name"><a href="product.php?p='.$product_id.'">'.$product_title.'</a></h4>
+									<div class="col-sm-4 "><img src="images'.$product_image.'" style="height: 70px;width:75px;"/>
+									<h4 class="nomargin product-name header-cart-item-name"><a href="vista_pre.php?oe='.$product_id.'">'.$product_title.'</a></h4>
 									</div>
 									<div class="col-sm-6">
 										<div style="max-width=50px;">
