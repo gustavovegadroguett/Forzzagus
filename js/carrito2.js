@@ -1,6 +1,8 @@
 $(document).ready(function(){
   
 });
+
+
 (function(){
     $(document).click(function() {
        var $item = $(".shopping-cart");
@@ -40,7 +42,7 @@ $(document).ready(function(){
 
      $("body").delegate("#product","click",function(event){		
       var pid = $(this).attr("pid");
-      alert (pid);
+     
       event.preventDefault();
       
       $(".overlay").show();
@@ -49,7 +51,7 @@ $(document).ready(function(){
         method : "POST",
         data : {addToCart:1,proId:pid,},
         success : function(data){
-          
+          alert("data revuelta "+data);
           count_item();
           getCartItem();
           $('#product_msg').html(data);
@@ -58,8 +60,10 @@ $(document).ready(function(){
       })
     })
      //Count user cart items funtion
+
+
 	count_item();
-	function count_item(){
+	function count_item(){  //esto lo llaman desde  la funcion donde captura el click del boton que agrega al carrito
 		$.ajax({
 			url : "action.php",
 			method : "POST",
@@ -72,7 +76,7 @@ $(document).ready(function(){
 	//Count user cart items funtion end
 
 	//Fetch Cart item from Database to dropdown menu
-	getCartItem();
+	getCartItem();  //esto se ejecuta en cada carga de pagina nueva.
 	function getCartItem(){
     
     $.ajax({
@@ -102,14 +106,19 @@ $(document).ready(function(){
 		$('.total').each(function(){
 			net_total += ($(this).val()-0);
 		})
-		$('.net_total').html("Total : $ " +net_total);
+		$('.net_total').html("Total : $ asdasd" + net_total);
   }
+
+
+  checkOutDetails();  //se ejecuta en cada carga de pagina nueva.
   function checkOutDetails(){
     $('.overlay').show();
+    
      $.ajax({
+       
        url : "action.php",
        method : "POST",
-       data : {Common:1,checkOutDetails:1},
+       data : {ingreso:1,checkOutDetails:1},
        success : function(data){
          $('.overlay').hide();
          $("#cart_checkout").html(data);
@@ -117,6 +126,43 @@ $(document).ready(function(){
        }
      })
    }
+   
+   /*
+		whenever user click on .remove class we will take product id of that row 
+		and send it to action.php to perform product removal operation
+	*/
+    
+	   
+  $("body").delegate(".remove","click",function(event){
+    var remove = $(this).parent().parent().parent();
+    var remove_id = remove.find(".remove").attr("remove_id");
+    $.ajax({
+        url	:	"action.php",
+        method	:	"POST",
+        data	:	{removeItemFromCart:1,rid:remove_id},
+        success	:	function(data){
+            $("#cart_msg").html(data);
+            checkOutDetails();
+            }
+        })
+})
+    $("body").delegate(".update","click",function(event){
+      var update = $(this).parent().parent().parent();
+      var update_id = update.find(".update").attr("update_id");
+      var qty = update.find(".qty").val();
+      $.ajax({
+        url	:	"action.php",
+        method	:	"POST",
+        data	:	{updateCartItem:1,update_id:update_id,qty:qty},
+        success	:	function(data){
+          $("#cart_msg").html(data);
+          checkOutDetails();
+        }
+      })
+
+
+    })
+
   
   
    })
