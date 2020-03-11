@@ -379,7 +379,7 @@ if (isset($_POST["ingreso"])) {
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">'.$product_title.'</a></h3>
-													<h4 class="product-price"><span class="qty">'.$n.'</span>$'.$product_price.'</h4>
+													<h4 class="product-price"><span class="qty"> Cant '.$qty.'</span>  Valor  $'.$product_price.'</h4>
 												</div>
 												
 											</div>';                  
@@ -389,8 +389,8 @@ if (isset($_POST["ingreso"])) {
 			}
             
             echo '<div class="cart-summary">
-				    <small class="qty">'.$n.' Item(s) selected</small>
-				    <h5>$'.$total_price.'</h5>
+				    <small class="qty">'.$n.' Item(s) </small><br>
+				    <small class="total_carrito" id="total_carrito2" >TOTAL DE LA COMPRA: $'.$total_price.'</small>
 				</div>';
             
 			
@@ -414,12 +414,12 @@ if (isset($_POST["ingreso"])) {
 	               <table id="cart" class="table table-hover table-condensed" id="">
     				<thead>
 						<tr>
-							<th style="width:10%">Producto</th>
-							<th style="width:50%">Descripcion Producto</th>
-							<th style="width:10%">Price</th>
-							<th style="width:8%">Quantity</th>
-							<th style="width:7%" class="text-center"> Subtotal</th>
-							<th style="width:10%"></th>	
+							<th style="width:35%">Producto</th>
+							<th style="width:40%">Descripcion Producto</th>
+							<th style="width:10%">PRECIO</th>
+							<th style="width:3%">CANT</th>
+							<th style="width:7%" class="text-center"> SUB</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -443,7 +443,7 @@ if (isset($_POST["ingreso"])) {
 							<td data-th="Product" >
 								<div class="row">
 								
-									<div class="col-sm-4 "><img src="images'.$product_image.'" style="height: 70px;width:75px;"/>
+									<div class="col-sm-4 "><img src="images'.$product_image.'" style="height: 100px;width:200px;"/>
 									<h4 class="nomargin product-name header-cart-item-name"><a href="vista_pre.php?oe='.$product_id.'">'.$product_title.'</a></h4>
 									</div>
 									<div class="col-sm-6">
@@ -481,13 +481,13 @@ if (isset($_POST["ingreso"])) {
 					
 					<tr>
 						<td><a href="store.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra.</a></td>
-						<td colspan="2" class="hidden-xs"></td>
-						<td class="hidden-xs text-center"><b class="net_total" ></b></td>
+						<td colspan="3" class="hidden-xs"></td>
+						<td class="hidden-xs text-center" style="width:10%"><b class="net_total" ></b></td>
 						<div id="issessionset"></div>
                         <td>
 							
 							';
-				if (!isset($_SESSION["uid"])) {
+				if (isset($_SESSION["uid"])) {
 					echo '
 					
 							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Realizar compra</a></td>
@@ -508,12 +508,11 @@ if (isset($_POST["ingreso"])) {
 							<input type="hidden" name="upload" value="1">';
 							  
 							$x=0;
-							$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,id_img_forzz,id,qty FROM productos_forzz as prod inner join cart on prod.sku_producto_id = cart.p_id WHERE cart.user_id='.$sesion.'";
+							$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,id_img_forzz,id,qty 
+							FROM productos_forzz as prod inner join cart on prod.sku_producto_id = cart.p_id 
+							WHERE cart.user_id='.$sesion.'";
 							$query = mysqli_query($con,$sql);
-							if (!$query) {
-								printf("Error: %s\n", mysqli_error($con));
-								exit();
-							}
+							
 				
 							while($row=mysqli_fetch_array($query)){
 								$x++;

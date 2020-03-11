@@ -54,8 +54,8 @@
       <div class="shopping-cart-header">
         <img src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
             <div class="shopping-cart-total">
-              <span class="lighter-text">Total:</span>
-              <span class="main-color-text total">$0</span>
+             <!-- <span class="lighter-text">Total:</span> -->
+               <!-- <span class="main-color-text total">$0</span> -->
             </div>
       </div>
         
@@ -95,7 +95,7 @@
 <il><a href= "lista_pro.php?x=<?php echo $pro_fila['id_tipo_pro'];?>&c=<?php echo $pro_fila['nombre_tipo_producto']; ?>"> CONTRUCCION </a></li>
 
 <il><a href= "#"> HOGAR </a></li>
-<il><a href= "#"> HOLI </a></li>
+<il><a href= "lista_pro_vista.php"> Todos los productos</a></li>
 <il><a href= "#">> HOLI </a></li>
 </ul>
 

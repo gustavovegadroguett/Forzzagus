@@ -8,6 +8,9 @@ $(document).ready(function(){
        var $item = $(".shopping-cart");
        if ($item.hasClass("active")) {
          $item.removeClass("active");
+         $(".badge2").html=$(".badge").html;
+         $("#total_muestra").html= $("#total_carrito2").html;
+        
        }
      });
 
@@ -69,7 +72,8 @@ $(document).ready(function(){
 			method : "POST",
 			data : {count_item:1},
 			success : function(data){
-				$(".badge").html(data);
+        $(".badge").html(data);
+        $(".badge2").html(data);
 			}
 		})
 	}
@@ -82,10 +86,12 @@ $(document).ready(function(){
     $.ajax({
      
 			url : "action.php",
-			method : "POST",
+      method : "POST",
 			data : {ingreso:1,getCartItem:1},
 			success : function(data){
-				$(".cart-list").html(data);
+        
+        $(".cart-list").html(data);
+       
           net_total();
                 
 			}
@@ -93,7 +99,8 @@ $(document).ready(function(){
   }
   
   /*
-		net_total function is used to calcuate total amount of cart item
+    net_total function is used to calcuate total amount of cart item,
+    esta muestra el total sumado  del carrito en cart.php
 	*/
 	function net_total(){
 		var net_total = 0;
@@ -106,7 +113,7 @@ $(document).ready(function(){
 		$('.total').each(function(){
 			net_total += ($(this).val()-0);
 		})
-		$('.net_total').html("Total : $ asdasd" + net_total);
+		$('.net_total').html("Total : $ " + net_total);
   }
 
 
