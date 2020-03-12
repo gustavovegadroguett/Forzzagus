@@ -54,7 +54,7 @@ $(document).ready(function(){
         method : "POST",
         data : {addToCart:1,proId:pid,},
         success : function(data){
-          alert("data revuelta "+data);
+         
           count_item();
           getCartItem();
           $('#product_msg').html(data);

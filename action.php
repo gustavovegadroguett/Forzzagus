@@ -487,7 +487,7 @@ if (isset($_POST["ingreso"])) {
                         <td>
 							
 							';
-				if (isset($_SESSION["uid"])) {
+				if (!isset($_SESSION["uid"])) {
 					echo '
 					
 							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Realizar compra</a></td>
@@ -495,7 +495,7 @@ if (isset($_POST["ingreso"])) {
 							</tfoot>
 				
 							</table></div></div>';
-                }else  if(!isset($_SESSION["uid"])){
+                }else  if(isset($_SESSION["uid"])){
 						
 					//Paypal checkout form
 					echo '
@@ -510,7 +510,7 @@ if (isset($_POST["ingreso"])) {
 							$x=0;
 							$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,id_img_forzz,id,qty 
 							FROM productos_forzz as prod inner join cart on prod.sku_producto_id = cart.p_id 
-							WHERE cart.user_id='.$sesion.'";
+							WHERE cart.user_id=$_SESSION[uid]";
 							$query = mysqli_query($con,$sql);
 							
 				
@@ -530,7 +530,7 @@ if (isset($_POST["ingreso"])) {
 					                <input type="hidden" name="notify_url" value="http://localhost/myfiles/public_html/payment_success.php">
 									<input type="hidden" name="cancel_return" value="http://localhost/myfiles/public_html/cancel.php"/>
 									<input type="hidden" name="currency_code" value="CLP"/>
-									<input type="hidden" name="custom" value="'.$sesion.'"/>
+									<input type="hidden" name="custom" value="$_SESSION[uid]"/>
 									<input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Listo para Checkout">
 									</form></td>
 									
