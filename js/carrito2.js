@@ -153,6 +153,36 @@ $(document).ready(function(){
             }
         })
 })
+/*
+		Here #login is login form id and this form is available in index.php page
+		from here input data is sent to login.php page
+		if you get login_success string from login.php page means user is logged in successfully and window.location is 
+		used to redirect user from home page to profile.php page
+	*/
+	$("#login").on("submit",function(event){
+		event.preventDefault();
+    $(".overlay").show();
+    
+		$.ajax({
+			url	:	"login.php",
+			method:	"POST",
+			data	:$("#login").serialize(),
+			success	:function(data){
+				if(data == "login_success"){
+          alert("success login");
+					window.location.href = "index.php";
+				}else if(data == "cart_login"){
+          alert("success carro  ");
+					window.location.href = "cart.php";
+				}else{
+          alert("else parece error " + data);
+					$("#e_msg").html(data);
+					$(".overlay").hide();
+				}
+			}
+		})
+	})
+	//end 
     $("body").delegate(".update","click",function(event){
       var update = $(this).parent().parent().parent();
       var update_id = update.find(".update").attr("update_id");

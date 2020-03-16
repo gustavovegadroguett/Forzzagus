@@ -63,7 +63,9 @@ header {
 
 }
 
-
+.contenedor{
+    height: 400px;
+}
 .contenedor-header {
     z-index: 100;
     width: 90%;
@@ -143,7 +145,7 @@ header {
 
 .contenedor-logo-title {
     display: flex;
-
+   
 }
 
 

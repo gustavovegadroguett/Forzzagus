@@ -272,10 +272,10 @@ nav a:hover {
 
 
 
-    .topcorner{
+    .topcornerderecha{
     position:absolute;
-    top:73;
-    right:167;
+    top:75px;
+    right:120px;
     width: 20%;
     height: 20%;
     /*Border: 4px dashed rgb(14, 178, 243);*/

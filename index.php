@@ -33,9 +33,9 @@ error_reporting(0);
 
     <?php  include 'header.php';?>
 
-
+    <br><br><br><br><br><br><br><br>
     <main class="main-about">
-    <br><br><br>
+    
         <div class="container-all">
             <input type="radio" id="1" name="image-slide" hidden>
             <input type="radio" id="2" name="image-slide" hidden>
@@ -43,66 +43,9 @@ error_reporting(0);
 
 
             
-            <div class="slide-banner">
-
-                <div class="item-slide">
-                    <div class="slider-titulo">
-                        <div class="slider-text">
-                            <div class="slider-caption">
-                                <h1 style="color:#fff;">Trabaje con la calidad Forzza</h1>
-                                <p>Amplio Stock en Materiales Electricos y Seguridad </p>
-                                <ul class="mas">
-                                    <li><a href="#">Saber Mas</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="img/slider01.jpg" id="img">
-                </div>
-
-                <div class="item-slide">
-                    <div class="slider-titulo">
-                        <div class="slider-text">
-                            <div class="slider-caption">
-                                <h1 style="color:#fff;">Amplio stock de herramientas</h1>
-                                <p>Unicos en Zofri con mayor variedad y calidad en herramientas </p>
-                                <ul class="mas">
-                                    <li><a href="#">Saber Mas</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="img/slider02.jpg" id="img">
-                </div>
-                <div class="item-slide">
-                    <div class="slider-titulo">
-                        <div class="slider-text">
-                            <div class="slider-caption">
-                                <h1 style="color:#fff;">Cotiza con Nosotros</h1>
-                                <p>Las mejores marcas en discos de corte </p>
-                                <ul class="mas">
-                                    <li><a href="#">Saber Mas</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="img/slider03.jpg" id="img">
-                </div>
-            </div>
-
-            <div class="pagination">
-                <label class="pagination-item" for="1">
-                    <img src="img/slider01.jpg">
-                </label>
-                <label class="pagination-item" for="2">
-                    <img src="img/slider02.jpg">
-                </label>
-                <label class="pagination-item" for="3">
-                    <img src="img/slider03.jpg">
-                </label>
-            </div>
-        </div>
+            
     </main>
+
     <main class="main-contenido">
         <div class="contenedor-uno">
             <div class="sub-uno"></div>
@@ -125,7 +68,8 @@ error_reporting(0);
                         <div class="item">
                             <img src="img/categoria5.jpg" alt="" title="Decoracion e Iluminacón">
                         </div>
-                        <div class="sub-item-uno">
+                        <div class="sub-item-uno">  
+
                             <!-- <div class="porcentaje">
                                 <p>hasta</p>
                                 <h1>30%</h1>
