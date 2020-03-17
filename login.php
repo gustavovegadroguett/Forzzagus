@@ -1,15 +1,15 @@
 <?php
 include "db.php";
 
-session_start();
-
 #Login script is begin here
 #If user given credential matches successfully with the data available in database then we will echo string login_success
 #login_success string will go back to called Anonymous funtion $("#login").click() 
 
 if(isset($_POST["email"]) && isset($_POST["password"])){
+	
 	$email = mysqli_real_escape_string($con,$_POST["email"]);
 	$password = $_POST["password"];
+	
 	$sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
 	$run_query = mysqli_query($con,$sql);
 	
@@ -23,8 +23,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
         
 	//if user record is available in database then $count will be equal to 1
 	if($count == 1){
-		$p_list = stripcslashes($_COOKIE["product_list"]);
-		printf(   $p_list);
+				
 			if (isset($_COOKIE["product_list"])) {	 // Esto se usa cuando se va a ingresar por formulario de Paypal.
 				$p_list = stripcslashes($_COOKIE["product_list"]);
 				//here we are decoding stored json product list cookie to normal array
@@ -60,11 +59,12 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 				if(!isset($BackToMyPage)) {
 					header('Location: '.$BackToMyPage);
 					echo"<script type='text/javascript'>
-					primer if back to my page
+					
 					</script>";
+					$_SESSION["uid"];
 				} else {
-					echo 'primer else';
-					header('Location: index.php'); // default page
+				
+					//header('Location: index.php'); // default page
 				} 
 				
 			
@@ -102,5 +102,6 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
     
 	
 }
+
 
 ?>

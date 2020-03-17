@@ -1,3 +1,4 @@
+
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Forzza</title>
@@ -26,14 +27,16 @@
 						<li><a href="#"><i class="fa fa-inr"></i> INR</a></li>
 						<li><?php
                              include "db.php";
+                             
                             if(isset($_SESSION["uid"])){
-                                $sql = "SELECT nombre FROM usuarios WHERE user_id='$_SESSION[uid]'";
+                                $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
                                 $query = mysqli_query($con,$sql);
-                                $row=mysqli_fetch_array($query);
+                                $row=mysqli_fetch_array($query);  
                                 
                                 echo '
                                <div class="dropdownn">
-                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> HI '.$row["nombre"].'</a>
+                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> HI '.$row["nombre"].'  '.$row["apellido"]
+                                  .'</a>
                                   <div class="dropdownn-content">
                                     <a href="" data-toggle="modal" data-target="#profile"><i class="fa fa-user-circle" aria-hidden="true" ></i>My Profile</a>
                                     <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>

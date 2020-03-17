@@ -1,7 +1,10 @@
 <?php
+session_start();
+include "header.php";
 include "db.php";
 
-include "header.php";
+
+
 
 
                          
@@ -108,7 +111,7 @@ span.price {
 		<div class="row-checkout">
 		<?php
 		if(isset($_SESSION["uid"])){
-			$sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
+			$sql = "SELECT * FROM usuarios WHERE id_usuario=$_SESSION[uid]";
 			$query = mysqli_query($con,$sql);
 			$row=mysqli_fetch_array($query);
 		
@@ -122,13 +125,13 @@ span.price {
 					<div class="col-50">
 						<h3>Billing Address</h3>
 						<label for="fname"><i class="fa fa-user" ></i> Full Name</label>
-						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["first_name"].' '.$row["last_name"].'">
+						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["nombre"].' '.$row["apellido"].'">
 						<label for="email"><i class="fa fa-envelope"></i> Email</label>
 						<input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="'.$row["email"].'" required>
 						<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-						<input type="text" id="adr" name="address" class="form-control" value="'.$row["address1"].'" required>
+						<input type="text" id="adr" name="address" class="form-control" value="'.$row["direccion1"].'" required>
 						<label for="city"><i class="fa fa-institution"></i> City</label>
-						<input type="text" id="city" name="city" class="form-control" value="'.$row["address2"].'" pattern="^[a-zA-Z ]+$" required>
+						<input type="text" id="city" name="city" class="form-control" value="'.$row["direccion2"].'" pattern="^[a-zA-Z ]+$" required>
 
 						<div class="row">
 						<div class="col-50">
@@ -189,7 +192,7 @@ span.price {
 						$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);
-						$product_id=$row["product_id"];
+						$product_id=$row["sku_producto_id"];
 						echo "	
 						<input type='hidden' name='prod_id_$i' value='$product_id'>
 						<input type='hidden' name='prod_price_$i' value='$amount_'>
@@ -208,6 +211,11 @@ span.price {
 			</div>
 			';
 		}else{
+			
+			$sql = "SELECT * FROM usuarios "	;
+			$query = mysqli_query($con,$sql);
+			$row=mysqli_fetch_array($query);
+		
 		//	echo"<script>window.location.href = 'cart.php'</script>";
 		echo'
 			<div class="col-75">
@@ -219,13 +227,13 @@ span.price {
 					<div class="col-50">
 						<h3>Billing Address</h3>
 						<label for="fname"><i class="fa fa-user" ></i> Full Name</label>
-						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["first_name"].' '.$row["last_name"].'">
+						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["nombre"].' '.$row["apellido"].'">
 						<label for="email"><i class="fa fa-envelope"></i> Email</label>
 						<input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="'.$row["email"].'" required>
 						<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-						<input type="text" id="adr" name="address" class="form-control" value="'.$row["address1"].'" required>
+						<input type="text" id="adr" name="address" class="form-control" value="'.$row["direccion1"].'" required>
 						<label for="city"><i class="fa fa-institution"></i> City</label>
-						<input type="text" id="city" name="city" class="form-control" value="'.$row["address2"].'" pattern="^[a-zA-Z ]+$" required>
+						<input type="text" id="city" name="city" class="form-control" value="'.$row["direccion2"].'" pattern="^[a-zA-Z ]+$" required>
 
 						<div class="row">
 						<div class="col-50">
@@ -345,10 +353,13 @@ span.price {
 						
 						$quantity_ = $_POST['quantity_'.$i];
 						$total=$total+$amount_ ;
-						$sql = "SELECT product_id FROM products WHERE product_title='$item_name_'";
+						$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);
-						$product_id=$row["product_id"];
+
+
+
+						$product_id=$row["sku_producto_id"];
 					
 						echo "	
 
@@ -384,7 +395,7 @@ span.price {
 								<input class="input" type="email" placeholder="Enter Your Email">
 								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
 							</form>
-							<ul class="newsletter-follow">
+							<ul class="newslcetter-follow">
 								<li>
 									<a href="#"><i class="fa fa-facebook"></i></a>
 								</li>
