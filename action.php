@@ -1,6 +1,5 @@
 <?php
-session_start();
-$_SESSION["uid"]=-1;
+
 
 $ip_add = getenv("REMOTE_ADDR");
 include "db.php";
