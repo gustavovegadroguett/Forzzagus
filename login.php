@@ -61,7 +61,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 					echo"<script type='text/javascript'>
 					
 					</script>";
-					$_SESSION["uid"];
+					
 				} else {
 				
 					//header('Location: index.php'); // default page

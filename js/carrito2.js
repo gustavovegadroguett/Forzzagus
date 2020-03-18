@@ -170,7 +170,9 @@ $(document).ready(function(){
 			success	:function(data){
 				if(data == "login_success"){
           alert("success login");
-					window.location.href = "index.php";
+
+          window.location.href = "index.php";
+          $("#success").data(-1);
 				}else if(data == "cart_login"){
           alert("success carro  ");
 					window.location.href = "cart.php";

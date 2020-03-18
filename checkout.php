@@ -291,7 +291,7 @@ span.price {
 						$amount_ = $_POST['amount_'.$i];
 						$quantity_ = $_POST['quantity_'.$i];
 						$total=$total+$amount_ ;
-						$sql = "SELECT product_id FROM products WHERE product_title='$item_name_'";
+						$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);
 						$product_id=$row["product_id"];
