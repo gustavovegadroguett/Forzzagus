@@ -1,6 +1,6 @@
 <?php
 include "db.php";
-
+session_start();
 #Login script is begin here
 #If user given credential matches successfully with the data available in database then we will echo string login_success
 #login_success string will go back to called Anonymous funtion $("#login").click() 
@@ -54,7 +54,9 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 				
 			}
 			//if user is login from page we will send login_success
+
 			echo "login_success";
+			
 			$BackToMyPage = $_SERVER['HTTP_REFERER'];
 				if(!isset($BackToMyPage)) {
 					header('Location: '.$BackToMyPage);

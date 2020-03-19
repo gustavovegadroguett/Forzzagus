@@ -1,4 +1,4 @@
-
+<?php session_start();    ?>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Forzza</title>
@@ -28,7 +28,7 @@
 						<li>
             <input type='hidden' id='success' value=''><?php
                              include "db.php";
-                             session_start();
+                             
                              
                             if(isset($_SESSION["uid"]) && $_SESSION["uid"]!=-1){
                                 $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
@@ -36,9 +36,8 @@
                                 $row=mysqli_fetch_array($query);  
                                 
                                 echo '
-                               <div class="dropdownn">
-                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'  '.$row["apellido"]
-                                  .'</a>
+                               <div class="dropdownn" id="loged">
+                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'    </a>
                                   <div class="dropdownn-content">
                                     <a href="" data-toggle="modal" data-target="#profile"><i class="fa fa-user-circle" aria-hidden="true" ></i>My Profile</a>
                                     <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>
@@ -48,7 +47,7 @@
 
                             }else if($_SESSION["uid"]==-1){
                               echo '
-                              <div class="dropdownn">
+                              <div class="dropdownn" id="loged">
                                 <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Invitado </a>
                                 <div class="dropdownn-content">
                                   <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
@@ -62,18 +61,18 @@
 
 
                             }  
-                            /*else{ 
+                            else{ 
                                 echo '
-                                <div class="dropdownn">
+                                <div class="dropdownn" id="loged">
                                   <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> My Account '.$_SESSION["uid"].' </a>
                                   <div class="dropdownn-content">
-                                    <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
+                                    <a href="login_form.php" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
                                     <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
                                     
                                   </div>
                                 </div>';
                                 
-                            }*/
+                            }
                                              ?>
                                
                                 </li>				
@@ -139,14 +138,6 @@
       
       
 <!--</div>-->
-
-
-
-
-
-
-
-
 </div>
 
 </div>
@@ -156,13 +147,11 @@
 
 </nav>
 
-
-
 <div class="modal" id="Modal_login" role="dialog" >
     
 
         <div class="modal-dialog">
-													
+                          
       <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -178,7 +167,7 @@
             </div>
                             
         </div>
-													
+                          
     </div>
 </div>
 
@@ -203,6 +192,17 @@
 
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="js/carrito2.js"></script>
