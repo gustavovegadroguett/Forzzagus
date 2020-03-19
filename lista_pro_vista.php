@@ -6,10 +6,7 @@ error_reporting(0);
 
 
 
-$sql ="SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion 
-FROM productos_forzz 
-INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id 
-INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_producto_forzz.sku_producto_tipo ";
+
 
 ?>
 
@@ -24,7 +21,7 @@ INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_product
         </div>
         <div class="container-detalle">
             <div class="detalle">
-                <h1><?php echo $c?></h1>
+                <h1>CATALOGO GENERAL</h1>
                
                 <br>
                 <span></span>
@@ -36,51 +33,57 @@ INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_product
     <main class="main-contenido-lista">
 
         <div class="titulo">
-            <h2 class="subtitulo"><?php echo $c?></h2>
         </div>
+            <h2 class="subtitulo">TODOS LOS PRODUCTOS</h2>
         <hr>
 
         <div class="contenido-calugas-pro">
             <section class="seccion-sql-pro">
                 <?php
-                       
-                //$stmt =  sqlsrv_prepare($con, $sql, array($x));
-                $stmt = mysqli_prepare($con,$sql);
-               // $stmt ->bind_param('i',$x);
-                $stmt ->execute();
-                $result = $stmt->get_result();
-                if($result->num_rows==0) 
-                echo 'No hay producto';
-                 while($row = $result->fetch_assoc()){
- 
-                // , ".$row['Pro_Imagen']."
-                //captura el precio
-                $numero = $row['price'];
+                $sql =" SELECT * 
+                FROM productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id ";       
+
+               // INNER JOIN tipo_producto_forzz on productos_forzz.sku_producto_id = tipo_producto_forzz.sku_producto_tipo "
+
+                $run_query = mysqli_query($con,$sql);
+                            
+               if(mysqli_num_rows($run_query) < 0){
+                echo 'No hay producto';}
+                else
+                {
+
+
+                while($row = mysqli_fetch_array($run_query)){
+                $pro_id= $row['sku_producto_id'];           
+                $pro_image = $row['ruta_forzz'];
+                $pro_marca = $row['marca_pro_forzz'];
+                $pro_nombre= $row['nombre_prod_forzz'];
+                $numero = $row['precio_prod_forzz'];
                 // separardor de miles
                 $separadormiles = number_format($numero, 0, '', '.');
                 //imprime lo que se debe mostrar para el producto
 
-    ?>
-                <div class="caluga-uno-pro">
-                    <a href="vista_pre.php?oe=<?php echo $row['code'];?>" class="caluga-superior">
-                        <div class="item-price-pro">
-                            <img src="<?php echo "images".$row['ruta'] ?>" alt="">
+                echo "
+                <div class='caluga-uno-pro'>
+                    <a href='vista_pre.php?oe=$pro_id class='caluga-superior'>
+                        <div class='item-price-pro'>
+                            <img src='images$pro_image' alt=''>
                         </div>
 
-                        <div class="sub-item-pro">
-                            <h2><?php echo $row['name']; ?></h2>
-                            <h3><?php echo $row['marca'];  ?></h3>
-                            <h2><?php //echo "$" .$separadormiles; ?></h2>
-                            <!--p><?php // echo $row['code'];  ?></p-->
+                        <div class='sub-item-pro'>
+                            <h2>$pro_nombre</h2>
+                            <h3>$pro_marca</h3>
+                            <h2><?php //echo '$' .$separadormiles; ?></h2>
+                            
 
                         </div>
                     </a>
                 </div>
-                <?php
+                ";
                           
                         }
                             mysqli_close($con);
-                      
+                    }    
                         ?>
 
 
