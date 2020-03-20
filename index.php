@@ -31,7 +31,7 @@ error_reporting(0);
 
 <body>
 
-    <?php  include 'header.php';?>
+    <?php  include 'header2.php';?>
 
     <br><br><br><br><br><br><br><br>
     <main class="main-about">
