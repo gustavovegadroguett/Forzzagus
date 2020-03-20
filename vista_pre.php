@@ -1,5 +1,5 @@
 <?php
-include("./conexiones/db.php");
+include("db.php");
 ?>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 

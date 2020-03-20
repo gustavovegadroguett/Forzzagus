@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $ip_add = getenv("REMOTE_ADDR");
 include "db.php";
@@ -389,7 +389,7 @@ if (isset($_POST["ingreso"])) {
             
             echo '<div class="cart-summary">
 				    <small class="qty">'.$n.' Item(s) </small><br>
-				    <small class="total_carrito" id="total_carrito2" >TOTAL DE LA COMPRA: $'.$total_price.'</small>
+				    <small class="total_carrito" id="total_carrito2" >TOTAL DE LA COMPRA:<br> $'.$total_price.'</small>
 				</div>';
             
 			

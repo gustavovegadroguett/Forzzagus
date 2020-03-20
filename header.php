@@ -45,8 +45,10 @@
                                   </div>
                                 </div>';
 
-                            }else if($_SESSION["uid"]==-1){
+                            }else {
+                              $_SESSION["uid"]=-1;
                               echo '
+                              
                               <div class="dropdownn" id="loged">
                                 <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Invitado </a>
                                 <div class="dropdownn-content">
@@ -61,18 +63,7 @@
 
 
                             }  
-                            else{ 
-                                echo '
-                                <div class="dropdownn" id="loged">
-                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> My Account '.$_SESSION["uid"].' </a>
-                                  <div class="dropdownn-content">
-                                    <a href="login_form.php" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
-                                    <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
-                                    
-                                  </div>
-                                </div>';
-                                
-                            }
+                          
                                              ?>
                                
                                 </li>				

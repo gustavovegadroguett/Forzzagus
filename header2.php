@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
  <title>Forzza</title>
@@ -28,7 +30,7 @@
 
         </div>  
        <div class="navbar-leftx" >
-           <img src="img/logo_frozza.png" alt="Cloudy Sky">
+          <a href="index.php"> <img src="img/logo_frozza.png" alt="Cloudy Sky"></a>
        </div>
  
     <div class="divbuscardor">  
@@ -65,8 +67,8 @@
                               <div class="dropdownn" id="loged">
                                 <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Invitado </a>
                                 <div class="dropdownn-content">
-                                  <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
-                                  <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                                  <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
+                                  <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
                                   
                                 </div>
                               </div>';
@@ -74,10 +76,10 @@
                             else{ 
                                 echo '
                                 <div class="dropdownn" id="loged">
-                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> My Account '.$_SESSION["uid"].' </a>
+                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Mi Cuenta asda '.$_SESSION["uid"].' </a>
                                   <div class="dropdownn-content">
-                                    <a href="login_form.php" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
-                                    <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                                    <a href="login_form.php" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
+                                    <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
                                     
                                   </div>
                                 </div>';
@@ -89,7 +91,7 @@
     <nav>
       <ul>
 
-        <li> <a href="#"><span class="icon-power-cord"></span> INICIO</a></li>
+        <li> <a href="index.php"><span class="icon-power-cord"></span> INICIO</a></li>
         <li> <a href="#"><span class="icon-switch"></span>TRABAJO</a></li>
   
         <li class="submenu"> 
@@ -107,6 +109,7 @@
 
           <li> <a href="#"><span class="icon-shield"></span>SERVICIOS</a></li>
           <li> <a href="#"><span class="icon-lab"></span>CONTACTO</a></li>
+          <li> <a href="lista_pro_vista.php"><span class="icon-switch"></span>TODOS LOS PROD</a></li>
         </ul>
 
     </nav>
@@ -121,9 +124,7 @@
            <div class="shopping-cart-header">
      
             <img class="torito" src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
-             <div class="shopping-cart-total">
             
-            </div>
       </div>
       <div class="cart-dropdown" id="pruebaCarro">
                 <div class="cart-list" id="cart_product">
