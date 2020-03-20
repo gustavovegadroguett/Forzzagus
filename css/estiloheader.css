@@ -293,12 +293,8 @@ body {
     transform-origin: right top 0;
     transform: scale(1);
   }
-  .cart-dropdown{
-    z-index: 100;
-  }
-  .dropdownlog{
-    
-  }
+ 
+  
   .shopping-cart .shopping-cart-header {
     border-bottom: 1px solid #E8E8E8;
     padding-bottom: 15px;
@@ -317,7 +313,9 @@ body {
     height: 200px;
   
   }
-  
+  .shopping-cart{
+    z-index: 99;
+}
   .shopping-cart .shopping-cart-items li {
     margin-bottom: 18px;
   }

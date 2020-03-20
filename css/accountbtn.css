@@ -1,8 +1,13 @@
 
-
 .dropdownn {
     position: relative;
     display: inline-block;
+    font-family: white;
+}
+.dropdownn a{
+    position: relative;
+    display: inline-block;
+    font-family: white;
 }
 
 .dropdownn-content {

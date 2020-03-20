@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/estilos.css">
 
+
+<link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
+
 <!--partial:index.partial.html -->
 <header>
 
@@ -49,7 +52,7 @@
                                 
                                 echo '
                                <div class="dropdownn" id="loged">
-                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'    </a>
+                                     <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'    </a>
                                     <div class="dropdownn-content">
                                     <a href="" data-toggle="modal" data-target="#profile"><i class="fa fa-user-circle" aria-hidden="true" ></i>My Profile</a>
                                     <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>
@@ -149,44 +152,51 @@
 
  </header>
 
+ <div class="modal" id="Modal_login" role="dialog" >
+    
 
-<!--
-<div class="divnav">
-
-<div class="menu">
-
-<ul>
-
-<a href= "#"><li> INICIO</li></a>
-<a href= "#"><li> SEGURIDAD</li></a>
-
-<a href= "#"><li> CONTRUCCION </li></a>
-
-<a href= "#"><li> HOGAR </li></a>
-<a href= "#"><li> HOLI </li></a>
-<a href= "#"><li> HOLI </li></a>
-</ul>
-
-
+    <div class="modal-dialog">
+                      
+  <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          
+        </div>
+        <div class="modal-body">
+        <?php
+            include "login_form.php";
+            
+        ?>
+      
+        </div>
+                        
+    </div>
+                      
+</div>
 </div>
 
-</div>-->
+<div class="modal" id="Modal_register" role="dialog">
+<div class="modal-dialog" style="">
 
+  <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          
+          </div>
+          <div class="modal-body">
+          <?php
+              include "register_form.php";
 
+          ?>
 
-<!--
-<div class="topnav" id="myTopnav">
-  
-  <a href="#home">Home</a>
-  
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+          </div>
+                        
+    </div>
+
 </div>
--->
+</div>
 
 
 
