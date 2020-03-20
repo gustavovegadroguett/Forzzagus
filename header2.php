@@ -4,7 +4,7 @@
  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
  <title>Forzza</title>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
+ <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="css/estiloheader.css">
  <link rel="stylesheet" href="css/fontello.css">
@@ -12,9 +12,12 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/estilos.css">
-
-
+<link rel="stylesheet" href="estilos/lista_pro.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
+<link rel="stylesheet" href="estilos/footer.css">
+<script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
 
 <!--partial:index.partial.html -->
 <header>

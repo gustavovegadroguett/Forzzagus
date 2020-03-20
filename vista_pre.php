@@ -75,7 +75,7 @@ include("db.php");
 
 
 <body>
-    <?php  include 'header.php';?>
+    <?php  include 'header2.php';?>
 
     <div class="container-portada-mision">
         <div class="capa-gradiente"></div>
