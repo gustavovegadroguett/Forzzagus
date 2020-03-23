@@ -13,7 +13,7 @@ error_reporting(0);
 
 <body>
    
-<?php  include 'header.php';?>
+<?php  include 'header2.php';?>
 
     <div class="container-portada-mision">
         <div class="capa-gradiente">

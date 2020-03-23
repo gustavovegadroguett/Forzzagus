@@ -14,17 +14,19 @@ include("db.php");
                         $oe = $_GET['oe']; 
                         
                         //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
-                            $sql = "SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion from productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id  WHERE  sku_producto_id = ? LIMIT 1" ;
+                            $sql = "SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price,
+                             fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, 
+                             especification_prod_forzz as especificacion 
+                             from productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id  WHERE  sku_producto_id = $oe LIMIT 1" ;
                        // $sql = "SELECT Zcodigos.Pro_ACod  as codigo , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen as imagen, ProPropiedades as propiedades , ProComposicion as descripcion, ProMarcaComercial as marca, ProPrecioVenta as precio
                       //  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ";
 
-                            $stmt = mysqli_prepare($con,$sql);
-                            $stmt ->bind_param('s',$oe);
-                            $stmt ->execute();
-                            $result = $stmt->get_result();
-                            if($result->num_rows==0) exit('No hay productos');
+                            $run_query = mysqli_query($con,$sql);
+                             
+                         
+                            if($row=mysqli_num_rows($run_query) < 0) exit('No hay productos');
 
-                            while($row = $result->fetch_assoc()){
+                            while($row = mysqli_fetch_array($run_query)){
                                      
                                 $codigo = $row['code'];
                                 $nombre = $row['name'];
