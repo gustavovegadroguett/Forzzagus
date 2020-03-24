@@ -37,9 +37,8 @@
        </div>
  
     <div class="divbuscardor">  
-        <!--<img src="img/logo_frozza.png" alt="Cloudy Sky">-->
-        <!--<div class="contebus">-->    
-        <input type="text"  placeholder="  BUSCADOR">  <!-- style="width : 452px; height : 48"</div> -->
+          
+        <input type="text"  placeholder="  BUSCADOR">  
      </div>
 
     <div class="quelepasalupita">
@@ -50,7 +49,7 @@
                              include "db.php";
                              
                              
-                            if(isset($_SESSION["uid"]) && $_SESSION["uid"]!=-1){
+                            if(isset($_SESSION["uid"]) && $_SESSION["uid"]!= " "){
                                 $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
                                 $query = mysqli_query($con,$sql);
                                 $row=mysqli_fetch_array($query);  
@@ -65,21 +64,13 @@
                                   </div>
                                 </div>';
 
-                            }else if($_SESSION["uid"]==-1){
-                              echo '
-                              <div class="dropdownn" id="loged">
-                                <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Invitado </a>
-                                <div class="dropdownn-content">
-                                  <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
-                                  <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
-                                  
-                                </div>
-                              </div>';
+                            
                             }  
                             else{ 
+                              
                                 echo '
                                 <div class="dropdownn" id="loged">
-                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Mi Cuenta asda '.$_SESSION["uid"].' </a>
+                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Bienvenido </a>
                                   <div class="dropdownn-content">
                                     <a href="login_form.php" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
                                     <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>

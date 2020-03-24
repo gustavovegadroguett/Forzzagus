@@ -15,6 +15,10 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 	
 
 	$count = mysqli_num_rows($run_query);
+	if( $count<1){
+		echo 'Datos incorrectos';
+		exit();
+	}
     $row = mysqli_fetch_array($run_query);
 		$_SESSION["uid"] = $row["id_usuario"];
 		$_SESSION["name"] = $row["nombre"];
@@ -103,6 +107,9 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 }
     
 	
+}else{
+	echo "Datos Incorrectos";
+	exit();
 }
 
 

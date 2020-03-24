@@ -1,4 +1,5 @@
 <?php
+
 include("db.php");
 ?>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -11,38 +12,43 @@ include("db.php");
 
     <?php 
                         
-                        $oe = $_GET['oe']; 
+        $oe = $_GET['oe']; 
+        
+        //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
+            $sql = "SELECT * FROM productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id 
+                WHERE  sku_producto_id = '$oe' limit 1" ;
+        // $sql = "SELECT Zcodigos.Pro_ACod  as codigo , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen as imagen, ProPropiedades as propiedades , ProComposicion as descripcion, ProMarcaComercial as marca, ProPrecioVenta as precio
+        //  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ";
+        
+            $query = mysqli_query($con,$sql);
+                
+            if (!$query) {
+                printf("Error: %s\n", mysqli_error($con));
+                exit();
+            }
+
+
+
+
+            if($row=mysqli_num_rows($query) < 0) exit('No hay productos');
+
+            while($row = mysqli_fetch_array($query)){
                         
-                        //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
-                            $sql = "SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price,
-                             fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, 
-                             especification_prod_forzz as especificacion 
-                             from productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id  WHERE  sku_producto_id = $oe LIMIT 1" ;
-                       // $sql = "SELECT Zcodigos.Pro_ACod  as codigo , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen as imagen, ProPropiedades as propiedades , ProComposicion as descripcion, ProMarcaComercial as marca, ProPrecioVenta as precio
-                      //  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ";
+                $codigo = $row['sku_producto_id'];
+                $nombre = $row['nombre_prod_forzz'];
+                $modelo = $row['modelo_prod_forzz'];
+                $marca = $row['marca_pro_forzz']; 
+                $precio = $row['precio_prod_forzz'];   
+                $foto = $row['ruta_forzz'];  
+                        
+                        
+                        
+                        ?>
 
-                            $run_query = mysqli_query($con,$sql);
-                             
-                         
-                            if($row=mysqli_num_rows($run_query) < 0) exit('No hay productos');
-
-                            while($row = mysqli_fetch_array($run_query)){
-                                     
-                                $codigo = $row['code'];
-                                $nombre = $row['name'];
-                                $modelo = $row['modelo'];
-                                $marca = $row['marca']; 
-                                $precio = $row['price'];   
-                                $foto = $row['ruta'];  
-                                     
-                                     
-                                     
-                                     ?>
-
-    <?php  echo '<meta property ="og:title"  content="Forzza"   />'?>
+                        <?php  echo '<meta property ="og:title"  content="Forzza"   />'?>
     <!--1-->
-    <?php  echo '<meta property ="og:description"  content="Codigo: '.$codigo.' Nombre:'.$nombre.' Marca: '.$marca.'  Modelo:'.$modelo.' Precio:'.$precio.' "   />'?>
-    <?php  echo '<meta   content="img/imagenesforzza'.$foto.'" property ="og:image" og:image:width ="700px"  og:image:height ="300px"  />'?>
+                        <?php  echo '<meta property ="og:description"  content="Codigo: '.$codigo.' Nombre:'.$nombre.' Marca: '.$marca.'  Modelo:'.$modelo.' Precio:'.$precio.' "   />'?>
+                        <?php  echo '<meta   content="img/imagenesforzza'.$foto.'" property ="og:image" og:image:width ="700px"  og:image:height ="300px"  />'?>
 
     <!--<img src="img/categoria1.jpg" alt="" id="imagen">-->
                             <!----><?php }?>
@@ -118,17 +124,24 @@ include("db.php");
                         $oe = $_GET['oe']; 
                         
                         //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
-                            $sql = "SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion from productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id  WHERE  sku_producto_id = ? LIMIT 1" ;
+                            $sql = "SELECT sku_producto_id as code, nombre_prod_forzz as name, modelo_prod_forzz as modelo, marca_pro_forzz
+                             as marca, precio_prod_forzz as price, fotos.ruta_forzz as ruta, cant_prod_forzz as cantidad, id_img_forzz 
+                             as id_img, descripcion_pro_forzz as descripcion, especification_prod_forzz as especificacion 
+                             from productos_forzz INNER JOIN fotos on fotos.id_pro_forzz = productos_forzz.sku_producto_id 
+                              WHERE  sku_producto_id = '$oe' LIMIT 1" ;
                        // $sql = "SELECT Zcodigos.Pro_ACod  as codigo , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen as imagen, ProPropiedades as propiedades , ProComposicion as descripcion, ProMarcaComercial as marca, ProPrecioVenta as precio
                       //  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ";
+                            
+                            $query = mysqli_query($con,$sql);
+                            if (!$query) {
+                                printf("Error: %s\n", mysqli_error($con));
+                                exit();
+                            }
+                            
+                            if(mysqli_num_rows($query)<0) exit('No hay productos');
 
-                            $stmt = mysqli_prepare($con,$sql);
-                            $stmt ->bind_param('s',$oe);
-                            $stmt ->execute();
-                            $result = $stmt->get_result();
-                            if($result->num_rows==0) exit('No hay productos');
+                            while($row = mysqli_fetch_array($query)){
 
-                            while($row = $result->fetch_assoc()){
                                         ?>
 
                             <?php echo '<img src="images'.$row['ruta']. '"class="zoom" / >'; ?>
@@ -174,12 +187,11 @@ include("db.php");
                        
                         <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
                         
-                        <i class='fa fa-shopping-cart'>  </i> <button href='#'  pid= <?php echo $codigo; ?> id='product' class='add-to-cart-btn'> Agregar al carrito.</button>
-                        <!--  <div class='add-to-cart'>
-										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
-                         </div> -->
-                       
-                        </div>
+                        <i class='fa fa-shopping-cart'>  </i>
+                         
+                        <button href='#' pid=<?php echo $codigo; ?> id='product' class='add-to-cart-btn'> Agregar al carrito.</button>
+                         </div>
+                         
 
                         <hr style="background: rgb(169, 169, 169);width: 300px; margin: auto;">
 

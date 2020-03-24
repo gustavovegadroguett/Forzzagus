@@ -29,6 +29,7 @@ $(document).ready(function(){
      
      $('#cart').click(function(e) {
        e.stopPropagation();
+       
        $(".shopping-cart").toggleClass("active");
        $('.shopping-cat active').z-index(100 );
 
@@ -45,7 +46,7 @@ $(document).ready(function(){
 
      $("body").delegate("#product","click",function(event){		
       var pid = $(this).attr("pid");
-     
+      
       event.preventDefault();
       
       $(".overlay").show();

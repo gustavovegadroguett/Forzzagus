@@ -1,11 +1,8 @@
 <?php
-
+session_start();
 include("db.php");
-header("Content-Type: text/html;charset=utf-8");
+
 error_reporting(0);
-
-
-
 
 
 ?>
@@ -65,7 +62,7 @@ error_reporting(0);
 
                 echo "
                 <div class='caluga-uno-pro'>
-                    <a href='vista_pre.php?oe=$pro_id class='caluga-superior'>
+                    <a href='vista_pre.php?oe=$pro_id' class='caluga-superior'>
                         <div class='item-price-pro'>
                             <img src='images$pro_image' alt=''>
                         </div>
@@ -82,7 +79,7 @@ error_reporting(0);
                 ";
                           
                         }
-                            mysqli_close($con);
+                            
                     }    
                         ?>
 
@@ -141,15 +138,7 @@ error_reporting(0);
 
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="js/main_forzza.js"></script>
-    <script src="js/jquery.js"></script>
-    <!-- <script src="js/script.js"></script> -->
-
-    <script src="./js/core.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/index.spa.bundle.dee7f94436e2f0efaff9.js"></script>
-    <script src="./js/javascript/Logger.js"></script>
+    
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];

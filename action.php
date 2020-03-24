@@ -243,36 +243,36 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		
 		if(isset($_SESSION["uid"])){
 
-		$user_id = $_SESSION["uid"];
-		
+				$user_id = $_SESSION["uid"];
+				
 
-    //	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-    	$sql = "SELECT * FROM cart WHERE cart.p_id = '$p_id'  ";
-        $run_query = mysqli_query($con,$sql);
-       
-
-    
-
-		$count = mysqli_num_rows($run_query);
-		if($count > 0){
-			
+			//	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+				$sql = "SELECT * FROM cart WHERE cart.p_id = '$p_id'  ";
+				$run_query = mysqli_query($con,$sql);
 			
 
-		} else {
-			$sql = "INSERT INTO `cart`
-			(`p_id`, `ip_add`, `user_id`, `qty`) 
-			VALUES ('$p_id','$ip_add','$user_id','1')";
-			if(mysqli_query($con,$sql)){
-                
-				echo "
-					<div class='alert alert-success'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is Added..!</b>
-					</div>
-				";
-			}
-		}
-		}else{
+			
+
+				$count = mysqli_num_rows($run_query);
+				if($count > 0){
+					
+					
+
+				} else {
+					$sql = "INSERT INTO `cart`
+					(`p_id`, `ip_add`, `user_id`, `qty`) 
+					VALUES ('$p_id','$ip_add','$user_id','1')";
+					if(mysqli_query($con,$sql)){
+						
+						echo "
+							<div class='alert alert-success'>
+								<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+								<b>Product is Added..!</b>
+							</div>
+						";
+					}
+				}
+		}else if(isset($_SESSION["uid"]) && $_SESSION["uid"]== -1){
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
 			if (mysqli_num_rows($query) > 0) {
@@ -311,10 +311,12 @@ if (isset($_POST["count_item"])) {
     if (isset($_SESSION["uid"]) && $_SESSION["uid"]!= -1) {
 		
 	$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
-	}else {
+	}else if(isset($_SESSION["uid"]) && $_SESSION["uid"]== -1) {
 		//When user is not logged in then we will count number of item in cart by using users unique ip address
 		
 		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE ip_add = '$ip_add' AND user_id < 0";
+	}else{
+		exit();
 	}
 	
 	$query = mysqli_query($con,$sql);
@@ -338,7 +340,7 @@ if (isset($_POST["ingreso"])) {
 		$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,descripcion_pro_forzz,ruta_forzz, id,qty 
 		FROM cart INNER JOIN productos_forzz as prod on cart.p_id = prod.sku_producto_id 
 		INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE prod.sku_producto_id=cart.p_id AND cart.user_id='$_SESSION[uid]'";
-	}else{
+	}else if(isset($_SESSION["uid"]) && $_SESSION["uid"]== -1){
 		//When user is not logged in this query will execute
 		
 		//$sql = "SELECT a.sku_producto_id,a.nombre_prod_forzz,a.precio_prod_forzz,a.id_img_forzz,b.id,b.qty FROM productos_forzz a,cart b WHERE a.sku_producto_id=b.p_id AND b.ip_add='$ip_add' AND b.user_id < 0";
@@ -347,6 +349,10 @@ if (isset($_POST["ingreso"])) {
 		 INNER JOIN cart on cart.p_id = prod.sku_producto_id INNER JOIN fotos on prod.id_img_forzz=fotos.id_foto_forzz 
 		 where prod.sku_producto_id=cart.p_id AND cart.ip_add = '$ip_add'and cart.user_id <0" ;
 		
+	}
+	else{
+		exit();	
+
 	}
     $query = mysqli_query($con,$sql);
   
@@ -358,6 +364,7 @@ if (isset($_POST["ingreso"])) {
 		if (mysqli_num_rows($query) > 0) {
 			$n=0;
 			$total_price=0;
+			$sub_total=0;
 			while ($row=mysqli_fetch_array($query)) {
                 
 				$n++;
@@ -367,7 +374,11 @@ if (isset($_POST["ingreso"])) {
 				$product_image = $row["ruta_forzz"];
 				$cart_item_id = $row["id"];
 				$qty = $row["qty"];
-				$total_price=$total_price+$product_price;
+				$sub_total=$qty*$product_price;
+				$total_price=$total_price+$sub_total;
+				
+				
+				
 				echo '
 					
                     
@@ -384,9 +395,9 @@ if (isset($_POST["ingreso"])) {
 											</div>';                  
                     
                     
-				
+				 
 			}
-            
+           
             echo '<div class="cart-summary">
 				    <small class="qty">'.$n.' Item(s) </small><br>
 				    <small class="total_carrito" id="total_carrito2" >TOTAL DE LA COMPRA:<br> $'.$total_price.'</small>
@@ -474,12 +485,12 @@ if (isset($_POST["ingreso"])) {
                             
                             ';
 				}
-				
+				$BackToMyPage = $_SERVER['HTTP_REFERER'];
 				echo '</tbody>
 				<tfoot>
 					
 					<tr>
-						<td><a href="store.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra.</a></td>
+						<td><a href="lista_pro_vista.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra.</a></td>
 						<td colspan="3" class="hidden-xs"></td>
 						<td class="hidden-xs text-center" style="width:10%"><b class="net_total" ></b></td>
 						<div id="issessionset"></div>
