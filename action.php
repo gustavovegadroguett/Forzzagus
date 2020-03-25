@@ -273,9 +273,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 					}
 				}
 		}else{
-
-
-
+					echo 'else funcionando';
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
 			if (mysqli_num_rows($query) > 0) {

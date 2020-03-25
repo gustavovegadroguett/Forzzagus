@@ -58,6 +58,7 @@ $(document).ready(function(){
          
           count_item();
           getCartItem();
+          
           $('#product_msg').html(data);
           $('.overlay').hide();
         }
@@ -170,12 +171,12 @@ $(document).ready(function(){
 			data	:$("#login").serialize(),
 			success	:function(data){
 				if(data == "login_success"){
-          alert("success login");
+          $("#e_msg").html(data);
 
           window.location.href = "index.php";
           
 				}else if(data == "cart_login"){
-          alert("success carro  ");
+         
 					window.location.href = "cart.php";
 				}else{
           alert("else parece error " + data);
@@ -185,7 +186,29 @@ $(document).ready(function(){
 			}
 		})
 	})
-	//end 
+  //end 
+  //Get User Information before checkout
+	$("#signup_form").on("submit",function(event){
+		event.preventDefault();
+		alert("probando entrada a signup js");
+		$(".overlay").show();
+		$.ajax({
+			url : "register.php",
+			method : "POST",
+			data : $("#signup_form").serialize(),
+			success : function(data){
+				$(".overlay").hide();
+				if (data == "register_success") {
+					window.location.href = "cart.php";
+				}else{
+					$("#signup_msg").html(data);
+				}
+				
+			}
+		})
+  })
+  
+  //end
     $("body").delegate(".update","click",function(event){
       var update = $(this).parent().parent().parent();
       var update_id = update.find(".update").attr("update_id");

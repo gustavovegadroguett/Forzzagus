@@ -28,7 +28,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 	//if user record is available in database then $count will be equal to 1
 	if($count == 1){
 				
-			if (isset($_COOKIE["product_list"])) {	 // Esto se usa cuando se va a ingresar por formulario de Paypal.
+			/*if (isset($_COOKIE["product_list"])) {	 // Esto se usa cuando se va a ingresar por formulario de Paypal.
 				$p_list = stripcslashes($_COOKIE["product_list"]);
 				//here we are decoding stored json product list cookie to normal array
 				$product_list = json_decode($p_list,true);
@@ -56,7 +56,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 				
 				exit();
 				
-			}
+			}*/
 			//if user is login from page we will send login_success
 
 			echo "login_success";

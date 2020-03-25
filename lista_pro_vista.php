@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+include 'header2.php';
 include("db.php");
 
 error_reporting(0);
@@ -10,7 +11,7 @@ error_reporting(0);
 
 <body>
    
-<?php  include 'header2.php';?>
+
 
     <div class="container-portada-mision">
         <div class="capa-gradiente">
