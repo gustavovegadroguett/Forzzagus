@@ -272,7 +272,10 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 						";
 					}
 				}
-		}else if(isset($_SESSION["uid"]) && $_SESSION["uid"]== -1){
+		}else{
+
+
+
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
 			if (mysqli_num_rows($query) > 0) {
@@ -293,8 +296,9 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 						<b>Your product is Added Successfully..!</b>
 					</div>
 				";
+				echo 'debe iniciar sesion';
 				exit();
-			}
+			}	
 			
 		}
 		
