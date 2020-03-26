@@ -39,24 +39,24 @@
                                         <input class="input form-control input-borders" type="email" name="email"  placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="password">
+                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="Contraseña">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="confirm password">
+                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="Confirme Password">
                                     </div>
-                                    <div class="form-group">
-                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular">
+                                   <!-- <div class="form-group">
+                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular anteponga 9" value="">
                                     </div>
                                     <div class="form-group">
                                         <input class="input form-control input-borders" type="text" name="address1" id="address1" placeholder="Dirección">
                                     </div>
                                     <div class="form-group">
                                         <input class="input form-control input-borders" type="text" name="city" id="city" placeholder="Ciudad">
-                                    </div>
+                                    </div>  -->
                                     
                                     
                                     <div style="form-group">
-                                       <input class="primary-btn btn-block"  value="Sign Up" type="submit" name="Registrar">
+                                       <input class="primary-btn btn-block"  value="Registrarse" type="submit" name="Registrar">
                                     </div>
                                     <div style="form-group">
                                     
