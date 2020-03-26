@@ -199,7 +199,12 @@ $(document).ready(function(){
 			success : function(data){
 				$(".overlay").hide();
 				if (data == "register_success") {
+<<<<<<< HEAD
 					window.location.href = "index.php";
+=======
+          //window.location.href = "cart.php";
+          alert(data);
+>>>>>>> c8ed065e53f865e5fb283d546e3dc0a5dad5d909
 				}else{
 					$("#signup_msg").html(data);
 				}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include("./conexiones/db.php"); 
+include("db.php"); 
 error_reporting(0);
 ?>
 

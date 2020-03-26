@@ -487,7 +487,10 @@ if (isset($_POST["ingreso"])) {
                             
                             ';
 				}
-				$BackToMyPage = $_SERVER['HTTP_REFERER'];
+
+
+
+				$BackToMyPage = $_SERVER['HTTP_REFERER'];   //Boton para volver a comprar desde el carrito
 				echo '</tbody>
 				<tfoot>
 					
@@ -499,7 +502,8 @@ if (isset($_POST["ingreso"])) {
                         <td>
 							
 							';
-				if (!isset($_SESSION["uid"])) {
+
+				if (!isset($_SESSION["uid"])) {//En caso de que el usuario quiera avanzar pero no este logeado, pedira registro o iniciar sesion
 					echo '
 					
 							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Realizar compra</a></td>
