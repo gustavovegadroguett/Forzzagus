@@ -23,35 +23,35 @@
                                     </div>
                                     <div class="form-group ">
                                     
-                                        <input class="input form-control input-borders" type="text" name="f_name" id="f_name" placeholder="Nombre">
+                                        <input class="input form-control input-borders" type="text" name="f_name" id="f_name" placeholder="Nombre" value="alba">
                                     </div>
                                     <div class="form-group">
                                     
-                                        <input class="input form-control input-borders" type="text" name="l_name1" id="l_name1" placeholder="Apellido Paterno">
+                                        <input class="input form-control input-borders" type="text" name="l_name1" id="l_name1" placeholder="Apellido Paterno" value="rocha">
                                         <br>
-                                        <input class="input form-control input-borders" type="text" name="l_name2" id="l_name2" placeholder="Apellido Materno">
+                                        <input class="input form-control input-borders" type="text" name="l_name2" id="l_name2" placeholder="Apellido Materno" value="donoso">
                                         
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="rut" name="rut"  placeholder="rut">
+                                        <input class="input form-control input-borders" type="rut" name="rut"  placeholder="rut" value="152645">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="email" name="email"  placeholder="Email">
+                                        <input class="input form-control input-borders" type="email" name="email"  placeholder="Email" value="probando@gmail.com">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="password">
+                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="password" value="25252525a">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="confirm password">
+                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="confirm password" value="25252525a">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular">
+                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular" value="5485485821">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="text" name="address1" id="address1" placeholder="Dirección">
+                                        <input class="input form-control input-borders" type="text" name="address1" id="address1" placeholder="Dirección" value="Heroes de la concepcion 1212">
                                     </div>
                                     <div class="form-group">
-                                        <input class="input form-control input-borders" type="text" name="city" id="city" placeholder="Ciudad">
+                                        <input class="input form-control input-borders" type="text" name="city" id="city" placeholder="Ciudad" value="Alto Hospicio">
                                     </div>
                                     
                                     

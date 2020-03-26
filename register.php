@@ -108,7 +108,7 @@ if(empty($f_name) || empty($l_name1) || empty($l_name2) || empty($rut) || empty(
 		exit();
 	}
 	//existing email address in our database
-	$sql = "SELECT user_id FROM user_info WHERE email = '$email' LIMIT 1" ;
+	$sql = "SELECT id_usuario FROM usuarios WHERE email = '$email' LIMIT 1" ;
 	$check_query = mysqli_query($con,$sql);
 	$count_email = mysqli_num_rows($check_query);
 	if($count_email > 0){
@@ -122,18 +122,19 @@ if(empty($f_name) || empty($l_name1) || empty($l_name2) || empty($rut) || empty(
 	} else {
 		
 		$sql = "INSERT INTO `usuarios` 
-		(`id_usuario`, `nombre`, `apellido`, 'apellido materno, `email`, 'rut',
+		(`id_usuario`, `nombre`, `apellido`, 'apellido_materno,  'rut',`email`,
 		`password`, `mobil`, `direccion1`, `ciudad`) 
-		VALUES (NULL, '$f_name', '$l_name1','$l_name2', '$email', '$rut',
-		'$password', '$mobile', '$address1', '$address2')";
+		VALUES (NULL, '$f_name', '$l_name1','$l_name2','$rut', '$email', 
+		'$password', '$mobile', '$address1', '$city')";
 		$run_query = mysqli_query($con,$sql);
 		$_SESSION["uid"] = mysqli_insert_id($con);
+		
 		$_SESSION["name"] = $f_name;
 		$ip_add = getenv("REMOTE_ADDR");
 		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
 		if(mysqli_query($con,$sql)){
 			echo "register_success";
-			echo "<script> location.href='store.php'; </script>";
+			//echo "<script> location.href='lista_pro_vista.php'; </script>";
             exit;
 		}
 	}
