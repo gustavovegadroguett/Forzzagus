@@ -127,22 +127,22 @@ span.price {
 					
 					<div class="col-50">
 						<h3>Billing Address</h3>
-						<label for="fname"><i class="fa fa-user" ></i> Full Name</label>
-						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["nombre"].' '.$row["apellido"].''.$row["apellido_materno"].'">
+						<label for="fname"><i class="fa fa-user" ></i> Nombre completo</label>
+						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["nombre"].' '.$row["apellido"].'  '.$row["apellido_materno"].'">
 						<label for="email"><i class="fa fa-envelope"></i> Email</label>
 						<input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="'.$row["email"].'" required>
-						<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+						<label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
 						<input type="text" id="adr" name="address" class="form-control" value="'.$row["direccion1"].'" required>
-						<label for="city"><i class="fa fa-institution"></i> City</label>
+						<label for="city"><i class="fa fa-institution"></i> Ciudad</label>
 						<input type="text" id="city" name="city" class="form-control" value="'.$row["ciudad"].'" pattern="^[a-zA-Z ]+$" required>
 
 						<div class="row">
 						<div class="col-50">
-							<label for="state">State</label>
+							<label for="state">Comuna</label>
 							<input type="text" id="state" name="state" class="form-control" pattern="^[a-zA-Z ]+$" required>
 						</div>
 						<div class="col-50">
-							<label for="zip">Zip</label>
+							<label for="zip">Código Postal</label>
 							<input type="text" id="zip" name="zip" class="form-control" pattern="^[0-9]{6}(?:-[0-9]{4})?$" required>
 						</div>
 						</div>
@@ -151,13 +151,13 @@ span.price {
 					
 					<div class="col-50">
 						<h3>Payment</h3>
-						<label for="fname">Accepted Cards</label>
+						<label for="fname">Tarjetas aceptadas</label>
 						<div class="icon-container">
 						<i class="fa fa-cc-visa" style="color:navy;"></i>
 						<i class="fa fa-cc-amex" style="color:blue;"></i>
 						<i class="fa fa-cc-mastercard" style="color:red;"></i>
 						<i class="fa fa-cc-discover" style="color:orange;"></i>
-						<i class="fa fa-cc-discover" style="color:orange;"></i>
+						
 						</div>
 						
 						
@@ -187,12 +187,16 @@ span.price {
 					</label>';
 					$i=1;
 					$total=0;
-					$total_count=$_POST['total_count'];
-					while($i<=$total_count){
+					$acumulado=0;
+					$total_count=$_POST['total_count']; //cantidad de items en el carro
+					while($i<=$total_count){  //repetira para llenar con el detalle que corresponde
 						$item_name_ = $_POST['item_name_'.$i];
 						$amount_ = $_POST['amount_'.$i];
 						$quantity_ = $_POST['quantity_'.$i];
-						$total=$total+$amount_ ;
+						
+
+						$acumulado=$quantity_ * $amount_;
+						$total=$total+$acumulado ;
 						$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);
@@ -203,6 +207,7 @@ span.price {
 						<input type='hidden' name='prod_qty_$i' value='$quantity_'>
 						";
 						$i++;
+						
 					}
 					
 				echo'	
@@ -291,6 +296,7 @@ span.price {
 					$total=0;
 					$total_count=$_POST['total_count'];
 					while($i<=$total_count){
+
 						$item_name_ = $_POST['item_name_'.$i];
 						$amount_ = $_POST['amount_'.$i];
 						$quantity_ = $_POST['quantity_'.$i];
@@ -348,6 +354,7 @@ span.price {
 					<tbody>
 					";
 					$total=0;
+					$acumulado2=0;
 					while($i<=$total_count){
 						$item_name_ = $_POST['item_name_'.$i];
 						
@@ -356,7 +363,8 @@ span.price {
 						$amount_ = $_POST['amount_'.$i];
 						
 						$quantity_ = $_POST['quantity_'.$i];
-						$total=$total+$amount_ ;
+						$acumulado2=$amount_*$quantity_;
+						$total=$total+$acumulado2 ;
 						$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);

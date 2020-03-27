@@ -39,7 +39,6 @@
                                         <input class="input form-control input-borders" type="email" name="email"  placeholder="Email" value="probando@gmail.com">
                                     </div>
                                     <div class="form-group">
-<<<<<<< HEAD
                                         <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="Contraseña">
                                     </div>
                                     <div class="form-group">
@@ -47,27 +46,13 @@
                                     </div>
                                    <!-- <div class="form-group">
                                         <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular anteponga 9" value="">
-=======
-                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="password" value="25252525a">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="confirm password" value="25252525a">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular" value="5485485821">
->>>>>>> c8ed065e53f865e5fb283d546e3dc0a5dad5d909
                                     </div>
                                     <div class="form-group">
                                         <input class="input form-control input-borders" type="text" name="address1" id="address1" placeholder="Dirección" value="Heroes de la concepcion 1212">
                                     </div>
                                     <div class="form-group">
-<<<<<<< HEAD
                                         <input class="input form-control input-borders" type="text" name="city" id="city" placeholder="Ciudad">
                                     </div>  -->
-=======
-                                        <input class="input form-control input-borders" type="text" name="city" id="city" placeholder="Ciudad" value="Alto Hospicio">
-                                    </div>
->>>>>>> c8ed065e53f865e5fb283d546e3dc0a5dad5d909
                                     
                                     
                                     <div style="form-group">

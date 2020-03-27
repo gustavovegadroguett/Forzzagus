@@ -122,22 +122,11 @@ if(empty($f_name) || empty($l_name1) || empty($l_name2) || empty($rut) || empty(
 		exit();
 	} else {
 		
-<<<<<<< HEAD
 		$sql = "INSERT INTO usuarios (id_usuario,nombre ,apellido,  apellido_materno, email , rut , password ) 
 		VALUES (NULL, '$f_name', '$l_name1','$l_name2', '$email', '$rut','$password')";
 		$run_query = mysqli_query($con,$sql);
 		if(!$run_query){
 			printf("ERROR:  %s\n",mysqli_error($con));
-=======
-		$sql = "INSERT INTO usuarios 
-		(id_usuario, nombre, apellido, apellido_materno,  rut,email,
-		password, mobil, direccion1, ciudad) 
-		VALUES (NULL, '$f_name', '$l_name1','$l_name2','$rut', '$email', 
-		'$password', '$mobile', '$address1', '$city')";
-		$run_query = mysqli_query($con,$sql);
-		if (!$run_query){
-			printf("Error: %s\n",mysqli_error($con));
->>>>>>> c8ed065e53f865e5fb283d546e3dc0a5dad5d909
 			exit();
 		}
 		$_SESSION["uid"] = mysqli_insert_id($con);
@@ -147,11 +136,7 @@ if(empty($f_name) || empty($l_name1) || empty($l_name2) || empty($rut) || empty(
 		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
 		if(mysqli_query($con,$sql)){
 			echo "register_success";
-<<<<<<< HEAD
 			//echo "<script> location.href='store.php'; </script>";
-=======
-			//echo "<script> location.href='lista_pro_vista.php'; </script>";	
->>>>>>> c8ed065e53f865e5fb283d546e3dc0a5dad5d909
             exit;
 		}
 	}
