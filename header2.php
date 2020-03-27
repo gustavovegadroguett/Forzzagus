@@ -47,9 +47,10 @@
     </div>
     <?php
                              include "db.php";
-                             
-                             
-                            if(isset($_SESSION["uid"]) && $_SESSION["uid"]!= " "){
+                             if(!isset($_SESSION["uid"])){
+                               $_SESSION["uid"]=-1;
+                             }
+                            if(isset($_SESSION["uid"]) && $_SESSION["uid"]!=-1){
                                 $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
                                 $query = mysqli_query($con,$sql);
                                 $row=mysqli_fetch_array($query);  
@@ -58,7 +59,7 @@
                                <div class="dropdownn" id="loged">
                                      <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'    </a>
                                     <div class="dropdownn-content">
-                                    <a href="perfil.php" data-toggle="modal" data-target="#profile"><i class="fa fa-user-circle" aria-hidden="true" ></i>Mi Perfil</a>
+                                    <a href="perfil.php" ><i class="fa fa-user-circle" aria-hidden="true" ></i>Mi Perfil</a>
                                     <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Salir</a>
                                     
                                   </div>
@@ -67,10 +68,12 @@
                             
                             }  
                             else{ 
-                              
+                              $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
+                              $query = mysqli_query($con,$sql);
+                              $row=mysqli_fetch_array($query);    
                                 echo '
                                 <div class="dropdownn" id="loged">
-                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Ingreso</a>
+                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> '.$row["nombre"].'</a>
                                   <div class="dropdownn-content">
                                     <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
                                     <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
