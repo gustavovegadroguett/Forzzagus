@@ -190,6 +190,7 @@ include("db.php");
                         <i class='fa fa-shopping-cart'>  </i>
                          
                         <button href='#' pid=<?php echo $codigo; ?> id='product' class='add-to-cart-btn'> Agregar al carrito.</button>
+                        
                          </div>
                          
 

@@ -1,13 +1,20 @@
 <?php
     include 'header2.php';
     include 'db.php';
+    
 ?>
 
 <div class="container-fluid">
       <?php 
-           $envio= $_SESSION["uid"];
-            $sql="SELECT * FROM usuarios WHERE id_usuario='$envio' LIMIT 1";     
+           printf($_SESSION["uid"]);
+           
+           
+            $sql= "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";     
+            printf($sql);
             $run_query=mysqli_query($sql,$con);  
+            if(!$run_query){
+                printf("ERROR %s\n",$con);
+            }
             $row=mysqli_fetch_row($run_query);
 
             ?>								

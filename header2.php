@@ -67,13 +67,13 @@
 
                             
                             }  
-                            else{ 
+                            else if($_SESSION["uid"]==-1){ 
                               $sql = "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";
                               $query = mysqli_query($con,$sql);
                               $row=mysqli_fetch_array($query);    
                                 echo '
                                 <div class="dropdownn" id="loged">
-                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> '.$row["nombre"].'</a>
+                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i>Else if '.$row["nombre"].'  '.$_SESSION["uid"].'</a>
                                   <div class="dropdownn-content">
                                     <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
                                     <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
@@ -81,6 +81,18 @@
                                   </div>
                                 </div>';
                                 
+                            }
+                            else{
+                              echo '
+                                <div class="dropdownn" id="loged">
+                                  <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Mal entrado</a>
+                                  <div class="dropdownn-content">
+                                    <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
+                                    <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                                    
+                                  </div>
+                                </div>';
+                              
                             }
                                              ?>
 

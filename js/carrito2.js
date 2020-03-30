@@ -44,18 +44,20 @@ $(document).ready(function(){
      //---------------------------------Crear item en Dropdown carrito----------------------------------------------------
 
 
-     $("body").delegate("#product","click",function(event){		
+     $("body").delegate("#product","click",function(event){	
+       	
       var pid = $(this).attr("pid");
       
       event.preventDefault();
-      
+      alert(pid);
       $(".overlay").show();
       $.ajax({
         url : "action.php",
         method : "POST",
         data : {addToCart:1,proId:pid,},
         success : function(data){
-         
+         alert("entrando");
+
           count_item();
           getCartItem();
           
