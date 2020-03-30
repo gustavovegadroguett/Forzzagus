@@ -247,23 +247,20 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				
 
 			//	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-				$sql = "SELECT * FROM cart WHERE cart.p_id = '$p_id'  ";
+				$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id='$user_id ";
+				
 				$run_query = mysqli_query($con,$sql);
-			
-
-			
-
 				$count = mysqli_num_rows($run_query);
 				if($count > 0){
-					
-					
+					echo "Error: %s\n"+ mysqli_error($con);
+					exit();
 
 				} else {
 					$sql = "INSERT INTO `cart`
 					(`p_id`, `ip_add`, `user_id`, `qty`) 
 					VALUES ('$p_id','$ip_add','$user_id','1')";
 					if(mysqli_query($con,$sql)){
-						
+
 						echo "
 							<div class='alert alert-success'>
 								<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -271,9 +268,11 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 							</div>
 						";
 					}
+					
+					
 				}
-		}else{
-					echo 'else funcionando';
+		}
+				
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
 			if (mysqli_num_rows($query) > 0) {
@@ -303,7 +302,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		
 		
 		
-	}
+	
 
 //-------------------------------funcion contar items para el carrito.----------------------------------
 if (isset($_POST["count_item"])) {

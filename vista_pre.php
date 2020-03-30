@@ -102,6 +102,8 @@ include("db.php");
     <main class="main-contenido-producto">
         <div class="contenedor-uno">
             <div class="sub-uno"></div>
+            <div id="prodmsg" class="alert alert-success"> </div>
+            
         </div>
 
         <div class="titulo">
@@ -270,7 +272,7 @@ include("db.php");
             }
           ?>
 
-    <div class="contenedor-tres">
+    <!-- <div class="contenedor-tres">
         <div class="sub-contenedor-tres">
             <div class="horarios">
                 <a href="#" class="link-footer">
@@ -294,9 +296,9 @@ include("db.php");
             </div>
             </a>
         </div>
-    </div>
+    </div> -->
 
-    <?php  include 'footer.php';?>
+    <?php // include 'footer.php';?>
 
 
     <div id="WAButton"></div>
