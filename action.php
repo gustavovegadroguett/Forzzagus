@@ -247,12 +247,18 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				
 
 			//	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-				$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id='$user_id ";
+				$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND cart.user_id = '$user_id '";
 				
 				$run_query = mysqli_query($con,$sql);
+				if (!$run_query) {
+					printf("Error: %s\n", mysqli_error($con));
+					exit();
+				}
+	
 				$count = mysqli_num_rows($run_query);
 				if($count > 0){
-					echo "Error: %s\n"+ mysqli_error($con);
+					echo 'Producto ya esta agregado!';
+
 					exit();
 
 				} else {
