@@ -8,7 +8,7 @@ $(document).ready(function(){
        var $item = $(".shopping-cart");
        if ($item.hasClass("active")) {
          $item.removeClass("active");
-         $(".badge2").html=$(".badge").html;
+         $(".badge2").html= $(".badge").html;
          $("#total_muestra").html= $("#total_carrito2").html;
         
        }
@@ -220,8 +220,7 @@ $(document).ready(function(){
         method	:	"POST",
         data	:	{updateCartItem:1,update_id:update_id,qty:qty},
         success	:	function(data){
-          count_item();
-          getCartItem();
+          
           $("#cart_msg").html(data);
           
           checkOutDetails();
