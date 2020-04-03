@@ -31,6 +31,7 @@ error_reporting(0);
 
 <body>
     <?php  include 'header2.php';?>
+    <br>
     <div class="container-all">
 
         <input type="radio" id="1" name="image-slide" hidden />
@@ -40,7 +41,7 @@ error_reporting(0);
         <div class="slide">
 
                 <div class="item-slide">
-                        <img src="img/slider/taladro.png"  class="imgi">
+                    <img src="img/slider/taladro.png"  class="imgi">
                 </div>
 
                 <div class="item-slide">
@@ -64,7 +65,7 @@ error_reporting(0);
                     <img src="img/slider/img2.jpg" class="imgi" >
                 </label>
 
-         </div>
+            </div>
 
 
 
@@ -83,9 +84,9 @@ error_reporting(0);
 
             
             
-    </main>
+    
 
-            </section>
+           
 
             
 
@@ -126,7 +127,7 @@ error_reporting(0);
         
      
 
-        <?php  include 'footer2.php';?>
+        <?php      include 'footer2.php';?>
 
        
     </main>

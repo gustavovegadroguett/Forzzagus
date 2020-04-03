@@ -239,15 +239,16 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		
 
 		$p_id = $_POST["proId"];
+		$user_id = $_SESSION["uid"];
 		
 		
 		if(isset($_SESSION["uid"])){
 
-				$user_id = $_SESSION["uid"];
+				
 				
 
 			//	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-				$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND cart.user_id = '$user_id '";
+				$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND cart.user_id = '$user_id 'AND cart.ip_add  = '$ip_add'";
 				
 				$run_query = mysqli_query($con,$sql);
 				if (!$run_query) {
@@ -262,6 +263,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 					exit();
 
 				} else {
+					
 					$sql = "INSERT INTO `cart`
 					(`p_id`, `ip_add`, `user_id`, `qty`) 
 					VALUES ('$p_id','$ip_add','$user_id','1')";
@@ -314,10 +316,11 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 if (isset($_POST["count_item"])) {
 	//When user is logged in then we will count number of item in cart by using user session id
 	//$_SESSION['uid']=-1;
+	$user_id=$_SESSION["uid"];
 	
-    if (isset($_SESSION["uid"]) && $_SESSION["uid"]!= -1) {
+    if (isset($_SESSION[ "uid"]) && $_SESSION["uid"]!= -1) {
 		
-	$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
+		$sql = "SELECT COUNT(*) AS count_item FROM cart WHERE user_id = $_SESSION[uid]";
 	}else if(isset($_SESSION["uid"]) && $_SESSION["uid"]== -1) {
 		//When user is not logged in then we will count number of item in cart by using users unique ip address
 		
@@ -590,6 +593,10 @@ if (isset($_POST["removeItemFromCart"])) {
 if (isset($_POST["updateCartItem"])) {
 	$update_id = $_POST["update_id"];
 	$qty = $_POST["qty"];
+	if($qty<=0){
+		echo "La cantidad debe ser mayor a 0";
+		exit();
+	}
 	if (isset($_SESSION["uid"])) {
 		$sql = "UPDATE cart SET qty='$qty' WHERE p_id = '$update_id' AND user_id = '".$_SESSION[uid]."'";
 	}else{

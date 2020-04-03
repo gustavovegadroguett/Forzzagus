@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/estiloheader.css">
 <link rel="stylesheet" href="css/estilofooter.css">
 
 <div class="esfotter">

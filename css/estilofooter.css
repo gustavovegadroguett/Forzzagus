@@ -1,0 +1,1996 @@
+@media only screen and (max-width: 3840px) 
+{
+  .esfotter {
+
+
+    height: 250px;
+    line-height: 50px;
+    background: #e5e5e3;
+    color: #333333;
+    text-align: center;
+    position: absolute;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+  }
+
+
+
+  .logo {
+
+
+    /width: 30%;/
+    /*height: auto;  
+      
+      float: left;*/
+    width: 120px;
+    height: 52px;
+    /* Border: 5px dashed rgb(14, 13, 13);*/
+    float: right;
+    margin-top: 100px;
+    z-index: -1;
+    
+
+
+  }
+
+  .menuprincipal {
+
+    /* border:  dashed red 2px;*/
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 0px;
+    float: left;
+    margin-top: -35px;
+
+
+
+  }
+
+  .divhr {
+
+    /* border: dashed blue 2px;*/
+    width: 105px;
+    margin-top: 65px;
+    border-top: 2px solid #b3b3b3;
+    margin-left: -1;
+  }
+
+  .parrafo {
+    margin-top: -20px;
+    padding-top: 19px;
+    float: left;
+    /border: dashed purple 2px;/
+    margin-left: -104px;
+  }
+
+
+  .parrafo ul {
+
+    /* border: brown 2px dashed;*/
+    padding-top: 18px;
+  }
+
+  .parrafo li {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -28px;
+    text-align: left;
+    /margin-left: -127px;/
+    /border: dashed gold 2px;/
+  }
+
+
+
+  .parrafohorario {
+    /* border:  dashed olive 2px;*/
+    padding-top: 19px;
+    float: left;
+    margin-left: 35px;
+  }
+
+  .horarios {
+
+
+    font-weight: bold;
+    font-size: 12px;
+    /padding-top: 35px;/
+    margin-top: -37px;
+    float: left;
+    margin-left: 35px;
+    /* border:  dashed green 2px;*/
+  }
+
+  .parrafohorario li {
+
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: left;
+    margin-left: -176px;
+    /border:  dashed deeppink 2px;/
+  }
+
+
+
+
+  .divhr2 {
+
+    width: 146px;
+    /margin-top: 70px;/
+    border-top: 2px solid #b3b3b3;
+    /*  margin-left: -1;*/
+    margin-left: 135px;
+    margin-top: -2px;
+  }
+
+  .logogarantia {
+
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    float: left;
+    margin-left: 180px;
+    margin-top: -10px;
+    /border: dashed red 2px;/
+  }
+
+
+  .parrafonuestras {
+
+
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -38px;
+    float: right;
+    margin-right: -130px;
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: 0px;
+    border-top: 2px solid #b3b3b3;
+    /margin-left: -1;/
+    float: right;
+    margin-right: -153px;
+  }
+
+
+  .parrafosucursale {
+    margin-top: 0px;
+    /*   border: dashed red 2px;*/
+    float: right;
+    text-align: right;
+    margin-right: -153px;
+  }
+
+  .parrafosucursale ul {
+
+    /*  border: brown 2px dashed;*/
+    padding-top: 18px;
+  }
+
+  .parrafosucursale ul li {
+
+    /border: gold 2px dashed;/
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: right;
+
+
+
+
+  }
+
+  .divredes {
+
+    /border: red dashed 2px;/
+    height: 40px;
+    width: 400px;
+    margin-top: 120px;
+  }
+
+  .wsp {
+
+    height: 30px;
+    width: 30px;
+    margin-top: -20px;
+
+     float: left;
+  }
+
+
+
+
+
+ 
+
+  .ig {
+
+    height: 30px;
+    width: 30px;
+
+    /display: inline-block;/
+    float: left;
+    margin-left: 30px;
+    margin-top: -18px;
+  }
+  .fb {
+
+    height: 30px;
+    width: 30px;
+
+    /display: inline-block;/
+    float: left;
+    margin-left: 30px;
+    margin-top: -18px;
+  }
+
+  .lineanegra {
+
+    /position:fixed;/
+    left: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+    width: 100%;
+    background: black;
+  margin-top: 10px;
+   
+  }
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+
+  }
+}
+@media only screen and (max-width: 1366px) {
+
+  .esfotter {
+
+
+    height: 250px;
+    line-height: 50px;
+    background: #e5e5e3;
+    color: #333333;
+    text-align: center;
+    position: absolute;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+  }
+
+
+
+  .logo {
+
+
+    /*width: 30%;*/
+    /*height: auto;  
+      
+      float: left;*/
+    width: 120px;
+    height: 52px;
+    /* Border: 5px dashed rgb(14, 13, 13);*/
+    float: right;
+    margin-top: 100px;
+    z-index: -1;
+    
+
+
+  }
+
+  .menuprincipal {
+
+    /* border:  dashed red 2px;*/
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 0px;
+    float: left;
+    margin-top: -35px;
+
+
+
+  }
+
+  .divhr {
+
+    /* border: dashed blue 2px;*/
+    width: 105px;
+    margin-top: 65px;
+    border-top: 2px solid #b3b3b3;
+    margin-left: -1;
+  }
+
+  .parrafo {
+    margin-top: -20px;
+    padding-top: 19px;
+    float: left;
+    /*border: dashed purple 2px;*/
+    margin-left: -104px;
+  }
+
+
+  .parrafo ul {
+
+    /* border: brown 2px dashed;*/
+    padding-top: 18px;
+  }
+
+  .parrafo li {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -28px;
+    text-align: left;
+    /*margin-left: -127px;*/
+    /*border: dashed gold 2px;*/
+  }
+
+
+
+  .parrafohorario {
+    /* border:  dashed olive 2px;*/
+    padding-top: 19px;
+    float: left;
+    margin-left: 35px;
+  }
+
+  .horarios {
+
+
+    font-weight: bold;
+    font-size: 12px;
+    /*padding-top: 35px;*/
+    margin-top: -37px;
+    float: left;
+    margin-left: 35px;
+    /* border:  dashed green 2px;*/
+  }
+
+  .parrafohorario li {
+
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: left;
+    margin-left: -176px;
+    /*border:  dashed deeppink 2px;*/
+  }
+
+
+
+
+  .divhr2 {
+
+    width: 146px;
+    /*margin-top: 70px;*/
+    border-top: 2px solid #b3b3b3;
+    /*  margin-left: -1;*/
+    margin-left: 135px;
+    margin-top: -2px;
+  }
+
+  .logogarantia {
+
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    float: left;
+    margin-left: 180px;
+    margin-top: -10px;
+    /*border: dashed red 2px;*/
+  }
+
+
+  .parrafonuestras {
+
+
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -38px;
+    float: right;
+    margin-right: -130px;
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: 0px;
+    border-top: 2px solid #b3b3b3;
+    /*margin-left: -1;*/
+    float: right;
+    margin-right: -153px;
+  }
+
+
+  .parrafosucursale {
+    margin-top: 0px;
+    /*   border: dashed red 2px;*/
+    float: right;
+    text-align: right;
+    margin-right: -153px;
+  }
+
+  .parrafosucursale ul {
+
+    /*  border: brown 2px dashed;*/
+    padding-top: 18px;
+  }
+
+  .parrafosucursale ul li {
+
+    /*border: gold 2px dashed;*/
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: right;
+
+
+
+
+  }
+
+  .divredes {
+
+    /*border: red dashed 2px;*/
+    height: 40px;
+    width: 400px;
+    margin-top: 120px;
+  }
+
+  .wsp {
+
+    height: 30px;
+    width: 30px;
+    margin-top: -20px;
+
+     float: left;
+  }
+
+
+
+
+
+ 
+
+  .ig {
+
+    height: 30px;
+    width: 30px;
+
+    /*display: inline-block;*/
+    float: left;
+    margin-left: 30px;
+    margin-top: -18px;
+  }
+  .fb {
+
+    height: 30px;
+    width: 30px;
+
+    /*display: inline-block;*/
+    float: left;
+    margin-left: 30px;
+    margin-top: -18px;
+  }
+
+  .lineanegra {
+
+    /*position:fixed;*/
+    left: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+    width: 100%;
+    background: black;
+  margin-top: 10px;
+   
+  }
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+
+  }
+}
+
+
+
+@media only screen and (max-width: 1076px) {
+
+  
+
+  .logogarantia {
+
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    float: left;
+    margin-left: 50px;
+    margin-top: -10px;
+    /*border: dashed red 2px;*/
+  }
+
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 950px) {
+
+ 
+  .logogarantia {
+
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    float: left;
+    margin-left: 40px;
+    margin-top: -10px;
+    /*border: dashed red 2px;*/
+  }
+
+
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+
+
+
+
+
+  .parrafonuestras {
+
+
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -38px;
+    float: right;
+    margin-right: -100px;
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: 0px;
+    border-top: 2px solid #b3b3b3;
+    /*margin-left: -1;*/
+    float: right;
+    margin-right: -150px;
+  }
+
+
+  .parrafosucursale {
+    margin-top: 0px;
+    /*   border: dashed red 2px;*/
+    float: right;
+    text-align: right;
+    margin-right: -153px;
+  }
+
+  .parrafosucursale ul {
+
+    /*  border: brown 2px dashed;*/
+    padding-top: 18px;
+  }
+
+  .parrafosucursale ul li {
+
+    /*border: gold 2px dashed;*/
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: right;
+
+
+
+
+  }
+
+
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 812px) {
+
+
+
+
+
+  .logogarantia {
+
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+    /*border: dashed red 2px;*/
+  }
+
+
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+
+
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  
+    .esfotter {
+
+
+      height: 400px;
+      line-height: 50px;
+      background: #e5e5e3;
+      color: #333333;
+      text-align: center;
+      position: absolute;
+      margin-bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+      /*border: dashed  blue 5px;*/
+    }
+  
+
+  
+
+    .logo {
+
+
+      
+      width: 120px;
+      height: 52px;
+     
+      float: right;
+      margin-top: 140px;
+      z-index: -1;
+    
+  
+    }
+  
+   
+  
+    .menuprincipal {
+  
+     
+      font-weight: bold;
+      font-size: 12px;
+      padding-top: 0px;
+      margin-top: -30px;
+      float: left;
+     
+      
+  
+  
+    }
+  
+    .divhr {
+  
+    
+      width: 105px;
+      margin-top: 5px;
+      border-top: 2px solid #b3b3b3;
+      margin-left: -1;
+      
+      
+    }
+  
+    .parrafo {
+     
+      margin-top: -20px;
+      padding-top: 19px;
+      float: left;
+      
+      margin-left: -104px;
+     
+      
+    }
+  
+  
+    .parrafo ul {
+ 
+    
+      padding-top: 18px;
+    }
+  
+    .parrafo li {
+     
+     font-size: 12px;
+      font-weight: normal;
+      margin-top: -28px;
+      text-align: left;
+     
+    }
+  
+  
+  
+    .parrafohorario {
+    
+      
+      padding-top: 19px;
+      float: left;
+      margin-left: 40px;
+     
+      
+    }
+  
+    .horarios {
+  
+  
+      font-weight: bold;
+      font-size: 12px;
+     
+      margin-top: -37px;
+      float: left;
+      margin-left: 100px;
+     
+      
+
+    }
+  
+    .parrafohorario li {
+  
+      font-size: 12px;
+      font-weight: normal;
+      margin-top: -30px;
+      text-align: left;
+      margin-left: -176px;
+      
+
+    }
+  
+  
+  
+  
+    .divhr2 {
+  
+      width: 146px;
+  
+      border-top: 2px solid #b3b3b3;
+     
+      margin-left: 200px;
+      margin-top: -2px;
+      
+
+     
+    }
+  
+    .logogarantia {
+  
+     height: 100px;
+      width: 200px;
+      z-index: -1;
+      float: left;
+      margin-left: 260px;
+      margin-top: 20px;
+     
+      
+     
+  
+    }
+  
+  
+    .parrafonuestras {
+  
+  
+      font-weight: bold;
+      font-size: 12px;
+      margin-top: -145px;
+      float: right;
+      margin-right: -110px;
+      
+
+    }
+  
+    .divhr3 {
+  
+      width: 153px;
+      margin-top: -112px;
+      border-top: 2px solid #b3b3b3;
+    
+      float: right;
+      margin-right: -108px;
+      
+     
+    }
+  
+  
+    .parrafosucursale {
+     
+      margin-top: -228px;
+      float: right;
+      text-align: right;
+      margin-right: -110px;
+     
+    
+    }
+  
+    .parrafosucursale ul {
+  
+      /*  border: brown 2px dashed;*/
+      padding-top: 18px;
+    }
+  
+    .parrafosucursale ul li {
+  
+      /*border: gold 2px dashed;*/
+      font-size: 12px;
+      font-weight: normal;
+      margin-top: -30px;
+      text-align: right;
+  
+  
+  
+  
+    }
+  
+    .divredes {
+  
+    
+      height: 40px;
+      width: 250px;
+      margin-top: 250px;
+    
+
+    }
+  
+    .wsp {
+  
+      height: 35px;
+      width: 35px;
+     float: left;
+     margin-top: 10px;
+  
+      /* float: left;*/
+    }
+  
+  
+  
+  
+  
+    .fb {
+  
+      height: 35px;
+      width: 35px;
+  
+     
+      float: left;
+      margin-left: 102px;
+      margin-top: 10px;
+    }
+  
+    .ig {
+  
+    
+      height: 35px;
+      width: 35px;
+  
+     
+      float: left;
+      margin-left: 68px;
+      margin-top: -35px;
+    }
+  
+  
+    .lineanegra {
+  
+      
+      
+      height: 30px;
+      width: 100%;
+      background: black;
+      
+      
+
+  }
+    .contenerfootner {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 2px dashed  red 5px;
+      height: 380px;
+
+      padding-top: 40px;
+      padding-left: 80px;
+      padding-right: 80px;
+  
+    }
+ 
+}
+
+
+@media only screen and (max-width: 784px) {
+
+ 
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px dashed  red 5px;
+    height: 380px;
+
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+
+  }
+
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -145px;
+    float: right;
+    margin-right: -110px;
+    
+
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -112px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -108px;
+    
+   
+  }
+
+
+  .parrafosucursale {
+   
+    margin-top: -108px;
+    float: right;
+    text-align: right;
+    margin-right: -110px;
+   
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 711px) {
+
+
+
+
+
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -145px;
+    float: right;
+    margin-right: -110px;
+    
+
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -112px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -108px;
+    
+   
+  }
+
+
+  .parrafosucursale {
+   
+    margin-top: -230px;
+    float: right;
+    text-align: right;
+    margin-right: -110px;
+   
+  
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 664px) {
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -145px;
+    float: right;
+    margin-right: -110px;
+    
+
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -230px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -108px;
+    
+   
+  }
+
+
+  .parrafosucursale {
+   
+    margin-top: -230px;
+    float: right;
+    text-align: right;
+    margin-right: -110px;
+   
+  
+  }
+
+
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 662px)   {
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -144px;
+    float: right;
+    margin-right: -111px;
+    
+
+  }
+
+  
+
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -230px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -110px;
+    
+   
+  }
+
+
+
+}
+
+
+@media only screen and (max-width:  661px)   {
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -265px;
+    float: right;
+    margin-right: -111px;
+    
+
+  }
+
+  
+
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -230px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -110px;
+    
+   
+  }
+
+
+
+}
+
+
+@media only screen and (max-width:  619px)   {
+
+
+  .logo {
+
+
+      
+    width: 120px;
+    height: 52px;
+   
+    float: right;
+    margin-top: 143px;
+    z-index: -1;
+  
+
+  }
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: left;
+     margin-left: 200px;
+     margin-top: 20px;
+    
+     
+    
+ 
+   }
+
+
+   .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -144px;
+    float: right;
+    margin-right: -111px;
+    
+
+  }
+
+  
+
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -112px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -110px;
+    
+   
+  }
+
+
+
+
+
+ 
+
+}
+
+
+@media only screen and (max-width:  640px)   {
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: left;
+     margin-left: 230px;
+     margin-top: 20px;
+    
+    
+    
+ 
+   }
+
+
+
+
+
+   
+
+   .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -144px;
+    float: right;
+    margin-right: -111px;
+    
+
+  }
+
+  
+
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -112px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -110px;
+    
+   
+  }
+
+
+
+
+}
+
+
+
+
+
+
+@media only screen and (max-width:  596px)   {
+
+
+
+
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px dashed  red 5px;
+    height: 380px;
+
+    padding-top: 40px;
+    padding-left:5px;
+    padding-right: 5px;
+
+
+  }
+
+
+
+
+
+  
+  .parrafohorario {
+    
+      
+    padding-top: 19px;
+    float: left;
+    margin-left: 40px;
+   
+    
+  }
+
+  .horarios {
+
+
+    font-weight: bold;
+    font-size: 12px;
+   
+    margin-top: -37px;
+    float: left;
+    margin-left: 40px;
+   
+    
+
+  }
+
+  .parrafohorario li {
+
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: left;
+    margin-left: -176px;
+    
+
+  }
+
+  .divhr2 {
+  
+    width: 146px;
+
+    border-top: 2px solid #b3b3b3;
+   
+    margin-left: 140px;
+    margin-top: -2px;
+    
+
+   
+  }
+
+
+
+
+}
+
+
+
+
+@media only screen and (max-width:  596px)   {
+
+
+
+
+  .esfotter {
+
+
+    height: 200px;
+    line-height: 50px;
+    background: #e5e5e3;
+    color: #333333;
+    text-align: center;
+    
+    position: absolute;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    /*border: dashed pink 2px;*/
+
+  }
+
+
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+   /* border: 2px dashed  red 5px;*/
+    height: 200px;
+
+    padding-top: 40px;
+    padding-left:5px;
+    padding-right: 5px;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right:30px ;
+
+
+  }
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: left;
+     margin-left: 180px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+  .logo {
+
+
+      
+    width: 120px;
+    height: 52px;
+   
+    float: right;
+    margin-top: 90px;
+    
+    z-index: -1;
+  
+
+  }
+  
+  .parrafohorario {
+    
+      
+    padding-top: 19px;
+    float: left;
+    margin-left: 40px;
+   
+    display: none;
+  }
+
+  .horarios {
+
+
+    font-weight: bold;
+    font-size: 12px;
+   
+    margin-top: -37px;
+    float: left;
+    margin-left: 40px;
+   
+    display: none;
+
+  }
+
+  .parrafohorario li {
+
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -30px;
+    text-align: left;
+    margin-left: -176px;
+    
+    display: none;
+  }
+
+  .divhr2 {
+  
+    width: 146px;
+
+    border-top: 2px solid #b3b3b3;
+   
+    margin-left: 140px;
+    margin-top: -2px;
+    
+    display: none;
+   
+  }
+
+
+
+  
+  .parrafohorario {
+    
+      
+    padding-top: 19px;
+    float: left;
+    margin-left: 40px;
+    display: none;
+    
+  }
+
+
+
+  .parrafonuestras {
+  
+  
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -145px;
+    float: right;
+    margin-right: -110px;
+    display: none;
+
+  }
+
+  .divhr3 {
+
+    width: 153px;
+    margin-top: -230px;
+    border-top: 2px solid #b3b3b3;
+  
+    float: right;
+    margin-right: -108px;
+    display: none;
+   
+  }
+
+
+  .parrafosucursale {
+   
+    margin-top: -230px;
+    float: right;
+    text-align: right;
+    margin-right: -110px;
+    display: none;
+  
+  }
+
+
+
+  
+  .menuprincipal {
+  
+     
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 0px;
+    margin-top: -30px;
+    float: left;
+    display: none;
+    
+
+
+  }
+
+  .divhr {
+
+  
+    width: 105px;
+    margin-top: 5px;
+    border-top: 2px solid #b3b3b3;
+    margin-left: -1;
+    
+    display: none;
+  }
+
+  .parrafo {
+   
+    margin-top: -20px;
+    padding-top: 19px;
+    float: left;
+    
+    margin-left: -104px;
+   
+    display: none;
+  }
+
+
+
+
+
+
+  .divredes {
+  
+    
+    height: 40px;
+    width: 250px;
+    margin-top: 100px;
+  
+
+  }
+
+  .wsp {
+
+    height: 30px;
+    width: 30px;
+   float: left;
+   margin-top: 10px;
+
+    /* float: left;*/
+  }
+
+
+
+
+
+  .fb {
+
+    height: 30px;
+    width: 30px;
+
+   
+    float: left;
+    margin-left: 102px;
+    margin-top: 10px;
+  }
+
+  .ig {
+
+  
+    height: 30px;
+    width: 30px;
+
+   
+    float: left;
+    margin-left: 68px;
+    margin-top: -30px;
+  }
+
+
+
+
+  .lineanegra {
+  
+      
+      
+    height: 30px;
+    width: 100%;
+    margin-top: 0px;
+    background: black;
+    
+    
+
+}
+
+
+
+
+}
+
+
+@media only screen and (max-width:  539px)   {
+
+
+
+
+  .logo {
+
+
+      
+    width: 120px;
+    height: 52px;
+   
+    float: right;
+    margin-top: 5px;
+    
+    z-index: -1;
+  
+
+  }
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 150px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+
+
+
+
+
+
+
+}
+
+
+
+
+@media only screen and (max-width:  486px)   {
+
+
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 100px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+
+
+
+
+}
+
+
+@media only screen and (max-width:  375px)   {
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 55px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:  366px)   {
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 50px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+
+
+
+
+   .divredes {
+  
+    
+    height: 40px;
+    width: 250px;
+    margin-top: 100px;
+  
+
+  }
+
+  .wsp {
+
+    height: 30px;
+    width: 30px;
+   float: left;
+   margin-top: 10px;
+
+    /* float: left;*/
+  }
+
+
+
+
+
+  .fb {
+
+    height: 30px;
+    width: 30px;
+
+   
+    float: left;
+    margin-left: 72px;
+    margin-top: 10px;
+  }
+
+  .ig {
+
+  
+    height: 30px;
+    width: 30px;
+
+   
+    float: left;
+    margin-left: 50px;
+    margin-top: -30px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@media only screen and (max-width:  320px)   {
+
+
+
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 30px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+
+
+
+
+
+
+
+}
+@media only screen and (max-width:  311px)   {
+
+
+
+  
+
+  .esfotter {
+
+
+    height: 280px;
+    line-height: 50px;
+    background: #e5e5e3;
+    color: #333333;
+    text-align: center;
+    
+    position: absolute;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    /*border: dashed pink 2px;*/
+
+  }
+
+
+
+  .contenerfootner {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+   /* border: 2px dashed  red 5px;*/
+    height: 280px;
+
+    padding-top: 40px;
+    padding-left:5px;
+    padding-right: 5px;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right:30px ;
+
+
+  }
+
+
+  .logogarantia {
+  
+    height: 100px;
+     width: 180px;
+     z-index: -1;
+     float: right;
+     margin-right: 25px;
+     margin-top: -10px;
+    
+     
+    
+ 
+   }
+
+   .logo {
+
+
+      
+    width: 120px;
+    height: 52px;
+   
+    margin-right: 60px;
+    margin-top: 60px;
+    
+    z-index: -1;
+  
+
+  }
+
+
+
+
+
+
+
+
+  
+  .divredes {
+  
+    padding-right: 30px;
+    padding-left: 4px;
+    height: 40px;
+    width: 250px;
+    margin-top: 80px;
+  
+
+  }
+
+  .wsp {
+
+    height: 35px;
+    width: 35px;
+   float: left;
+   margin-top: -10px;
+   margin-left: 20px;
+    /* float: left;*/
+  }
+
+
+
+
+
+  .fb {
+
+    height: 35px;
+    width: 35px;
+
+   
+    float: right;
+    margin-left: 130px;
+    margin-top: -120px;
+  }
+
+  .ig {
+
+  
+    height: 35px;
+    width: 35px;
+
+   
+    float: left;
+    margin-left: 100px;
+    margin-top: -120px;
+  }
+
+
+
+
+
+
+
+}

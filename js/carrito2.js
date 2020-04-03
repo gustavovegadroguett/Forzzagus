@@ -220,8 +220,12 @@ $(document).ready(function(){
         method	:	"POST",
         data	:	{updateCartItem:1,update_id:update_id,qty:qty},
         success	:	function(data){
+          count_item();
+          getCartItem();
           $("#cart_msg").html(data);
+          
           checkOutDetails();
+          
         }
       })
 
