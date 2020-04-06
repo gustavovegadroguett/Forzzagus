@@ -185,8 +185,13 @@ include("db.php");
                             <br>
                             <h4 id="h4">Comparte nuestros productos en Facebook</h4>
                         </div>
+                        <div class="control_cant_general" id="control_cant_general">
+                            <button class="control_cantidad" id="disminuye"> - </button>
+                            <input type="text" class="cantidad_prod" id="cantidad_prod" value="1"> </input>
+                            <button class="control_cantidad" id="aumento"> + </button>
+                        </div>    
                         <div class="comprar">
-                       
+                           
                         <!-- <a href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir);window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&amp;t='+tit2+'');"><button>Compartir</button></a> -->
                         
                         <i class='fa fa-shopping-cart'>  </i>

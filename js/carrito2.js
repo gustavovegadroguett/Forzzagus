@@ -230,6 +230,25 @@ $(document).ready(function(){
 
 
     })
+    $("body").delegate("#aumento","click",function(event){
+      //var mensaje=$("#aumento").html.attr("value");
+      alert("valor aumenta proabando");
+
+     /* $.ajax({
+        url	:	"action.php",
+        method	:	"POST",
+        data	:	{updateCartItem:1,update_id:update_id,qty:qty},
+        success	:	function(data){
+          
+          $("#cart_msg").html(data);
+          
+          checkOutDetails();
+          
+        }
+      })*/
+
+
+    })
 
   
   
