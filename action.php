@@ -240,7 +240,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 		$p_id = $_POST["proId"];
 		$user_id = $_SESSION["uid"];
-		
+		$cant_prod=$_SESSION["cantidad"];
 		
 		if(isset($_SESSION["uid"])){
 
@@ -258,7 +258,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 	
 				$count = mysqli_num_rows($run_query);
 				if($count > 0){
-					echo 'Producto ya esta agregado!';
+					echo "Producto ya esta agregado!' .$cant_prod.'";
 
 					exit();
 

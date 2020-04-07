@@ -231,22 +231,17 @@ $(document).ready(function(){
 
     })
     $("body").delegate("#aumento","click",function(event){
-      //var mensaje=$("#aumento").html.attr("value");
-      alert("valor aumenta proabando");
+      var cantidad=$("#cantidad_prod").val();
+      cantidad= parseInt(cantidad) + 1;
+      $("#cantidad_prod").val(cantidad);    
 
-     /* $.ajax({
-        url	:	"action.php",
-        method	:	"POST",
-        data	:	{updateCartItem:1,update_id:update_id,qty:qty},
-        success	:	function(data){
-          
-          $("#cart_msg").html(data);
-          
-          checkOutDetails();
-          
-        }
-      })*/
-
+    })
+    $("body").delegate("#disminuye","click",function(event){
+      var cantidad=$("#cantidad_prod").val();
+      if(cantidad > 1){
+      cantidad= parseInt(cantidad) - 1;
+      }
+      $("#cantidad_prod").val(cantidad);    
 
     })
 
