@@ -265,11 +265,17 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 					$cant_bd=$cant_bd  + $cant_prod; 
 
 					echo 'se supone que actualiza '. $cant_bd.' usuario '.$user_id.' producto  '.$p_id.'';
-					$sql = "UPDATE cart SET qty='.$cant_bd.' WHERE p_id = '.$p_id.' AND cart.user_id = '.$user_id.'";
-					if(mysqli_query($con,$sql)){
-						echo 'Registro Actualizado';
-						exit();
+
+					$sql = "UPDATE `cart` SET `qty`='$cant_bd' WHERE `p_id` = '$p_id' AND `ip_add` = '$ip_add' AND `user_id` = '$user_id'";
+					
+					//$registro=mysqli_num_rows($run_query);
+					
+					if (mysqli_query($con,$sql) ){
+						
+						echo 'Agregado';
+						
 					}
+					
 
 				} else {
 					

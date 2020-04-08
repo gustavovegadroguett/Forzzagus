@@ -50,7 +50,7 @@ $(document).ready(function(){
       var cantidad=$("#cantidad_prod").val();
 
       event.preventDefault();
-      alert("Mostrando cantidad "+cantidad);
+     
       $(".overlay").show();
       $.ajax({
         url : "action.php",
