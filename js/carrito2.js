@@ -47,14 +47,15 @@ $(document).ready(function(){
      $("body").delegate("#product","click",function(event){	
         
       var pid = $(this).attr("pid");
-      
+      var cantidad=$("#cantidad_prod").val();
+
       event.preventDefault();
-        
+      alert("Mostrando cantidad "+cantidad);
       $(".overlay").show();
       $.ajax({
         url : "action.php",
         method : "POST",
-        data : {addToCart:1,proId:pid,},
+        data : {addToCart:1,proId:pid,cantProd:cantidad,},
         success : function(data){
           alert(data);
 

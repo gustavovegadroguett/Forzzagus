@@ -240,7 +240,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 		$p_id = $_POST["proId"];
 		$user_id = $_SESSION["uid"];
-		$cant_prod=$_SESSION["cantidad"];
+		$cant_prod=$_POST["cantProd"];
 		
 		if(isset($_SESSION["uid"])){
 
@@ -255,18 +255,27 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 					printf("Error: %s\n", mysqli_error($con));
 					exit();
 				}
-	
+				
 				$count = mysqli_num_rows($run_query);
+				
 				if($count > 0){
-					echo "Producto ya esta agregado!' .$cant_prod.'";
+					
+					$row=mysqli_fetch_array($run_query);
+					$cant_bd=$row["qty"];
+					$cant_bd=$cant_bd  + $cant_prod; 
 
-					exit();
+					echo 'se supone que actualiza '. $cant_bd.' usuario '.$user_id.' producto  '.$p_id.'';
+					$sql = "UPDATE cart SET qty='.$cant_bd.' WHERE p_id = '.$p_id.' AND cart.user_id = '.$user_id.'";
+					if(mysqli_query($con,$sql)){
+						echo 'Registro Actualizado';
+						exit();
+					}
 
 				} else {
 					
 					$sql = "INSERT INTO `cart`
 					(`p_id`, `ip_add`, `user_id`, `qty`) 
-					VALUES ('$p_id','$ip_add','$user_id','1')";
+					VALUES ('$p_id','$ip_add','$user_id','$cant_prod')";
 					if(mysqli_query($con,$sql)){
 
 						echo "
@@ -279,7 +288,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 					
 					
 				}
-		}
+		}else{
 				
 			$sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
 			$query = mysqli_query($con,$sql);
@@ -305,7 +314,9 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				exit();
 			}	
 			
+		
 		}
+	}
 		
 		
 		
