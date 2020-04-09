@@ -400,7 +400,9 @@ if (isset($_POST["ingreso"])) {
 				$product_price = $row["precio_prod_forzz"];
 				$product_image = $row["ruta_forzz"];
 				$cart_item_id = $row["id"];
+				
 				$qty = $row["qty"];
+				$momentaneo=$qty * $product_price;
 				$sub_total=$qty*$product_price;
 				$total_price=$total_price+$sub_total;
 				
@@ -416,7 +418,7 @@ if (isset($_POST["ingreso"])) {
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">'.$product_title.'</a></h3>
-													<h4 class="product-price"><span class="qty"> Cant '.$qty.'</span>  Valor  $'.$product_price.'</h4>
+													<h4 class="product-price"><span class="qty"> Cant '.$qty.'</span>  Valor  $'.$momentaneo.'</h4>
 												</div>
 												
 											</div>';                  
@@ -444,7 +446,7 @@ if (isset($_POST["ingreso"])) {
 		if ($num=mysqli_num_rows($query) > 0) {
 			//display user cart item with "Ready to checkout" button if user is not login
 			
-			echo '<div class="main ">
+			echo '<div class="main ">	
 			<div class="table-responsive">
 			<form method="post" action="login_form.php">
 			

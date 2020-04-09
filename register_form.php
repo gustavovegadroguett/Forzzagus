@@ -40,9 +40,11 @@
                                     </div>
                                     <div class="form-group">
                                         <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="Contraseña">
+                                        <span> * 6 o mas caracteres   </span>
                                     </div>
                                     <div class="form-group">
                                         <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="Confirme Password">
+                                         
                                     </div>
                                    <!-- <div class="form-group">
                                         <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="Celular anteponga 9" value="">
