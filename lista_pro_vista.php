@@ -13,20 +13,7 @@ error_reporting(0);
    
 
 
-    <div class="container-portada-mision">
-        <div class="capa-gradiente">
-
-        </div>
-        <div class="container-detalle">
-            <div class="detalle">
-                <h1>CATALOGO GENERAL</h1>
-               
-                <br>
-                <span></span>
-            </div>
-        </div>
-
-    </div>
+   
 
     <main class="main-contenido-lista">
 

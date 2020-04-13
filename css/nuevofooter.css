@@ -3,7 +3,7 @@
 body{
 
 
-  background: #b3abab;
+  background: #f2f2f2;
 }
 
   
@@ -111,9 +111,9 @@ padding-left: 40px;
 
 
   .lineahorario{
-font-weight: bold;
+    font-weight: bold;
     border-bottom: 2px solid #b3b3b3;
-
+    width: 165px;
 }
 
 .contenedortecnologia {
