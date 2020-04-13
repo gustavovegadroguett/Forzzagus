@@ -204,7 +204,7 @@ span.price {
 						echo "	
 						<input type='hidden' name='prod_id_$i' value='$product_id'>
 						<input type='hidden' name='prod_price_$i' value='$amount_'>
-						<input type='hidden' name='prod_qty_$i' value='$quantity_'>
+						<input type='hidden' name='prod_qty_$i' value='$quantity_'>	
 						";
 						$i++;
 						
@@ -346,10 +346,11 @@ span.price {
 
 					<table class='table table-condensed'>
 					<thead><tr>
-					<th >no</th>
-					<th >product title</th>
-					<th >	qty	</th>
-					<th >	amount</th></tr>
+					<th >	N°</th>
+					<th >	Cantidad	</th>
+					<th > 	Producto</th>					
+					<th >	Precio</th>
+					<th >	Sub Total</th></tr>
 					</thead>
 					<tbody>
 					";
@@ -375,7 +376,7 @@ span.price {
 					
 						echo "	
 
-						<tr><td><p>$item_number_</p></td><td><p>$item_name_</p></td><td ><p>$quantity_</p></td><td ><p>$amount_</p></td></tr>";
+						<tr><td><p>$item_number_</p></td><td ><p>$quantity_</p></td><td><p>$item_name_</p></td><td ><p>$amount_</p></td><td ><p>$acumulado2</p></td></tr>";
 						
 						$i++;
 					}

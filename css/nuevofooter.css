@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+
+
+  background: #f2f2f2;
+}
+
+  
+.footerfinal {
+       
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding-top: 30px;
+        left: 0;
+       margin-bottom: 0;
+       
+       background: #f2f2f2;
+       
+       font-family: 'Montserrat', sans-serif;
+     /* display: flex;*/
+      
+     /*padding-left: 40px;*/
+   
+      
+     /* justify-content: center;*/
+    
+      
+      }
+/*
+      .footer > *:not(:last-child) {
+        margin-right: 10px;
+      }
+*/
+
+
+.contenedortotal{
+
+width: 100%;
+/*border: dashed 1px orangered;*/
+display: flex;
+float: left;
+padding-top: 40px;
+padding-left: 40px;
+}
+      .divmenuprincipal{
+        
+        font-size: 12px;
+        
+        /*border: dashed 1px blue;*/
+        width: 120px;
+        font-weight: normal;
+     /*  padding-left: 40px;*/
+     
+      /* padding-left: 80px;*/
+      }
+
+      .listamenu{
+
+       /* height: 100px;*/
+        width: 113px;
+       /* border: dashed red 2px;*/
+        float: right;
+        line-height: 21px;
+       
+      }
+
+    
+
+      .divmenuprincipal ul{
+       /* margin-left: -40px;*/
+
+        list-style: none;
+        
+      }
+      
+     .lineamenu{
+        font-weight: bold;
+        border-bottom: 2px solid #b3b3b3;
+
+    }
+
+.divhorario
+{
+
+ 
+    font-size: 12px;
+    /*border: dashed 2px green;*/
+    width: 200px;
+
+  /*  border: deeppink 2px dashed;*/
+
+}
+
+.listahorario{
+
+    width: 155px;
+    /*border: blue 2px dashed;*/
+    float: right;
+    padding-left: 5px;
+    line-height: 21px;
+}
+
+.divhorario ul{
+
+
+    list-style: none;
+   /* margin-left: -40px;*/
+  }
+
+
+  .lineahorario{
+font-weight: bold;
+    border-bottom: 2px solid #b3b3b3;
+
+}
+
+.contenedortecnologia {
+
+ /* align-self: center;*/
+    height: 150px;
+    width: 100%;
+  
+ /* border: dashed 2px yellow;*/
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+  
+    /*border: dashed red 2px;*/
+  }
+  
+
+  .tecnologia{
+width: 220px;
+height: 100px;
+margin-top: 85px;
+/*border: dashed 2px red;*/
+
+
+  }
+.tecnologia img{
+
+    height: 100%;
+    width: 100%;
+
+     
+}
+
+.divsucursales{
+
+  
+    font-size: 12px;
+    
+ /*aki*/
+margin-left: auto;
+/*border: dashed 2px blue;*/
+width: 250px;
+padding-right: 40px;
+text-align: right;
+/*margin-right: 174px;*/
+}
+
+.listanuestra{
+  /*  border: dashed 2px brown;*/
+    width: 215px;
+    float: left;
+   
+    line-height: 21px;
+
+}
+
+
+
+.divsucursales ul{
+    margin-left: -40px;
+    
+    list-style: none;
+    
+  }
+
+
+  .lineanuestra{
+    font-weight: bold;
+    border-bottom: 2px solid #b3b3b3;
+    width: 158px;
+    margin-left: 95px;
+   
+}
+
+.contenedorrssylogo{
+
+  
+  width: 100%;
+/*  border: 1px dashed red;*/
+ float: left;
+ display: flex;
+
+}
+
+
+.contenedorrrs{
+  width: 310px;
+  height: 120px;
+
+/*border: 2px blue dashed;*/
+  display: flex;
+justify-content: center;
+  align-content: center;
+}
+
+.cajaredes{
+  margin-top: 50px;
+  width: 160px;
+  height: 40px;
+  margin-left: -30px;
+ /*border: 2px dashed green;*/
+  display: flex;
+  justify-content: space-between;
+  margin-left: -70px;
+}
+
+.wsp{
+
+height: 35px;
+/*border: firebrick dashed 1px;*/
+width: 35px;
+
+}
+
+.wsp img{
+
+  height: 100%;
+
+  width: 100%;
+
+}
+.fb{
+
+  height: 35px;
+  /*border: firebrick dashed 1px;*/
+  width: 35px;
+
+}
+
+.fb img{
+
+  height: 100%;
+
+  width: 100%;
+
+}
+.ig{
+
+  height: 35px;
+  /*border: firebrick dashed 1px;*/
+  width: 35px;
+}
+.ig img{
+
+  height: 100%;
+
+  width: 100%;
+
+}
+
+
+.logofooter{
+
+
+  width: 310px;
+  height: 120px;
+/*border: gold 2px dashed;*/
+margin-left: auto;
+display: flex;
+justify-content: center;
+  align-content: center;
+}
+
+
+.contonedorlogo{
+ width: 150px;
+ height: 82.7px;
+margin-right: -77px;
+ /*border: aquamarine 2px dashed;*/
+
+}
+.contonedorlogo img{
+width: 100%;
+height: 100%;
+
+}
+
+.lineanegra{
+
+height: 50px;
+  background: black;
+  float: left;
+  width: 100%;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+
+
+.lineanegra p{
+  color:white;
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 810px) 
+{
+
+  .divmenuprincipal{
+
+display: none;
+
+
+  }
+
+.divhorario{
+
+  display: none;
+}
+
+.divsucursales{
+
+
+  display: none;
+}
+
+
+.contenedortecnologia {
+
+  /* align-self: center;*/
+     height: 100px;
+     width: 100%;
+   
+  /* border: dashed 2px yellow;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+   
+     /*border: dashed red 2px;*/
+   }
+
+   .tecnologia{
+    width: 220px;
+    height: 100px;
+    margin-top: 0px;
+    /*border: dashed 2px red;*/
+    
+    
+      }
+
+
+      .contenedorrssylogo{
+
+  
+        width: 100%;
+      
+      /* border: 2px dashed red;*/
+       float: left;
+       display: flex;
+      
+      }
+      .contenedorrrs{
+        width: 310px;
+        height: 120px;
+      padding-left: 10px;
+     /* border: 2px blue dashed;*/
+        display: flex;
+      justify-content: center;
+        align-content: center;
+      }
+
+
+      .cajaredes{
+        margin-top: 50px;
+        width: 160px;
+        height: 40px;
+        margin-left: -30px;
+      /* border: 2px dashed green;*/
+        display: flex;
+        justify-content: space-between;
+        margin-left: -70px;
+      }
+      .contonedorlogo{
+        width: 150px;
+        height: 82.7px;
+       margin-right: -57px;
+        /*border: aquamarine 2px dashed;*/
+       
+       }
+
+}
+
+
+@media only screen and (max-width: 480px) 
+{
+
+
+
+
+
+  .contenedortotal{
+
+    width: 100%;
+   /* border: dashed 1px orangered;*/
+    display: flex;
+    float: left;
+    padding-top: 0px;
+    padding-left: 0px;
+    }
+
+    .tecnologia{
+      width: 220px;
+      height: 100px;
+     /* margin-top: 85px;*/
+    /*  border: dashed 2px red;*/
+      
+      
+        }
+        
+      .contenedorrssylogo{
+
+  
+        width: 100%;
+      
+     /*  border: 1px dashed red;*/
+       float: left;
+       display: flex;
+      
+      }
+
+
+
+      .contenedorrrs{
+       /* width: 310px;*/
+       width: 50%;
+        height: 120px;
+      padding-left: 0px;
+     /* border: 1px blue dashed;*/
+        display: flex;
+      justify-content: center;
+        align-content: center;
+        
+      }
+
+      .cajaredes{
+        margin-top: 50px;
+       /* width: 160px;*/
+        width: 70%;
+        height: 40px;
+      /*  margin-left: -30px;*/
+      /* border: 2px dashed green;*/
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0px;
+      }
+
+
+      .logofooter{
+
+
+       /* width: 310px;*/
+       width: 50%;
+
+        height: 120px;
+      /*border: gold 2px dashed;*/
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+        align-content: center;
+      }
+
+
+
+
+
+
+      .contonedorlogo{
+        width: 130px;
+        height: 72.7px;
+       margin-right: 0px;
+       /* border: olive 1px dashed;*/
+       margin-top: 15px;
+       }
+
+
+       .lineanegra p{
+
+        font-size: 15px;
+
+
+       }
+
+
+}
+
+
+@media only screen and (max-width: 355px) 
+{
+
+
+  .lineanegra p{
+
+    font-size: 12px;
+
+
+   }
+
+
+}

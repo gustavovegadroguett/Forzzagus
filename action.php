@@ -183,10 +183,10 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 	}
 	
 	$run_query = mysqli_query($con,$sql);
-	if (!$run_query) {
-		printf("Error: %s\n", mysqli_error($con));
-		exit();
-	}
+		if (!$run_query) {
+			printf("Error: %s\n", mysqli_error($con));
+			exit();
+		}
 	while($row=mysqli_fetch_array($run_query)){
 			$pro_id    = $row['sku_producto_id'];
 			$pro_cat   = $row['categoria_prod'];
@@ -553,8 +553,13 @@ if (isset($_POST["ingreso"])) {
 							$x=0;
 							$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,id_img_forzz,id,qty 
 							FROM productos_forzz as prod inner join cart on prod.sku_producto_id = cart.p_id 
-							WHERE cart.user_id=$_SESSION[uid]";
+							WHERE cart.user_id = $_SESSION[uid] AND cart.ip_add = '".$ip_add."'";
+
 							$query = mysqli_query($con,$sql);
+							if(!$query){
+								printf(" ERROR %s\n", mysqli_error($con));
+								exit();
+							}
 							
 				
 							while($row=mysqli_fetch_array($query)){

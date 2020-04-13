@@ -127,7 +127,7 @@ error_reporting(0);
         
      
 
-        <?php      include 'footer2.php';?>
+        
 
        
     </main>
@@ -138,7 +138,7 @@ error_reporting(0);
                 autoplay:true,
                 autoplaySpeed:2000,
                 arrows:false,
-                slidesToShow:3,
+                slidesToShow:4,
                 slidesToScroll:1,
                 responsive:[
                     {
@@ -159,7 +159,7 @@ error_reporting(0);
              });
         };
     </script>
-      
+      <?php      include 'nuevofooter.php';?>
     <div id="WAButton"></div>
  
     <script src="js/main_forzza.js"></script>
