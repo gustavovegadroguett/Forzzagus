@@ -96,8 +96,31 @@
                             }
                                              ?>
 
+<div class="navbar-rightx">
+           <a href="#" id="cart">
+      
+           <img src="img/carrito.png" alt="Cloudy Sky" class="imgcarro"></a>
+             </i><span class="badge">0</span>
+    
+           <div class="shopping-cart">
+           <div class="shopping-cart-header">
+     
+            <img class="torito" src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
+            
+             </div>
+            <div class="cart-dropdown" id="pruebaCarro">
+                <div class="cart-list" id="cart_product">
 
-    <nav>
+                </div>        
+                <div class="cart-btns">
+                     <a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i> Ir a Carrito</a>
+              
+                </div>
+          </div>
+          </div>
+          </div>  
+          
+    <nav class="menu-principal">
       <ul>
 
         <li> <a href="index.php"><span class="icon-power-cord"></span> INICIO</a></li>
@@ -123,27 +146,7 @@
 
     </nav>
 
-            <div class="navbar-rightx">
-           <a href="#" id="cart">
-      
-           <img src="img/carrito.png" alt="Cloudy Sky" class="imgcarro"></a>
-             </i><span class="badge">0</span>
-    
-           <div class="shopping-cart">
-           <div class="shopping-cart-header">
-     
-            <img class="torito" src="img/torito_rojo.png" alt="item1" /><span class="badge2">0</span>
-            
-      </div>
-      <div class="cart-dropdown" id="pruebaCarro">
-                <div class="cart-list" id="cart_product">
-
-                </div>        
-                <div class="cart-btns">
-                     <a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i> Ir a Carrito</a>
-              
-                </div>
-          </div>
+           
     
 
 

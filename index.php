@@ -38,7 +38,7 @@ error_reporting(0);
         <input type="radio" id="2" name="image-slide" hidden />
         <input type="radio" id="3" name="image-slide" hidden />
 
-        <div class="slide">
+        <!--- <div class="slide">
 
                 <div class="item-slide">
                     <img src="img/slider/taladro.png"  class="imgi">
@@ -66,7 +66,7 @@ error_reporting(0);
                 </label>
 
             </div>
-
+-->
 
 
 

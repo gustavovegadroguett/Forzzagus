@@ -11,7 +11,7 @@ include("db.php");
 <head>
 
     <?php 
-                        
+               include 'header2.php';           
         $oe = $_GET['oe']; 
         
         //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
@@ -83,29 +83,16 @@ include("db.php");
 
 
 <body>
-    <?php  include 'header2.php';?>
+    
 
-    <div class="container-portada-mision">
-        <div class="capa-gradiente"></div>
-        <div class="container-detalle">
-            <div class="detalle">
-                <h1>Productos.</h1>
-                <!-- <p>Av. salitrera victoria Mz.E Sitio 43B Iquique</p>
-                <p>Telefono : 09 9298 4569</p>
-                <p>Nuestros horarios: 09:00 - 14:00, 15:30 - 19:00</p> -->
-                <br>
-                <span></span>
-            </div>
-        </div>
-
-    </div>
+    
     <main class="main-contenido-producto">
-        <div class="contenedor-uno">
+        <!-- <div class="contenedor-uno">
             <div class="sub-uno"></div>
             <div id="prodmsg" class="alert alert-success"> </div>
             
         </div>
-
+            -->         
         <div class="titulo">
             <h2 class="subtitulo">Producto seleccionado </h2>
         </div>
