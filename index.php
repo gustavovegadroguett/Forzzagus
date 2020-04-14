@@ -10,8 +10,7 @@ error_reporting(0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forzza index</title>
-    
-    <link rel="stylesheet" href="estilos/estilos.css">
+        <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="stylesheet" href="estilos/slider.css">
     <link rel="stylesheet" href="estilos/footer.css">
     <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
@@ -38,35 +37,7 @@ error_reporting(0);
         <input type="radio" id="2" name="image-slide" hidden />
         <input type="radio" id="3" name="image-slide" hidden />
 
-        <!--- <div class="slide">
-
-                <div class="item-slide">
-                    <img src="img/slider/taladro.png"  class="imgi">
-                </div>
-
-                <div class="item-slide">
-                    <img src="img/slider/taladro.png"  class="imgi" >
-                 </div>
-
-                <div class="item-slide">
-                    <img src="img/slider/taladro.png"  class="imgi" >
-                </div>
-        </div>
-
-            <div class="pagination">
-                <label class="pagination-items" for="1">
-                    <img src="img/slider/img1.jpg"   class="imgi">
-                </label>
-
-                <label class="pagination-items" for="2">
-                    <img src="img/slider/img3.jpg"   class="imgi" >
-                </label>
-                <label class="pagination-items" for="3">
-                    <img src="img/slider/img2.jpg" class="imgi" >
-                </label>
-
-            </div>
--->
+       
 
 
 
@@ -80,15 +51,6 @@ error_reporting(0);
             <input type="radio" id="1" name="image-slide" hidden>
             <input type="radio" id="2" name="image-slide" hidden>
             <input type="radio" id="3" name="image-slide" hidden>
-
-
-            
-            
-    
-
-           
-
-            
 
 
         </div>

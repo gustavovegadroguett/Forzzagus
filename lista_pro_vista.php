@@ -96,33 +96,9 @@ error_reporting(0);
             </div>
         </div>
 
-        <div class="contenedor-tres">
-            <div class="sub-contenedor-tres">
-                <div class="horarios">
-                    <a href="#" class="link-footer">
-                        <img src="img/iconos/horarios.png" width="50px">
-                        <h2>Horarios</h2>
-                        <p>Conoce Nuestros Horarios de atencion</p>
-                </div>
-                </a>
-                <div class="ayuda">
-                    <a href="#" class="link-footer">
-                        <img src="img/iconos/ayuda.png" width="50px">
-                        <h2>Centro de Ayuda</h2>
-                        <p>Te ayudamos ante cualquier duda</p>
-                </div>
-                </a>
-                <div class="acceso">
-                    <a href="#" class="link-footer">
-                        <img src="img/iconos/acceso.png" width="50px">
-                        <h2>Recuperar Clave de Acceso</h2>
-                        <p>¿ Olvidaset tu clave ?</p>
-                </div>
-                </a>
-            </div>
-        </div>
+        
 
-        <?php  include 'footer.php';?>
+        <?php  include 'nuevofooter.php';?>
 
         </div>
     </main>

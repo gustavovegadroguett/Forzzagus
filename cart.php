@@ -11,5 +11,5 @@
 </section>	
 <?php
 //include "newslettter.php";
-include "footer.php";
+include "nuevofooter.php";
 ?>

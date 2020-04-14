@@ -126,13 +126,28 @@ span.price {
 					<div class="row-checkout">
 					
 					<div class="col-50">
-						<h3>Billing Address</h3>
-						<label for="fname"><i class="fa fa-user" ></i> Nombre completo</label>
+						<h3>Datos de la factura</h3>
+						<label for="fname"><i class="fa fa-user" ></i> Nombre/Razón Social	</label>
 						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="'.$row["nombre"].' '.$row["apellido"].'  '.$row["apellido_materno"].'">
+						
+						<label for="rut"><i class="fa fa-user" ></i> RUT	</label>
+						<input type="text" id="fname" class="form-control" name="rut" pattern="^[a-zA-Z ]+$"  value=" '.$row["rut"].'">
+						
 						<label for="email"><i class="fa fa-envelope"></i> Email</label>
 						<input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="'.$row["email"].'" required>
+						
+						<label for="fono"><i class="fa fa-user" ></i> Fono	</label>
+						<input type="text" id="ffono" class="form-control" name="fono" pattern="^[a-zA-Z ]+$"  value="'.$row["mobil"].' ">
+
+						<label for="giro"><i class="fa fa-address-card-o"></i> GIRO<label>
+						<input type="text" id="adr" name="address" class="form-control" value="'.$row["direccion1"].'" required>
+
 						<label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
 						<input type="text" id="adr" name="address" class="form-control" value="'.$row["direccion1"].'" required>
+
+						<label for="comuna"><i class="fa fa-address-card-o"></i> Comuna </label>
+						<input type="text" id="adr" name="address" class="form-control" value="'.$row["comuna"].'" required>
+						
 						<label for="city"><i class="fa fa-institution"></i> Ciudad</label>
 						<input type="text" id="city" name="city" class="form-control" value="'.$row["ciudad"].'" pattern="^[a-zA-Z ]+$" required>
 
@@ -149,6 +164,11 @@ span.price {
 					</div>
 					
 					
+
+
+
+
+
 					<div class="col-50">
 						<h3>Payment</h3>
 						<label for="fname">Tarjetas aceptadas</label>
@@ -396,40 +416,8 @@ span.price {
 		</div>
 	</div>
 </section>
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-							<form >
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form>
-							<ul class="newslcetter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
+		
 		
 <?php
-include "footer.php";
+include "nuevofooter.php";
 ?>
