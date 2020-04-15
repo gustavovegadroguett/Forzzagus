@@ -1,16 +1,5 @@
-<?php
 
-include "header2.php";
-include "db.php";
-require_once "./vendor/autoload.php";
-use Transbank\Webpay\Configuration;
-use Transbank\Webpay\Webpay;
-$transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
-               ->getNormalTransaction();   
-?>
-<div class="cuerpo">
-    <iframe src="webpay.php"  width="1000" height="1000" border:none >
-        <h1>Zona de facturacion</h3>
+<h1>Zona de facturacion</h3>
 
         <form id="checkout_form" action="proceso_pago.php" method="POST" class="was-validated">
         <?php  
@@ -178,12 +167,3 @@ $transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
 
             </div>
         <input type="submit" id="submit" value="Continuar la compra" class="checkout-btn">
-    </iframe>                
-
-
-</div>
-
-<?php
-    include "nuevofooter.php";
-
-?>
