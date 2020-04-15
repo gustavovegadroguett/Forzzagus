@@ -8,6 +8,7 @@ include "db.php"; ?>
  <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="css/estiloheader.css">
+ <link rel="stylesheet" href="css/checkout2.css">
  <link rel="stylesheet" href="css/fontello.css">
  <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">

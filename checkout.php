@@ -342,7 +342,7 @@ span.price {
 				</div>
 			</div>
 			';
-		}
+		}	
 		?>
 
 			<div class="col-25">
@@ -362,7 +362,7 @@ span.price {
 					<i class='fa fa-shopping-cart'></i> 
 					<b>$total_count</b>
 					</span>
-				</h4>
+					</h4>
 
 					<table class='table table-condensed'>
 					<thead><tr>
@@ -404,10 +404,14 @@ span.price {
 				echo"
 
 				</tbody>
+				<tfoot>
+					<tr>
+					<th scope='row'>Total</th>
+					<td>$total</td>
+				</tr>
+			</tfoot>
 				</table>
-				<hr>
-				
-				<h3>total<span class='price' style='color:black'><b>$$total</b></span></h3>";
+				>";
 					
 				}
 				?>

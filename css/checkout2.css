@@ -1,0 +1,16 @@
+.tabla_detalles_compra{
+    font-size: xx-large;
+ 
+ }
+ .tabla_detalles_compra thead tr th{
+    font-size: xx-large;
+    padding-inline-start: 10px;
+ }.tabla_detalles_compra tbody tr td{
+     padding-inline-start: 15px;
+ }
+
+.total_compra{
+    float:right;
+    color:black;
+    margin-right: 75px;
+}
