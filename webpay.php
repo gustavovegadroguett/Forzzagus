@@ -69,7 +69,7 @@
                 <?php
                 $i=1;
                         $total=0;
-                        $total_count=$_POST['total_count'];
+                        $total_count=$_GET['x'];
                         while($i<=$total_count){
 
                             $item_name_ = $_POST['item_name_'.$i];

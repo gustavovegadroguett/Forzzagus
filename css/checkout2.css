@@ -14,3 +14,7 @@
     color:black;
     margin-right: 75px;
 }
+.cuerpo iframe {
+    align-self: center;
+    padding-inline-start: 100px;
+}
