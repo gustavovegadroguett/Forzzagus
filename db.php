@@ -1,13 +1,13 @@
 <?php
-
- $servername = "autoriver.cl";
+/*
+ $servername = "localhost";
 $username = "claudio";
 $password = "claudio.%";
-$db = "vashir_forzza"; 
-/* $servername = "localhost";
+$db = "vashir_forzza"; */
+ $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "vashir_forzza";*/
+$db = "vashir_forzza";
 
 // Create connection
 $con = mysqli_connect($servername, $username, $password,$db);
