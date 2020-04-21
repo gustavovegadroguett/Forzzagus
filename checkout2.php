@@ -5,16 +5,31 @@ include "db.php";
 require_once "./vendor/autoload.php";
 use Transbank\Webpay\Configuration;
 use Transbank\Webpay\Webpay;
-$transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
+$transaction = (new Webpay(Configuration::forTestingWebpayPluspulveri()))
                ->getNormalTransaction();   
 ?>
 <div class="cuerpo">
     
     <h1>Zona de facturacion</h3>
+        <?php
+        $amount=$_POST["total_compra"];
+        $sessionId=$_SESSION['uid'];
+        $buyOrder = strval(rand(10000,9999999));
+        $returnUrl= 'localhost/forzza/index.php';
+        $finalUrl= 'localhost/forzza/lista_pro_vista.php';
 
-        <form id="checkout_form" action="proceso_pago.php" method="POST" class="was-validated">
+        $initResult= $transaction->initTransaction(
+            $amount,$sessionId,$buyOrder,$returnUrl,$finalUrl
+        );
+        $formAction= $initResult->url;
+        $tokenWs=$initResult->token;
+
+
+        ?>
+        <form id="checkout_form" action="<?php $formAction ?>" method="POST" class="was-validated">
         <?php  
         ?>
+            <input type="hidden" mame="token_ws " value="<?php $tokenWs ?>" >
             <div class="primer-bloque-factura"> 
                 <h2> Datos de la factura</h2>
                 <div class="input-group">
@@ -80,7 +95,7 @@ $transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
                 <?php
                 $i=1;
                         $total=0;
-                            $total_count=$_POST['total_amount'];
+                            $total_count=$_POST['total_count'];
                         while($i<=$total_count){
 
                             $item_name_ = $_POST['item_name_'.$i];
@@ -140,7 +155,8 @@ $transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
                             $sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
                             $query = mysqli_query($con,$sql);
                             $row=mysqli_fetch_array($query);
-                            $product_id=$row["sku_producto_id"];					
+                            $product_id=$row["sku_producto_id"];		
+
                             echo "	
                             <div class='linea_compra'> 
                             <tr>

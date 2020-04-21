@@ -560,17 +560,22 @@ if (isset($_POST["ingreso"])) {
 								printf(" ERROR %s\n", mysqli_error($con));
 								exit();
 							}
-							
-				
+										
+							$total=0;
+							$acumulado=0;
 							while($row=mysqli_fetch_array($query)){
 								$x++;
+								$acumulado=$row["qty"]*$row["precio_prod_forzz"];
+								$total=$total+$acumulado;
 								echo  	
 
 									'<input type="hidden" name="total_count" value="'.$x.'">
+									<input type="hidden" name="total_compra" value="'.$total.'"> 
 									<input type="hidden" name="item_name_'.$x.'" value="'.$row["nombre_prod_forzz"].'">
 								  	 <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
 								     <input type="hidden" name="amount_'.$x.'" value="'.$row["precio_prod_forzz"].'">
-								     <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
+									 <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
+									 
 								}
 							  
 							echo   
