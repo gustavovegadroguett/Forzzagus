@@ -5,7 +5,7 @@ include "db.php";
 require_once "./vendor/autoload.php";
 use Transbank\Webpay\Configuration;
 use Transbank\Webpay\Webpay;
-$transaction = (new Webpay(Configuration::forTestingWebpayPluspulveri()))
+$transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
                ->getNormalTransaction();   
 ?>
 <div class="cuerpo">
