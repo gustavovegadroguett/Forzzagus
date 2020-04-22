@@ -5,31 +5,32 @@ include "db.php";
 require_once "./vendor/autoload.php";
 use Transbank\Webpay\Configuration;
 use Transbank\Webpay\Webpay;
-$transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
+$transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
                ->getNormalTransaction();   
 ?>
 <div class="cuerpo">
     
     <h1>Zona de facturacion</h3>
         <?php
-        $amount=$_POST["total_compra"];
-        $sessionId=$_SESSION['uid'];
+        $amount=(int)$_POST['total_compra'];
+        $sessionId='sessionId';
         $buyOrder = strval(rand(10000,9999999));
-        $returnUrl= 'localhost/forzza/index.php';
-        $finalUrl= 'localhost/forzza/lista_pro_vista.php';
+        $urlReturn= 'http://localhost/forzza/retornoTransbank.php';
+        $urlFinal= 'http://localhost/forzza/final.php';
 
         $initResult= $transaction->initTransaction(
-            $amount,$sessionId,$buyOrder,$returnUrl,$finalUrl
+            $amount,$sessionId,$buyOrder,$urlReturn,$urlFinal
         );
+        
         $formAction= $initResult->url;
         $tokenWs=$initResult->token;
 
 
         ?>
-        <form id="checkout_form" action="<?php $formAction ?>" method="POST" class="was-validated">
+        <form id="checkout_form" action="<?php echo $formAction ?>" method="POST" class="was-validated">
         <?php  
         ?>
-            <input type="hidden" mame="token_ws " value="<?php $tokenWs ?>" >
+            <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>" >
             <div class="primer-bloque-factura"> 
                 <h2> Datos de la factura</h2>
                 <div class="input-group">
@@ -91,7 +92,6 @@ $transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
             </div>
             <div class="quinto-bloque-factura"> 
                 <h2> Detalles de la compra  </h2>
-
                 <?php
                 $i=1;
                         $total=0;
@@ -194,7 +194,10 @@ $transaction = (new Webpay(Configuration::forTestingWebpayPlusNormal()))
 
             </div>
         <input type="submit" id="submit" value="Continuar la compra" class="checkout-btn">
-                
+        <form id="checkout_form" action="<?php echo $formAction ?>" method="POST" class="was-validated">
+            <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>">
+            <input type="submit" id="submit" value="probando transbank" class="checkout-btn">
+        </form>
 
 
 </div>

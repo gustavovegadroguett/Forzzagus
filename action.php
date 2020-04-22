@@ -570,7 +570,7 @@ if (isset($_POST["ingreso"])) {
 								echo  	
 
 									'<input type="hidden" name="total_count" value="'.$x.'">
-									<input type="hidden" name="total_compra" value="'.$total.'"> 
+									<input type="hidden" name="total_compra" value="'.$total.'">
 									<input type="hidden" name="item_name_'.$x.'" value="'.$row["nombre_prod_forzz"].'">
 								  	 <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
 								     <input type="hidden" name="amount_'.$x.'" value="'.$row["precio_prod_forzz"].'">
