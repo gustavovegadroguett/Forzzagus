@@ -12,11 +12,12 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
     
     <h1>Zona de facturacion</h3>
         <?php
+        $ip_usuario=getenv("REMOTE_ADDR");
         $amount=(int)$_POST['total_compra'];
         $sessionId='sessionId';
         $buyOrder = strval(rand(10000,9999999));
-        $urlReturn= 'http://localhost/forzza/retornoTransbank.php';
-        $urlFinal= 'http://localhost/forzza/final.php';
+        $urlReturn= 'http://192.168.0.138/forzza/retornoTransbank.php';
+        $urlFinal= 'http://192.168.0.138/forzza/final.php';
 
         $initResult= $transaction->initTransaction(
             $amount,$sessionId,$buyOrder,$urlReturn,$urlFinal
@@ -193,11 +194,7 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
                 
 
             </div>
-        <input type="submit" id="submit" value="Continuar la compra" class="checkout-btn">
-        <form id="checkout_form" action="<?php echo $formAction ?>" method="POST" class="was-validated">
-            <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>">
-            <input type="submit" id="submit" value="probando transbank" class="checkout-btn">
-        </form>
+            <input type="submit" id="submit" value="Continuar la compra" class="checkout-btn">
 
 
 </div>

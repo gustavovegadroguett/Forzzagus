@@ -103,7 +103,7 @@ include "db.php";
           </div>
           <div class="cart-dropdown" id="pruebaCarro">
             <div class="cart-list" id="cart_product">
-
+           <!-- AQUI ENTRA TODO LO DEL CARRITO -->
             </div>        
             <div class="cart-btns">
               <a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i> Ir a Carrito</a>
