@@ -29,8 +29,7 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
 
         ?>
         <form id="checkout_form" action="<?php echo $formAction ?>" method="POST" class="was-validated">
-        <?php  
-        ?>
+       
             <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>" >
             <div class="primer-bloque-factura"> 
                 <h2> Datos de la factura</h2>

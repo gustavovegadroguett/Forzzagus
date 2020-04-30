@@ -1,0 +1,1736 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+input{
+    border-radius: 20px;
+}
+
+    
+.body{
+
+    background: #f9f9f9;
+
+}
+
+.contencheckout {
+    
+    background: #f9f9f9;
+  /*  border: deeppink dashed 1px;*/
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 10px;
+}
+
+.contenedorgris {
+
+    border-radius: 36px;
+    background: #eaeaea;
+    width: 80%;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+#form-checkout{
+
+    width: 100%;
+}
+
+.quedocumentonecesita {
+    background: #fed202;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+
+
+.documentonecesita {
+    margin-top: 8px;
+
+}
+
+
+.contenradiooo {
+
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  /*  border: 2px darkslategray dashed;*/
+    display: flex;
+}
+
+
+.boletaaa {
+
+    width: 50%;
+ /*   border: 2px firebrick dashed;*/
+    display: flex;
+    justify-content: center;
+
+}
+
+.facturaa {
+
+    width: 50%;
+/*    border: 2px black dashed; */
+    display: flex;
+    justify-content: center;
+}
+
+
+.radboleta {
+
+    width: 50%;
+    height: 30px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radboleta p {
+    margin-left: 5px;
+    margin-top: 13px;
+}
+
+
+.radfactura {
+    display: flex;
+    width: 50%;
+    height: 30px;
+    background: white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.radfactura p {
+
+    margin-top: 13px;
+    margin-left: 5px;
+}
+
+.tamanoradio {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.datosboletaamarillo {
+
+    height: 30px;
+    width: 100%;
+    background: #fed202;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.datosboletaamarillo p {
+
+    margin-top: 5px;
+
+}
+
+.contenedordatosdelaboleta {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+  /*  border: #fed202 2px dashed; */
+
+    display: flex;
+}
+
+.caja1boleta {
+    width: 55%;
+
+  /*  border: deeppink dashed 1px; */
+    flex-direction: column;
+    display: flex;
+}
+
+.caja2boleta {
+
+    width: 45%;
+
+    /*border: deeppink dashed 1px; */
+    flex-direction: column;
+    display: flex;
+}
+
+
+.cajitacont1 {
+    width: 100%;
+  /*  border: firebrick 2px dashed; */
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajitacont1 input {
+    background: white;
+    border: 0px;
+    height: 38px;
+}
+
+.cajitaconta2 {
+    margin-top: 10px;
+    width: 100%;
+    height: 50%;
+ /*   border: blue 2px dashed;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.cajitaconta2 input {
+    height: 38px;
+    background: white;
+    border: 0px;
+}
+
+
+.cajitacont3 {
+    width: 100%;
+  /*  border: firebrick 2px dashed;*/
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.cajitacont3 input {
+    background: white;
+    border: 0px;
+}
+
+.cajitaconta4 {
+    margin-top: 10px;
+    width: 100%;
+    height: 50%;
+ /*   border: blue 2px dashed;*/
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.cajitaconta4 input {
+    background: white;
+    border: 0px;
+    height: 38px;
+
+}
+
+
+.cajaamarillaquienrecibe {
+
+    width: 100%;
+    height: 30px;
+    background: #fed202;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.cajaamarillaquienrecibe p {
+
+    margin-top: 8px;
+
+}
+
+.contenedorquienrecibe {
+
+    width: 100%;
+    padding-bottom: 20px;
+  /*  border: aqua 2px dashed;*/
+    display: flex;
+    padding-top: 20px;
+}
+
+
+
+.cajacontquien1 {
+    width: 50%;
+    height: 100%;
+  /*  border: blue 2px dashed;  */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cajacontquien2 {
+
+    width: 50%;
+   /* border: black 2px dashed; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cajitachica {
+
+    width: 100%;
+    padding: 10px;
+ /*   border: 1px tomato dashed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cajitachica input {
+    border: 0px;
+    background: white;
+    height: 38px;
+}
+
+.cajitachica2 {
+
+    width: 100%;
+    padding: 10px;
+   /* border: 1px tomato dashed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.cajitachica2 input {
+
+    width: 200px;
+    height: 38px;
+    border: 0px;
+    background: white;
+}
+
+
+
+.radyo {
+
+    width: 70%;
+    border-radius: 20px;
+    background: white;
+    justify-content: center;
+    height: 30px;
+    display: flex;
+}
+
+.radyo P {
+
+    margin-top: 5PX;
+}
+
+.radconserje {
+    width: 70%;
+    border-radius: 20px;
+    background: white;
+    margin-top: 10px;
+    justify-content: center;
+    height: 30px;
+    display: flex;
+
+}
+
+.radconserje p {
+    margin-top: 5px;
+}
+
+
+
+
+
+.radotro {
+
+    width: 50%;
+    border-radius: 20px;
+    background: white;
+    justify-content: center;
+    height: 30px;
+    display: flex;
+}
+
+.radotro P {
+
+    margin-top: 5PX;
+}
+
+
+.datosdespachoamarillo {
+
+
+    width: 100%;
+    height: 30px;
+    background: #fed202;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 20PX;
+}
+
+
+.datosdespachoamarillo p {
+
+
+    margin-top: 10px;
+
+}
+
+.contnedordireccion {
+
+
+    width: 100%;
+
+  /*  border: 1px dashed orange;*/
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.contdes1 {
+    padding-top: 20px;
+    width: 50%;
+ /*   border: 1px dashed blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contdes2 {
+    padding-top: 20px;
+    width: 50%;
+ /*   border: 1px dashed red;  */
+}
+
+
+.contdireccion {
+
+    width: 100%;
+ /*   border: 1px dashed black;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.contdireccion input {
+    background: white;
+    height: 38px;
+    border: 0px;
+}
+
+.contcombociudad {
+    padding-top: 10px;
+    width: 100%;
+ /*   border: 1px dashed gold;  */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+
+.contnumero {
+
+    width: 100%;
+  /*  border: 1px dashed black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+
+
+
+.contnumero input {
+    background: white;
+    height: 38px;
+    border: 0px;
+}
+
+.contcomuna {
+    padding-top: 10px;
+    width: 100%;
+  /*  border: 1px dashed gold;  */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.detalleamarillo {
+
+
+    height: 30px;
+    width: 100%;
+    background: #fed202;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.detalleamarillo p {
+    margin-top: 10px;
+
+
+}
+
+.contdetalle {
+
+
+    width: 100%;
+
+  /* border: dashed 1px blue; */
+    display: flex;
+
+}
+
+.contdellateprod {
+
+    width: 100%;
+    height: 100px;
+  /*  border: dashed 1px red; */
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.cajaletrascantde {
+
+    width: 100%;
+
+padding-top: 20PX;
+  /*  border: dashed green 2px;  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contcantidad {
+
+    width: 15%;
+
+  /*  border: dashed 1px red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contnombrepro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 55%;
+    height: 30px;
+    /*border: dashed 1px blue;*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.contpreciouni {
+
+    width: 15%;
+ /*   border: dashed 1px green; */
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contsubtotal {
+
+    width: 15%;
+ /*    border: dashed 1px gold;   */
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cajaaaaaax {
+
+
+    width: 100%;
+ /*   border: dashed 1px red;   */
+
+}
+
+
+
+.cajadentrocaaaaa {
+
+
+    width: 100%;
+  /*  border: dashed 1px blue;*/
+
+    padding-bottom: 10px;
+    display: flex;
+    height: 100%;
+
+}
+
+
+
+.cantidadblanco {
+    width: 15%;
+   /* border: dashed 1px blueviolet;  */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cantidadcont {
+
+    width: 80%;
+    height: 30px;
+    background: white;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cantidadcont p {
+
+    margin-top: 8px;
+
+}
+
+
+
+.prodddss {
+    width: 55%;
+    border-bottom: 2px solid #fc1010;
+
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+
+}
+
+
+.proddsssxxxx {
+
+    width: 95%;
+    height: 30px;
+    background: white;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.proddsssxxxx p {
+
+    margin-top: 8px;
+
+
+}
+
+
+
+
+.preunittt {
+
+    width: 15%;
+    border: dashed 1px aquamarine;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #fc1010;
+    border-bottom: 2px solid #fc1010;
+}
+
+
+
+
+
+
+
+.preunittxxx {
+
+    width: 80%;
+    height: 30px;
+    background: white;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+
+
+.preunittxxx p {
+
+
+    margin-top: 8px;
+}
+
+.subtotal {
+
+    width: 15%;
+    /*border: dashed 1px grey;  */
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.subtotalxxx {
+
+    width: 80%;
+    height: 30px;
+    background: white;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.subtotalxxx p {
+
+    margin-top: 8px;
+
+}
+
+
+.cajatotalll {
+
+    width: 100%;
+    height: 50px;
+   /* border: springgreen 2px dashed;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+
+}
+
+
+.cajatotalll p {
+
+    margin-top: 8px;
+
+}
+
+
+
+.totalsillo {
+
+    width: 18%;
+    height: 30px;
+    background: #fed202;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.totalsillo P{
+
+   font-size: 18px;
+}
+
+
+.amarillomediodepago {
+
+    height: 30px;
+    width: 100%;
+    background: #fed202;
+
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.amarillomediodepago p {
+
+    margin-top: 10px;
+
+}
+
+
+
+.contenedormediosdepago {
+
+
+    width: 100%;
+ padding-bottom: 10px;
+/*    border: 2px firebrick dashed; */
+
+}
+
+
+.contenres {
+
+    width: 100%;
+
+    padding-top: 20px;
+   /* border: 2px blue dashed;   */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+.cuadritowebpay {
+
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+  /*  border: 2px green dashed;  */
+    display: flex;
+    background: white;
+}
+
+.cuadritowebpay img{
+
+    width: 80%;
+    height: 80%;
+   
+
+}
+
+
+.cuadritoradiowebpay {
+    width: 20px;
+    height: 100%;
+ /*   border: blue 2px dashed;   */
+}
+
+
+
+
+
+.cuadritotransferencia {
+
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+ /*   border: 2px green dashed;  */
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+}
+
+
+.cuadritoradiotransferencia {
+    width: 20px;
+    height: 100%;
+    /*  border: blue 2px dashed;  */
+}
+
+
+
+.contenedorimagenmedio {
+    width: 100%;
+    height: 100%;
+ /*   border: black 2px dashed;   */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+
+
+
+
+.cuadrotransfeeee{
+
+width: 100%;
+height: 70%;
+/*border: violet 2px dashed; */
+justify-content: center;
+display: flex;
+margin-top: -15px;
+}
+.cuadrotransfeeee img{
+
+height:70px ;
+width: 90px ;
+    }
+
+
+    .contenedormonea{
+        width: 200px;
+        height: 160px;
+     /*    border: 2px dashed deeppink;  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .totalwebpay{
+        margin-top: 5px;
+        width: 80%;
+        height: 30px;
+        background: white;
+        border-radius: 20px ;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+    .totalwebpay p{
+     margin-top: 10px;
+    }
+
+
+
+.conterminosycondi{
+
+    width: 100%;
+    height: 40px;
+   /* border: violet dashed 2px;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.conterminosycondi p{
+
+
+margin-top: 13px;
+
+}
+
+
+
+.conterminosycondi input{
+
+height: 20px;
+width: 20px;
+}
+
+
+.contedorbonotesdepago{
+
+width: 100%;
+padding-bottom: 10px;
+padding-top: 10px;
+/*border: fuchsia 2px dashed; */
+display: flex;
+justify-content: space-evenly;
+}
+
+
+
+.volver{
+
+width: 200px;
+height: 38px;
+background: white;
+border-radius: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 0px;
+}
+
+
+.volver p{
+
+margin-top: 10px;
+
+}
+
+
+
+.pagar{
+
+    width: 200px;
+    height: 38px;
+    background: #fed202;
+    border-radius: 20px;
+    display: flex;
+justify-content: center;
+align-items: center;
+border: 0px;
+    }
+
+    .pagar p {
+
+margin-top: 10px;
+
+    }
+
+
+
+    .lineaamarillaconnumeros {
+        margin-top: 30px;
+        background: #fed202;
+        height: 60px;
+        width: 100%;
+        display: flex;
+      }
+      
+      
+      
+      
+      .cuadrovacio {
+      
+        width: 16.67%;
+        height: 60px;
+       /* border: #fc1010 1px dashed;*/
+      
+      
+      
+      }
+      
+      .mesacentral {
+      
+        width: 16.67%;
+        height: 60px;
+       /* border: #eaeaea 1px dashed;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1px;
+        padding-top: 20px;
+      line-height: 0px;
+      
+      }
+      
+      .ventasss {
+      
+        width: 16.67%;
+        height: 60px;
+       /* border: green 1px dashed;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1px;
+        padding-top: 20px;
+        line-height: 0px;
+      
+      
+      }
+      
+      .postventasss {
+      
+        width: 16.67%;
+        height: 60px;
+       /* border: firebrick 1px dashed;*/
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1px;
+        padding-top: 20px;
+        line-height: 0px;
+      
+      }
+      
+      .soportetecnico {
+      
+        width: 16.67%;
+        height: 60px;
+       /* border: burlywood 1px dashed;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1px;
+        padding-top: 20px;
+        line-height: 0px;
+      
+      }
+      
+      
+      .numerotelefonooo{
+      
+        font-size: 15px;
+        font-weight: 500;
+        color: #666666;
+      
+      }
+      
+      .letraarriba{
+      
+      
+      
+        font-size: 10px;
+        color: #666666;
+      
+      }
+      
+
+      .contenedordatosfactura{
+      padding-bottom: 20px;
+      padding-top: 20px;
+        width: 100%;
+       /* border: deeppink 2px dashed; */
+
+display: flex;
+
+      }
+
+
+      .caja1fact{
+height: 100%;
+width: 50%;
+/*border: firebrick 2px dashed;*/
+display: flex;
+flex-direction: column;
+      }
+
+
+.cajitafac1{
+    height: 50%;
+    width: 100%;
+ /*   border: rebeccapurple 2px dashed;  */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+
+.cajitafac1 input{
+    
+background: white;
+width: 70%;
+}
+
+.cajitafac1 p{
+    
+ margin-top: 10px;
+    }
+    
+
+
+.cajitafact2{
+    padding-top: 5px;
+    height: 50%;
+    width: 100%;
+   /* border: royalblue 2px dashed; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.cajitafact2 input{
+    background: white;
+    width: 70%;
+
+}
+
+
+    .caja2fact{
+        height: 100%;
+        width: 50%;
+     /*   border: firebrick 2px dashed; */
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+
+
+      
+.cajitafacc1{
+    height: 50%;
+    width: 100%;
+   /* border: rebeccapurple 2px dashed; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cajitafacc1 input{
+
+    background: white;
+    width: 70%;
+
+
+}
+
+
+.cajitafacct2{
+
+    height: 50%;
+    width: 100%;
+   /* border: royalblue 2px dashed; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 5px;
+}
+.cajitafacct2 input{
+
+    background: white;
+    width: 70%;
+
+}
+@media only screen and (max-width: 1060px) {
+
+
+
+
+
+    .contenedorgris {
+
+        border-radius: 36px;
+        background: #eaeaea;
+        width: 90%;
+        padding-bottom: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 1060px) {
+
+
+
+
+
+    .contenedorgris {
+
+        border-radius: 36px;
+        background: #eaeaea;
+        width: 95%;
+        padding-bottom: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+
+
+.contenedordatosdelaboleta{
+
+
+flex-direction: column;
+
+
+}
+
+
+
+.caja1boleta{
+
+    width: 100%;
+}
+
+
+.caja2boleta{
+
+    width: 100%;
+    padding-top: 10px;
+}
+
+
+.contnedordireccion{
+
+flex-direction: column;
+
+}
+
+
+.contdes1{
+
+width: 100%;
+
+}
+
+.contdes2{
+
+width: 100%;
+
+}
+
+
+
+
+
+.proddsssxxxx{
+
+    height: 50px;
+padding-left: 5px;
+}
+
+
+.contenedorquienrecibe{
+
+
+    flex-direction: column;
+}
+
+
+.cajacontquien1{
+
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fc1010;
+}
+
+
+.cajacontquien2{
+
+    width: 100%;
+    padding-top: 10px;
+
+}
+
+.preunittxxx{
+
+width: 100%;
+
+}
+
+.subtotalxxx{
+
+    width: 100%;
+}
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+.contdetalle {
+
+font-size: 10px;
+
+}
+
+.contcantidad{
+
+justify-content: left;
+
+
+}
+
+
+.contnombrepro {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+
+}
+
+
+
+
+.contpreciouni{
+
+
+    display: flex;
+    justify-content: left;
+    align-items: left;
+
+}
+
+
+.contsubtotal{
+
+    display: flex;
+    justify-content: left;
+    align-items: left;
+
+
+}
+
+}
+
+
+
+@media only screen and (max-width: 550px) {
+
+
+
+.totalsillo{
+
+    width: 30%;
+}
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 450px) {
+
+.contenedorgris{
+
+    font-size: 12px;
+}
+
+    .contenres{
+
+flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
+    }
+    
+
+
+.cantidadcont{
+
+width: 50%;
+
+}
+
+.conterminosycondi{
+
+    padding-top: 10px;
+}
+.cajaaaaaax{
+
+
+    font-size: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+    .contnombrepro {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    
+    }
+
+
+    .proddsssxxxx{
+
+height: 60px;
+
+        
+    }
+
+
+
+    .prodddss{
+
+width: 50%;
+
+    }
+    
+
+
+    .subtotal{
+width: 17%;
+
+
+    }
+    .preunittt{
+
+width: 17%;
+
+    }
+    
+.cajadentrocaaaaa{
+
+
+    font-size: 8px;
+}
+
+.radfactura{
+
+width: 100%;
+
+}
+.radboleta{
+
+    width: 100%;
+}
+
+    }
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 750px) {
+
+
+
+    .cuadrovacio{
+
+        display: none;
+      }
+      
+      
+      
+      .lineaamarillaconnumeros{
+      
+      justify-content: center;
+      align-items: center;
+      
+      
+      }
+      
+      
+      
+      
+      
+      .mesacentral{
+      
+      width: 25%;
+      
+      
+      
+      }
+      
+      .ventasss{
+      
+      
+        width: 25%;
+      }
+      
+      
+      
+      
+      
+      .postventasss{
+      
+      
+        width: 25%;
+      }
+      
+      
+      .soportetecnico{
+      
+      
+        width: 25%;
+      }
+
+
+
+      .contenedordatosfactura{
+      
+  
+  display: flex;
+  flex-direction: column;
+ 
+        }
+
+
+        .caja1fact {
+
+
+            width: 100%;
+        }
+.caja2fact{
+    margin-top: 10px;
+width: 100%;
+
+}
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      @media only screen and (max-width: 450px) {
+
+
+
+
+
+      
+
+.lineaamarillaconnumeros {
+    margin-top: 30px;
+    background: #fed202;
+    height: 130px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 250px ;
+    justify-content: center;
+    align-items: center;
+  
+    /*width: 16.67%;*/
+  
+  }
+  
+  .mesacentral{
+    width: 50%;
+    margin-left: 100px;
+  }
+  
+  .ventasss{
+    width: 50%;
+  }
+  
+  
+  .postventasss{
+    margin-left: 100px;
+   width:  50%;
+  }
+  
+  .soportetecnico{
+  
+  width: 50%;
+  
+  }
+  
+  }

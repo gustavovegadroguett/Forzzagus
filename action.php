@@ -544,7 +544,7 @@ if (isset($_POST["ingreso"])) {
 					echo '
 					</form>
 					
-						<form action="checkout2.php" method="post">
+						<form action="checkoutdespacho.php" method="post">
 						
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="business" value="shoppingcart@puneeth.com">
