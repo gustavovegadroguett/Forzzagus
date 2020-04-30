@@ -93,9 +93,9 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
             <div class="quinto-bloque-factura"> 
                 <h2> Detalles de la compra  </h2>
                 <?php
-                $i=1;
+                        $i=1;
                         $total=0;
-                            $total_count=$_POST['total_count'];
+                        $total_count=$_POST['total_count'];
                         while($i<=$total_count){
 
                             $item_name_ = $_POST['item_name_'.$i];
@@ -106,6 +106,7 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
                             $query = mysqli_query($con,$sql);
                             $row=mysqli_fetch_array($query);
                             $product_id=$row["sku_producto_id"];
+                           
                             echo "	
                             <input type='hidden' name='prod_id_$i' value='$product_id'>
                             <input type='hidden' name='prod_price_$i' value='$amount_'>
@@ -113,15 +114,10 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
                             ";
                             $i++;
                         }
-                ?>
-                <div class="col-25">
-                    <div class="container-checkout">
-                    
-                    <?php
+               
                     if (isset($_POST["cmd"])) {
                     
                         $user_id = $_POST['custom'];
-                        
                         
                         $i=1;
                         echo
@@ -188,8 +184,7 @@ $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
                         
                     }
                     ?>
-                    </div>
-                </div>
+                
                 
 
             </div>

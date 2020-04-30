@@ -159,14 +159,52 @@
     </div>
 
     <div class="detalleamarillo"><p>DETALLE DE COMPRA</p></div>
+    <?php
+                        $i=1;
+                        $total=0;
+                        $total_count=$_POST['total_count'];
+                        while($i<=$total_count){
 
-
+                            $item_name_ = $_POST['item_name_'.$i];
+                            $amount_ = $_POST['amount_'.$i];
+                            $quantity_ = $_POST['quantity_'.$i];
+                            $total=$total+$amount_ ;
+                            $sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
+                            $query = mysqli_query($con,$sql);
+                            $row=mysqli_fetch_array($query);
+                            $product_id=$row["sku_producto_id"];
+                           
+                            echo "	
+                            <input type='hidden' name='prod_id_$i' value='$product_id'>
+                            <input type='hidden' name='prod_price_$i' value='$amount_'>
+                            <input type='hidden' name='prod_qty_$i' value='$quantity_'>
+                            ";
+                            $i++;
+                        }
+      ?>
 
     <div class="contdetalle">
       <div class="contdellateprod">
-
+      
+                        <h4>Cart 
+                        <span class='price' style='color:black'>
+                        <i class='fa fa-shopping-cart'></i> 
+                        <b><?php echo"$total_count";?></b>
+                        </span>
+                        </h4>
 
         </div>
+        <div class="contdellateprod">
+      
+      
+                        <thead><tr>
+                            <th >	N°  </th>
+                            <th >	Cantidad	</th>
+                            <th > 	Producto  </th>					
+                            <th >	Precio  </th>
+                            <th >	Sub Total  </th></tr>
+                        </thead>
+
     </div>
 
     </div>

@@ -1,5 +1,11 @@
 .tabla_detalles_compra{
-    font-size: xx-large;
+    
+    width: 100%;
+    /*  border: dashed 1px blue;*/
+  
+      padding-bottom: 10px;
+      display: flex;
+      height: 100%;
  
  }
  .tabla_detalles_compra thead tr th{
