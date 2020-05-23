@@ -55,8 +55,8 @@ include "db.php";
               <div class="dropdownn" id="loged">
                     <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Hola '.$row["nombre"].'    </a>
                   <div class="dropdownn-content">
-                  <a href="perfil.php" ><i class="fa fa-user-circle" aria-hidden="true" ></i>Mi Perfil</a>
-                  <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Salir</a>
+                  <a href="ingreso.php" ><i class="fa fa-user-circle" aria-hidden="true" ></i>Mi Perfil</a>
+                  <a href="registro.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Salir</a>
                   
                 </div>
               </div>';
@@ -69,10 +69,10 @@ include "db.php";
             $row=mysqli_fetch_array($query);    
               echo '
               <div class="dropdownn" id="loged">
-                <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> '.$row["nombre"].'   '.$_SESSION["uid"].'</a>
+                <a href="" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> Ingreso   </a>
                 <div class="dropdownn-content">
-                  <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
-                  <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                  <a href="ingreso.php"><i class="fa fa-sign-in" aria-hidden="true" ></i>Ingresar</a>
+                  <a href="registro.php" ><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
                   
                 </div>
               </div>';
@@ -91,8 +91,8 @@ include "db.php";
             
           }
                                              ?>
-
-    <div class="navbar-rightx">   <!-- Carrito -->
+ <!------------------------------------------------ Carrito -------------------------------------------------->
+    <div class="navbar-rightx">  
       <a href="#" id="cart">  <img src="img/carrito.png" alt="Cloudy Sky" class="imgcarro"> </a>
       <span class="badge">0</span>
         
@@ -110,9 +110,11 @@ include "db.php";
             </div>
           </div>
         </div>
-    </div>  <!-- Carrito fin -->
-          
-    <nav class="menu-principal">    <!-- Menu anidado -->
+    </div> 
+    <!----------------------------------------------- Carrito fin ---------------------------------------------->       
+    
+    <!----------------------------------------------- Comienzo Menu anidado --------------------------------------------->
+    <nav class="menu-principal">    
       <ul>
 
         <li> <a href="index.php"><span class="icon-power-cord"></span> INICIO</a></li>
@@ -136,24 +138,15 @@ include "db.php";
           <li> <a href="lista_pro_vista.php"><span class="icon-switch"></span>TODOS LOS PROD</a></li>
         </ul>
 
-    </nav>  <!-- Fin de menu anidado-->
-
+    </nav>  
+    <!------------------------------------------------- Fin de menu anidado------------------------------------------------->
            
-    
-
-
-
-      
-
-
-    </div>
+      </div>
     </div>
    
 
           <!--</div>-->
   <!--</div> -->
-
- 
 
  </header>
 

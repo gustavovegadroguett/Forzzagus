@@ -6,12 +6,12 @@
 
 <div class="container-fluid">
       <?php 
-           printf($_SESSION["uid"]);
            
            
-            $sql= "SELECT * FROM usuarios WHERE id_usuario='$_SESSION[uid]'";     
-            printf($sql);
-            $run_query=mysqli_query($sql,$con);  
+           
+            $sql= "SELECT * FROM usuarios WHERE id_usuario=$_SESSION[uid]";     
+            
+            $run_query=mysqli_query($con,$sql);  
             if(!$run_query){
                 printf("ERROR %s\n",$con);
             }
