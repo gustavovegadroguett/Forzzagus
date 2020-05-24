@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+div{
+    padding: 2em;
+}
+
+
 
 input{
     border-radius: 20px;
+    
 }
 
     
 .body{
 
     background: #f9f9f9;
-
+    
 }
 
 .contencheckout {
@@ -513,32 +519,28 @@ padding-right: 10px;
 }
 
 
-.detalleamarillo p {
-    margin-top: 10px;
-
-
+.cantelementos {
+    align-self: flex-start;
+}
+.gridcabecera {
+    display: grid;
+    grid-template-columns: 100px 50px 100px 1fr 100px 105px;
+    grid-auto-rows: 100px;
+    grid-template-rows: 50px;
+   
+}
+.gridcabecera > div{
+   border:solid 1px red;
+   
+   padding: 1em;
+  
 }
 
-.contdetalle {
-
-
-    width: 100%;
-
-  /* border: dashed 1px blue; */
-    display: flex;
-
+.gridcabecera div:hover{
+    border: 1px solid black;
 }
 
-.contdellateprod {
 
-    width: 100%;
-    height: 100px;
-  /*  border: dashed 1px red; */
-    display: flex;
-    flex-direction: column;
-
-
-}
 
 
 .cajaletrascantde {
@@ -551,17 +553,6 @@ padding-top: 20PX;
     align-items: center;
     justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .contcantidad {
 
@@ -662,30 +653,6 @@ padding-top: 20PX;
 }
 
 
-
-.cantidadblanco {
-    width: 15%;
-   /* border: dashed 1px blueviolet;  */
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.cantidadcont {
-
-    width: 80%;
-    height: 30px;
-    background: white;
-    border: 0px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .cantidadcont p {
 

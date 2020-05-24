@@ -31,9 +31,6 @@
         ?>
 
 <div class="contencheckout">
-
-
-
 <div class="contenedorgris">
 <form id=form-checkout action="<?php echo $formAction ?>" method="POST" class="was-validated">
 <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>" >
@@ -183,58 +180,46 @@
                         }
       ?>
 
-    <div class="contdetalle">
-      <div class="contdellateprod">
-      
-                        <h4>Cart 
-                        <span class='price' style='color:black'>
-                        <i class='fa fa-shopping-cart'></i> 
-                        <b><?php echo"$total_count";?></b>
-                        </span>
-                        </h4>
+    <div class="gridcabecera">
+     
+          <div class="cantelementos">
+            
+                <h4>Cart 
+                <span class='price' style='color:black'>
+                <i class='fa fa-shopping-cart'></i> 
+                <b><?php echo"$total_count";?></b>
+                </span>
+                </h4>
 
-        </div>
-        <div class="contdellateprod">
-      
-      
-                        <thead><tr>
-                            <th >	N°  </th>
-                            <th >	Cantidad	</th>
-                            <th > 	Producto  </th>					
-                            <th >	Precio  </th>
-                            <th >	Sub Total  </th></tr>
-                        </thead>
-
-    </div>
-
-    </div>
-
-
-
-
-
-    <div class="cajadentrocaaaaa">
-
-
-    <div class="cantidadblanco">
-
-    <div class="cantidadcont"><p>1<p></div>
+          </div>
+          <div >
+            <span>	N°  </span> 
+          </div>
+          <div >
+            <span>	Cantidad  </span> 
+          </div>
+          <div >
+            <span>	Producto  </span> 
+          </div>
+          <div >
+            <span>	Precio  </span> 
+          </div>
+          <div >
+            <span>	Sub Total </span> 
+          </div>
 
     </div>
 
-    <div class="prodddss">
-
-    <div class="proddsssxxxx"><p>CEMENTO MARCA FORZZA EL MEJOR DEL MUNDO</p></div>
 
 
-    </div>
 
-    <div class="preunittt"><div class="preunittxxx"> <p> $1.400.900 </p></div></div>
 
-    <div class="subtotal"><div class="subtotalxxx"><p> $14.900 </p></div>  </div>
+    <div class="griditems">
 
-    </div>
-    </div>
+
+    
+
+    
 
 
 
