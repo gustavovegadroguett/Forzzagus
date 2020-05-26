@@ -6,7 +6,7 @@ div{
 
 
 input{
-    border-radius: 20px;
+    border-radius: 10px;
     
 }
 
@@ -159,72 +159,74 @@ padding-right: 10px;
 }
 
 .contenedordatosdelaboleta {
-
+    display: grid;
+    grid-template-columns: 50% 50%;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-  /*  border: #fed202 2px dashed; */
+    height: 180px;
+  
 
     display: flex;
 }
 
 .caja1boleta {
     width: 55%;
-
-  /*  border: deeppink dashed 1px; */
-    flex-direction: column;
     display: flex;
-}
-
-.caja2boleta {
-
-    width: 45%;
-
-    /*border: deeppink dashed 1px; */
+    border: dashed black 1px;
     flex-direction: column;
-    display: flex;
+   
+
 }
-
-
 .cajitacont1 {
+    display: grid;
+    grid-template-columns: 30% 70%;
     width: 100%;
-  /*  border: firebrick 2px dashed; */
     height: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .cajitacont1 input {
     background: white;
     border: 0px;
     height: 38px;
+    border: #fed202 2px solid;
+    width: 300px;
 }
 
 .cajitaconta2 {
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 30% 70%;
     width: 100%;
     height: 50%;
- /*   border: blue 2px dashed;  */
-    display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-
 .cajitaconta2 input {
     height: 38px;
     background: white;
-    border: 0px;
+    width: 300px;
+    border: #fed202 2px solid;
+}
+.caja2boleta {
+
+    width: 45%;
+
+    border: dashed black 1px;
+    flex-direction: column;
+    display: flex;
 }
 
-
 .cajitacont3 {
+    display: grid;
+    grid-template-columns: 30% 70%;
     width: 100%;
-  /*  border: firebrick 2px dashed;*/
+    
     height: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10px;
@@ -233,15 +235,17 @@ padding-right: 10px;
 .cajitacont3 input {
     background: white;
     border: 0px;
+    border: yellow 2px solid;
 }
 
 .cajitaconta4 {
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+  
     width: 100%;
     height: 50%;
- /*   border: blue 2px dashed;*/
-    display: flex;
-
+ 
+    
     justify-content: center;
     align-items: center;
     padding-left: 10px;
@@ -252,6 +256,7 @@ padding-right: 10px;
     background: white;
     border: 0px;
     height: 38px;
+    border: yellow 2px solid;
 
 }
 
@@ -270,17 +275,18 @@ padding-right: 10px;
 
 
 .cajaamarillaquienrecibe p {
-
+  
     margin-top: 8px;
 
 }
 
 .contenedorquienrecibe {
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     padding-bottom: 20px;
-  /*  border: aqua 2px dashed;*/
-    display: flex;
+    
+    
     padding-top: 20px;
 }
 
@@ -308,15 +314,24 @@ padding-right: 10px;
 }
 
 .cajitachica {
-
+    display: grid;
+    grid-template-columns: 30% 70%;
     width: 100%;
-    padding: 10px;
- /*   border: 1px tomato dashed; */
-    display: flex;
+    border: 1px tomato dashed; 
     justify-content: center;
     align-items: center;
 }
+.cajitachica  input{
+    border:solid yellow 2px;
+}
+.cajitachicanombre {
+    font-size: 18px;
+    border:solid yellow 2px;
+}
+.cajitachicarut{
+    font-size: 18px;
 
+}
 
 
 .cajitachica input {
@@ -368,7 +383,7 @@ padding-right: 10px;
     width: 70%;
     border-radius: 20px;
     background: white;
-    margin-top: 10px;
+   
     justify-content: center;
     height: 30px;
     display: flex;
@@ -507,51 +522,44 @@ padding-right: 10px;
 
 
 .detalleamarillo {
-
-
+   
     height: 30px;
     width: 100%;
     background: #fed202;
     border-radius: 20px;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
+/* -------------------------- Inicio Detalle en los productos---------------*/
 
+/*.contdetalle {
 
-.cantelementos {
-    align-self: flex-start;
-}
-.gridcabecera {
-    display: grid;
-    grid-template-columns: 100px 50px 100px 1fr 100px 105px;
-    grid-auto-rows: 100px;
-    grid-template-rows: 50px;
    
+    
+    }
+.contdellateprod{
+
 }
-.gridcabecera > div{
-   border:solid 1px red;
-   
-   padding: 1em;
-  
-}
-
-.gridcabecera div:hover{
-    border: 1px solid black;
-}
-
-
-
-
+*/
 .cajaletrascantde {
-
+    display: grid;
+    grid-template-columns: 15% 50% 20% 1fr;
     width: 100%;
-
-padding-top: 20PX;
+   
   /*  border: dashed green 2px;  */
-    display: flex;
+   
     align-items: center;
     justify-content: center;
+}
+
+
+.cajaaaaaax {
+
+    border: solid 1 px red;
+    width: 100%;
+ /*   border: dashed 1px red;   */
+
 }
 
 .contcantidad {
@@ -564,26 +572,6 @@ padding-top: 20PX;
     justify-content: center;
     height: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -601,17 +589,9 @@ padding-top: 20PX;
 
 
 
-
-
-
-
-
-
-
-
 .contpreciouni {
 
-    width: 15%;
+   
  /*   border: dashed 1px green; */
     height: 30px;
     display: flex;
@@ -621,7 +601,7 @@ padding-top: 20PX;
 
 .contsubtotal {
 
-    width: 15%;
+    
  /*    border: dashed 1px gold;   */
     height: 30px;
     display: flex;
@@ -629,43 +609,26 @@ padding-top: 20PX;
     align-items: center;
 }
 
-
-.cajaaaaaax {
-
-
-    width: 100%;
- /*   border: dashed 1px red;   */
-
-}
-
-
-
-.cajadentrocaaaaa {
-
+.itemDetalle {
+    display: grid;
+    grid-template-columns: 15% 50% 20% 1fr;
 
     width: 100%;
   /*  border: dashed 1px blue;*/
-
-    padding-bottom: 10px;
-    display: flex;
+    padding-bottom: 5px;
+    
     height: 100%;
-
+    border-bottom: 2px solid #fc1010;
+    
 }
 
 
 
-.cantidadcont p {
-
-    margin-top: 8px;
-
-}
 
 
 
 .prodddss {
-    width: 55%;
-    border-bottom: 2px solid #fc1010;
-
+    width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -673,17 +636,21 @@ padding-top: 20PX;
 
 
 }
+.cantidadProd{
+    width: 15%;
+    justify-content: center;
+    display: flex;
+}
 
+.nombreProducto {
 
-.proddsssxxxx {
-
-    width: 95%;
+    width: 85%;
     height: 30px;
     background: white;
     border: 0px;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
 
 }
@@ -718,7 +685,7 @@ padding-top: 20PX;
 
 .preunittxxx {
 
-    width: 80%;
+   
     height: 30px;
     background: white;
     border: 0px;
@@ -728,16 +695,6 @@ padding-top: 20PX;
     align-items: center;
 
 
-}
-
-
-
-
-
-.preunittxxx p {
-
-
-    margin-top: 8px;
 }
 
 .subtotal {
