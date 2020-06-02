@@ -131,10 +131,6 @@
 
             </div>
 
-
-
-
-
           </div>
 
           <div class="datosdespachoamarillo">
@@ -202,15 +198,15 @@
       ?>
 
           <div class="contdetalle">
-                <div class="cajaletrascantde">
-                  <div class="contcantidad">CANT</div>
-                  <div class="contnombrepro">PRODUCTOS</div>
-                  <div class="contpreciouni">PRECIO UNIT</div>
-                  <div class="contsubtotal">SUB TOTAL</div>
-                </div>
+            <div class="cajaletrascantde">
+              <div class="contcantidad">CANT</div>
+              <div class="contnombrepro">PRODUCTOS</div>
+              <div class="contpreciouni">PRECIO UNIT</div>
+              <div class="contsubtotal">SUB TOTAL</div>
+            </div>
 
-                <!-- Inicio row con datos de producto individual  -->
-                <?php
+            <!-- Inicio row con datos de producto individual  -->
+            <?php
                         $i=1;
                         $total=0;
                         $total_count=$_POST['total_count'];
@@ -219,8 +215,9 @@
                             $item_name_ = $_POST['item_name_'.$i];
                             $amount_ = $_POST['amount_'.$i];
                             $quantity_ = $_POST['quantity_'.$i];
-                            $total=$total+$amount_ ;
                             $subtotal=$amount_*$quantity_;
+                            $total=$total+$subtotal;
+                            
                             $sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
                             $query = mysqli_query($con,$sql);
                             $row=mysqli_fetch_array($query);
@@ -242,33 +239,24 @@
                             ";
                             $i++;
                         }
+                        $totalWebPay=intval($total/1.05);
+                        $totalTransferencia=intval($total/1.03);
                ?>
 
           </div>
         </div>
-        
+
         <div class="cajatotalll">
 
 
           <p>TOTAL:&nbsp</p>
-          <div class="totalsillo">
-            <p>$14.990</p>
-          </div>
+          <div class="totalsillo"> <?php echo" <div>$total</div> "  ?> </div>
 
         </div>
 
         <div class="amarillomediodepago">
           <p>SELECCIONA MEDIO DE PAGO</p>
         </div>
-
-
-
-
-
-
-
-
-
 
         <div class="contenedormediosdepago">
 
@@ -285,9 +273,9 @@
                 </div>
                 <div class="contenedorimagenmedio"> <img src="img/webpay.png" class="imgi"></div>
               </div>
-              <div class="totalwebpay">
-                <p>$16.990<p>
+              <div class="totalwebpay"><div><?php echo"$totalWebPay"; ?> </div>
               </div>
+              
             </div>
 
 
@@ -310,15 +298,14 @@
 
                 </div>
               </div>
-              <div class="totalwebpay">
-                <p>$14.900<p>
-              </div>
+              <div class="totalwebpay"><?php echo"$totalTransferencia"; ?></div>
 
             </div>
           </div>
           <div class="conterminosycondi">
-            <input type="radio" name="terminos" value="1">&nbsp<p>Declaro conocer y aceptar los <a href="#"> términos y
-                condiciones</a> y <a href="#">políticas de privacidad y seguridad</a></p>
+            <input type="checkbox" name="terminos" value="1">
+            <div>Declaro conocer y aceptar los <a href="#"> términos y
+                condiciones</a> y <a href="#">políticas de privacidad y seguridad</a></div>
 
 
 
@@ -329,10 +316,10 @@
         <div class="contedorbonotesdepago">
 
 
-          <button class="volver">VOLVER </button>
+          <a href="http://localhost/forzza/cart.php"> Volver </a>
 
 
-          <button class="pagar">PAGAR</button>
+          <input type="submit" class="pagar" value="pagar"></input>
 
         </div>
 
