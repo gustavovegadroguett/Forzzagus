@@ -91,9 +91,13 @@
 
 
           <!--Fin Contenedor Boleta-->
+          <div id="contenedorFactura">
+
+          </div>
+
           <!--AKI-->
 
-          <div class="cajaamarillaquienrecibe">
+          <div class="seccionRecibe">
             <p>¿QUIÉN RECIBIRÁ TU COMPRA?</p>
           </div>
 
@@ -259,52 +263,39 @@
         </div>
 
         <div class="contenedormediosdepago">
-
-
-
-          <div class="contenres">
-            <div class="contenedormonea">
-              <div class="cuadritowebpay">
-
-
-
-                <div class="cuadritoradiowebpay">
-                  <input type="radio" name="medio" value="1" checked>
-                </div>
-                <div class="contenedorimagenmedio"> <img src="img/webpay.png" class="imgi"></div>
+          <div class="mediosdepagoorden">
+            <div class="cuadritowebpay">
+              <div class="cuadritoradiowebpay">
+                <input type="radio" name="medio" value="WEBPAY" checked>
               </div>
-              <div class="totalwebpay"><div><?php echo"$totalWebPay"; ?> </div>
+              <div class="contenedorimagenmedio"> <img src="img/webpay.png" class="imgi"></div>
+              <div class="totalwebpay">
+                <div class="totalwebpaydato">$<?php echo"$totalWebPay"; ?> </div>
               </div>
-              
             </div>
-
-
-
-            <div class="contenedormonea">
-              <div class="cuadritotransferencia">
-
-                <div class="cuadritoradiotransferencia">
-                  <input type="radio" name="medio" value="2">
-                </div>
-                <div class="contenedorimagenmedio">
-
-
-                  <p>TRASNFERENCIA<p>
-                      <div class="cuadrotransfeeee">
-                        <img src="img/transferencia.jpg" class="imgi">
-
-
-                      </div>
-
-                </div>
+            
+            <div class="cuadritotransferencia">
+              <div class="cuadritoradiotransferencia">
+                <input type="radio" name="medio" value="2">
               </div>
-              <div class="totalwebpay"><?php echo"$totalTransferencia"; ?></div>
+              <div class="contenedorimagenmedio">
+                <img src="img/transferencia.jpg" class="imgi">
 
+              </div>
+              <div class="totaltranferencia">
+                <div class="totaltransferenciadato">$<?php echo"$totalTransferencia"; ?> </div>
+              </div>
             </div>
           </div>
+
+          
+
+
+
+
           <div class="conterminosycondi">
-            <input type="checkbox" name="terminos" value="1">
-            <div>Declaro conocer y aceptar los <a href="#"> términos y
+            <div class="checkboxcondiciones"><input type="checkbox" name="terminos" value="1"></div>
+            <div class="terminoscondiciones">Declaro conocer y aceptar los <a href="#"> términos y
                 condiciones</a> y <a href="#">políticas de privacidad y seguridad</a></div>
 
 
@@ -401,360 +392,25 @@
         document.getElementById('choicehidden').innerText = this.value;
         /* alert(x);*/
         if (x == "2") {
-          /*alert(" es 2");*/
-
-          var codeBlock = '<div class="datosboletaamarillo"><p>DATOS FACTURA</p></div>' +
-
-            '<div class="contenedordatosdelaboleta">' +
 
 
-            '<div class="caja1boleta">' +
-
-            '<div class="cajitacont1"><div>*NOMBRE/R.SOCIAL</div>  <input type="text" id="nombre" name="nombre"></div>' +
-
-            '<div class="cajitaconta2"><div>*EMAIL</div>   <input type="text" id="emailDatos" name="email"></div>' +
-
-            '</div>' +
-
-
-            '<div class="caja2boleta">' +
-
-            '<div class="cajitacont3"><div>*RUT</div>   <input type="text" id="rut" name="rut"></div>' +
-            '<div class="cajitaconta4"><div>TELÉFONO</div>   <input type="text" id="telefono" name="telefono"></div>' +
-
-
-
-            '</div>' +
-            '</div>' +
-
-
-
-            '<div class="cajaamarillaquienrecibe"><p>DATOS DE FACTURACIÓN</p></div>' +
+          var codeBlock =
+            '<div class="seccionFactura"> <p>DATOS DE FACTURACIÓN</p> </div>' +
             '<div class="contenedordatosfactura">' +
-            '<div class="caja1fact">' +
-
-            '<div class="cajitafac1"> <p>*GIRO</p>&nbsp<input type="text" id="giro" name="giro"></div>' +
-            '<div class="cajitafact2"><p>*CIUDAD</p>&nbsp<input type="text" id="ciudadgiro" name="ciudadgiro"></div>' +
-
-            '</div>' +
-            '<div class="caja2fact">' +
-
-            '<div class="cajitafacc1"><p>*DIRECCION</p>&nbsp<input type="text" id="dirgiro" name="dirgiro"></div>' +
-
-            '<div class="cajitafacct2"><p>*COMUNA</p>&nbsp<input type="text" id="comugiro" name="comugiro"></div>' +
-
-            '</div>' +
-            '</div>' +
-
-            '<div class="cajaamarillaquienrecibe"><p>¿QUIÉN RECIBIRÁ TU COMPRA?</p></div>' +
-
-            '<div class="contenedorquienrecibe">' +
-
-
-            '<div class="cajacontquien1">' +
-            '<div class="radyo">' +
-            '<input type="radio" name="recibe" value="1" checked class="tamanoradio">' +
-            '&nbsp  ' +
-            '<p>YO</p>' +
-            '</div>' +
-
-            '<div class="radconserje">' +
-            '<input type="radio" name="recibe" value="2"  class="tamanoradio"> &nbsp ' +
-            '<p>DEJAR EN CONSERJERÍA</p>' +
-            '</div>' +
-            '</div>' +
-
-            '<div class="cajacontquien2">' +
-            '<div class="radotro">' +
-            '<input type="radio" name="recibe" value="3"  class="tamanoradio">' +
-            '&nbsp' +
-            '<p>OTRO<p>' +
-
-            '</div>' +
-
-            '<div class="cajitachica">' +
-            '<p>*NOMBRE</p>&nbsp &nbsp' +
-            '<input type="text" id="nombrereceptor" name="nombrereceptor">' +
-
-
-
-            '</div>' +
-            '<div class="cajitachica2">' +
-            '<p>*RUT</p>&nbsp &nbsp' +
-            '<input type="text" id="rutreceptor" name="rutreceptor">' +
-
-
-
-            '</div>' +
-
-
-            '</div>' +
-
-
-            '</div>' +
-
-            '<div class="datosdespachoamarillo">' +
-
-            '<P>LLENA ESTOS DATOS, PARA TU DESPACHO</P>' +
-
-
-            '</div>' +
-
-            '<div class="contnedordireccion">' +
-            '<div class="contdes1">' +
-
-            '<div class="contdireccion"><p>*DIRECCION</p> &nbsp  &nbsp <input type="text" id="direccion" name="direccion"></div>' +
-
-            '<div class="contcombociudad">*CIUDAD   &nbsp &nbsp  <select id="ciudad">' +
-            '<option value="IQUIQUE">IQUIQUE</option>' +
-
-            '</select></div>' +
-
-            '</div>' +
-            '<div class="contdes2">' +
-
-
-            '<div class="contnumero"><p>*NUMERO</p> &nbsp  &nbsp <input type="text" id="numerodir" name="numerodir"></div>' +
-
-            '<div class="contcomuna">*COMUNA   &nbsp &nbsp  <select id="comuna">' +
-            '<option value="IQUIQUE">IQUIQUE</option>' +
-            '<option value="IQUIQUE">ALTO HOSPICIO</option>' +
-
-            '</select></div>' +
-
-            '</div>' +
-
-            '</div>' +
-
-            '<div class="detalleamarillo"><p>DETALLE</p></div>' +
-
-
-
-            '<div class="contdetalle">' +
-
-
-
-            '<div class="contdellateprod">' +
-            '<div class="cajaaaaaax">' +
-            '<div class="cajaletrascantde">' +
-            '<div class="contcantidad"><p>CANTIDAD</p></div>' +
-            '<div class="contnombrepro"><p>PRODUCTOS</p></div>' +
-            '<div class="contpreciouni"><p>PRECIO UNIT</p></div>' +
-            '<div class="contsubtotal"><P>SUB TOTAL</p></div>' +
-            '</div>' +
-
-            '</div>' +
-
-
-
-
-
-            '<div class="cajadentrocaaaaa">' +
-
-
-            '<div class="cantidadblanco">' +
-
-            '<div class="cantidadcont"><p>1<p></div>' +
-
-            '</div>' +
-
-            '<div class="prodddss">' +
-
-            '<div class="proddsssxxxx"><p>CEMENTO MARCA FORZZA EL MEJOR DEL MUNDO</p></div>' +
-
-
-            '</div>' +
-
-            '<div class="preunittt"><div class="preunittxxx"> <p> $14.900 </p></div></div>' +
-
-            '<div class="subtotal"><div class="subtotalxxx"><p> $14.900 </p></div>  </div>' +
-
-            '</div>' +
-            '</div>' +
-
-
-
-
-            '</div>' +
-
-
-
-
-
-            '</div><!--/datos-->';
-
-
-          document.getElementById("datoss").innerHTML = codeBlock
+            ' <div class="caja1fact">' +
+            '   <div class="cajitafac1"> <p>*GIRO</p>&nbsp<input type="text" id="giro" name="giro"></div>' +
+            '   <div class="cajitafact2"><p>*CIUDAD</p>&nbsp<input type="text" id="ciudadgiro" name="ciudadgiro"></div>' +
+            ' </div>' +
+            ' <div class="caja2fact">' +
+            '   <div class="cajitafacc1"><p>*DIRECCION</p>&nbsp<input type="text" id="dirgiro" name="dirgiro"></div>' +
+            '   <div class="cajitafacct2"><p>*COMUNA</p>&nbsp<input type="text" id="comugiro" name="comugiro"></div>' +
+            '</div>';
+          document.getElementById("contenedorFactura").innerHTML = codeBlock;
         } else {
 
-          var codeBlock = '<div class="datosboletaamarillo"><p>DATOS BOLETA</p></div>' +
+          var codeBlock = '';
 
-            '<div class="contenedordatosdelaboleta">' +
-
-
-            '<div class="caja1boleta">' +
-
-            '<div class="cajitacont1"><div>*NOMBRE/R.SOCIAL</div>  <input type="text" id="nombre" name="nombre"></div>' +
-
-            '<div class="cajitaconta2"><div>*EMAIL</div>   <input type="text" id="emailDatos" name="email"></div>' +
-
-            '</div>' +
-
-
-            '<div class="caja2boleta">' +
-
-            '<div class="cajitacont3"><div>*RUT</div>   <input type="text" id="rut" name="rut"></div>' +
-            '<div class="cajitaconta4"><div>TELÉFONO</div>   <input type="text" id="telefono" name="telefono"></div>' +
-
-
-
-
-
-            '</div>' +
-            '</div>' +
-            '<div class="cajaamarillaquienrecibe"><p>¿QUIÉN RECIBIRÁ TU COMPRA?</p></div>' +
-
-            '<div class="contenedorquienrecibe">' +
-
-
-            '<div class="cajacontquien1">' +
-            '<div class="radyo">' +
-            '<input type="radio" name="recibe" value="1" checked class="tamanoradio">' +
-            '&nbsp  ' +
-            '<p>YO</p>' +
-            '</div>' +
-
-            '<div class="radconserje">' +
-            '<input type="radio" name="recibe" value="2"  class="tamanoradio"> &nbsp ' +
-            '<p>DEJAR EN CONSERJERÍA</p>' +
-            '</div>' +
-            '</div>' +
-
-            '<div class="cajacontquien2">' +
-            '<div class="radotro">' +
-            '<input type="radio" name="recibe" value="3"  class="tamanoradio">' +
-            '&nbsp' +
-            '<p>OTRO<p>' +
-
-            '</div>' +
-
-            '<div class="cajitachica">' +
-            '<p>*NOMBRE</p>&nbsp &nbsp' +
-            '<input type="text" id="nombrereceptor" name="nombrereceptor">' +
-
-
-
-            '</div>' +
-            '<div class="cajitachica2">' +
-            '<p>*RUT</p>&nbsp &nbsp' +
-            '<input type="text" id="rutreceptor" name="rutreceptor">' +
-
-
-
-            '</div>' +
-
-
-            '</div>' +
-
-
-            '</div>' +
-
-            '<div class="datosdespachoamarillo">' +
-
-            '<P>LLENA ESTOS DATOS, PARA TU DESPACHO</P>' +
-
-
-            '</div>' +
-
-            '<div class="contnedordireccion">' +
-            '<div class="contdes1">' +
-
-            '<div class="contdireccion"><p>*DIRECCION</p> &nbsp  &nbsp <input type="text" id="direccion" name="direccion"></div>' +
-
-            '<div class="contcombociudad">*CIUDAD   &nbsp &nbsp  <select id="ciudad">' +
-            '<option value="IQUIQUE">IQUIQUE</option>' +
-
-            '</select></div>' +
-
-            '</div>' +
-            '<div class="contdes2">' +
-
-
-            '<div class="contnumero"><p>*NUMERO</p> &nbsp  &nbsp <input type="text" id="numerodir" name="numerodir"></div>' +
-
-            '<div class="contcomuna">*COMUNA   &nbsp &nbsp  <select id="comuna">' +
-            '<option value="IQUIQUE">IQUIQUE</option>' +
-            '<option value="IQUIQUE">ALTO HOSPICIO</option>' +
-
-            '</select></div>' +
-
-            '</div>' +
-
-            '</div>' +
-
-            '<div class="detalleamarillo"><p>DETALLE</p></div>' +
-
-
-
-            '<div class="contdetalle">' +
-
-
-
-            '<div class="contdellateprod">' +
-            '<div class="cajaaaaaax">' +
-            '<div class="cajaletrascantde">' +
-            '<div class="contcantidad"><p>CANTIDAD</p></div>' +
-            '<div class="contnombrepro"><p>PRODUCTOS</p></div>' +
-            '<div class="contpreciouni"><p>PRECIO UNIT</p></div>' +
-            '<div class="contsubtotal"><P>SUB TOTAL</p></div>' +
-            '</div>' +
-
-            '</div>' +
-
-
-
-
-
-            '<div class="cajadentrocaaaaa">' +
-
-
-            '<div class="cantidadblanco">' +
-
-            '<div class="cantidadcont"><p>1<p></div>' +
-
-            '</div>' +
-
-            '<div class="prodddss">' +
-
-            '<div class="proddsssxxxx"><p>CEMENTO MARCA FORZZA EL MEJOR DEL MUNDO</p></div>' +
-
-
-            '</div>' +
-
-            '<div class="preunittt"><div class="preunittxxx"> <p> $14.900 </p></div></div>' +
-
-            '<div class="subtotal"><div class="subtotalxxx"><p> $14.900 </p></div>  </div>' +
-
-            '</div>' +
-            '</div>' +
-
-
-
-
-            '</div>' +
-
-
-
-
-
-            '</div><!--/datos-->';
-
-
-
-
-
-
-          document.getElementById("datoss").innerHTML = codeBlock
+          document.getElementById("contenedorFactura").innerHTML = codeBlock
 
         }
 
