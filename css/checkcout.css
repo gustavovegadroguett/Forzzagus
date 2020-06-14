@@ -331,9 +331,11 @@ input {
     display: grid;
     grid-template-columns: 30% 70%;
     width: 100%;
-    border: 1px tomato dashed;
+   
     justify-content: center;
-    align-items: center;
+   padding-top: 5PX;
+    
+    
 }
 
 .cajitachica input {
@@ -342,7 +344,7 @@ input {
 
 .cajitachicanombre {
     font-size: 18px;
-    border: solid yellow 2px;
+    
 }
 
 .cajitachicarut {
@@ -1002,12 +1004,17 @@ input {
     border: 0px;
 }
 
-
-.volver p {
-
-    margin-top: 10px;
-
+.vovler {
+    width: 200px;
+    height: 38px;
+    background: #fed202;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
 }
+
 
 
 

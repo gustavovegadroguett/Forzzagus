@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css\checkcout.css">
+
   <title>CHECKOUT</title>
 </head>
 
@@ -42,7 +43,7 @@
         <div class="contenradiooo">
           <div class="boletaaa">
             <div class="radboleta">
-              <input type="radio" name="facturacion" value="1" checked class="tamanoradio">
+              <input type="radio" name="facturacion" id="radiofactura" value="1" checked class="tamanoradio">
               <p>BOLETA</p>
             </div>
           </div>
@@ -91,6 +92,8 @@
 
 
           <!--Fin Contenedor Boleta-->
+
+          <!-- Aqui aparece y desaparecen los datos de factura segun el radio buton que seleccionen -->
           <div id="contenedorFactura">
 
           </div>
@@ -119,18 +122,15 @@
 
 
             <div class="radotro">
-              <input type="radio" name="recibe" value="3" class="tamanoradio">
+              <input type="radio" name="recibe" id="otroradio" value="3" class="tamanoradio">
               &nbsp
               <p>OTRO<p>
 
             </div>
             <div></div>
             <div></div>
-            <div class="cajitachica">
-              <div id="cajitachicanombre">*NOMBRE</div>
-              <input type="text" id="nombrereceptor" name="nombrereceptor">
-              <div id="cajitachicarut">*RUT</div>
-              <input type="text" id="rutreceptor" name="rutreceptor">
+            <div class="cajitachica" id="otroretiro">
+
 
 
             </div>
@@ -266,17 +266,17 @@
           <div class="mediosdepagoorden">
             <div class="cuadritowebpay">
               <div class="cuadritoradiowebpay">
-                <input type="radio" name="medio" value="WEBPAY" checked>
+                <input type="radio" id="radiowebpay" name="medio" value="WEBPAY" checked>
               </div>
               <div class="contenedorimagenmedio"> <img src="img/webpay.png" class="imgi"></div>
               <div class="totalwebpay">
                 <div class="totalwebpaydato">$<?php echo"$totalWebPay"; ?> </div>
               </div>
             </div>
-            
+
             <div class="cuadritotransferencia">
               <div class="cuadritoradiotransferencia">
-                <input type="radio" name="medio" value="2">
+                <input type="radio" id="radiotransfer" name="medio" value="2">
               </div>
               <div class="contenedorimagenmedio">
                 <img src="img/transferencia.jpg" class="imgi">
@@ -288,13 +288,13 @@
             </div>
           </div>
 
-          
+
 
 
 
 
           <div class="conterminosycondi">
-            <div class="checkboxcondiciones"><input type="checkbox" name="terminos" value="1"></div>
+            <div class="checkboxcondiciones"><input type="checkbox" id="terminos" name="terminos" value="1"></div>
             <div class="terminoscondiciones">Declaro conocer y aceptar los <a href="#"> términos y
                 condiciones</a> y <a href="#">políticas de privacidad y seguridad</a></div>
 
@@ -305,12 +305,14 @@
 
 
         <div class="contedorbonotesdepago">
-
-
-          <a href="http://localhost/forzza/cart.php"> Volver </a>
-
-
-          <input type="submit" class="pagar" value="pagar"></input>
+          <?php
+        $ip=$_SERVER['REMOTE_ADDR'];
+       
+        ?>
+          <div> <button type="button" class="volver btn-info" onclick="window.location.href='http://localhost/forzza/cart.php'">Volver</a></button></div>
+         
+          <div id="botonenvio"> </input></div>
+         
 
         </div>
 
@@ -321,8 +323,6 @@
     </div>
 
 
-
-
   </div>
 
 
@@ -331,7 +331,7 @@
 
 
 
-  <div class="lineaamarillaconnumeros">
+  <!--<div class="lineaamarillaconnumeros">
 
     <div class="cuadrovacio">
 
@@ -364,8 +364,7 @@
     </div>
 
 
-  </div>
-
+  </div>               -->                     
   </div>
 
 
@@ -379,45 +378,6 @@
 
 
 
-
-
-<script>
-  (function () {
-    var radios = document.getElementsByName('facturacion');
-    console.log(radios);
-    for (var i = 0; i < radios.length; i++) {
-      radios[i].onclick = function () {
-        var x = document.getElementById('choicehidden').innerText = this.value;
-        let template = '';
-        document.getElementById('choicehidden').innerText = this.value;
-        /* alert(x);*/
-        if (x == "2") {
-
-
-          var codeBlock =
-            '<div class="seccionFactura"> <p>DATOS DE FACTURACIÓN</p> </div>' +
-            '<div class="contenedordatosfactura">' +
-            ' <div class="caja1fact">' +
-            '   <div class="cajitafac1"> <p>*GIRO</p>&nbsp<input type="text" id="giro" name="giro"></div>' +
-            '   <div class="cajitafact2"><p>*CIUDAD</p>&nbsp<input type="text" id="ciudadgiro" name="ciudadgiro"></div>' +
-            ' </div>' +
-            ' <div class="caja2fact">' +
-            '   <div class="cajitafacc1"><p>*DIRECCION</p>&nbsp<input type="text" id="dirgiro" name="dirgiro"></div>' +
-            '   <div class="cajitafacct2"><p>*COMUNA</p>&nbsp<input type="text" id="comugiro" name="comugiro"></div>' +
-            '</div>';
-          document.getElementById("contenedorFactura").innerHTML = codeBlock;
-        } else {
-
-          var codeBlock = '';
-
-          document.getElementById("contenedorFactura").innerHTML = codeBlock
-
-        }
-
-      }
-
-    }
-  })();
-</script>
+<script src="js\checkout.js"></script>
 
 </html>

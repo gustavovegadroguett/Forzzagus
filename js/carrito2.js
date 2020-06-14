@@ -1,7 +1,3 @@
-$(document).ready(function(){
-  
-});
-
 
 (function(){
     $(document).click(function() {

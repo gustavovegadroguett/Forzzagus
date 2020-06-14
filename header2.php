@@ -24,6 +24,7 @@ include "db.php";
 <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
 
+
 <!--partial:index.partial.html -->
 <header>
 
@@ -199,6 +200,7 @@ include "db.php";
 
 
  
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script  src="js/carrito2.js"></script>
-  <script  src="mainheader.js"></script>
+<script  src="mainheader.js"></script>
