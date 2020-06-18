@@ -29,7 +29,7 @@ error_reporting(0);
 </head>
 
 <body>
-    <?php  include 'header2.php';?>
+    <?php  include 'header.php';?>
     <br>
     <div class="container-all">
 

@@ -1,6 +1,6 @@
 <?php
 
-include 'header2.php';
+include 'header.php';
 include("db.php");
 
 error_reporting(0);

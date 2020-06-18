@@ -10,7 +10,7 @@
 </head>
 
 <body class="body">
-  <?php include 'header2.php';
+  <?php include 'header.php';
         require_once "./vendor/autoload.php";
         use Transbank\Webpay\Configuration;
         use Transbank\Webpay\Webpay;
@@ -303,7 +303,7 @@
           </div>
         </div>
 
-
+ 
         <div class="contedorbonotesdepago">
           <?php
         $ip=$_SERVER['REMOTE_ADDR'];
