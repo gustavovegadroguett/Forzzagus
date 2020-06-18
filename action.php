@@ -6,190 +6,8 @@ include "db.php";
 
 
 
-//-------------------- Relleno de categorias con su cantidad de productos por categorias. ---------------------------
 
 
-if(isset($_POST["brand"])){
-	$brand_query = "SELECT * FROM marca_forzz";
-	$run_query = mysqli_query($con,$brand_query);
-	echo "
-		<div class='aside'>
-							<h3 class='aside-title'>Brand</h3>
-							<div class='btn-group-vertical'>
-	";
-	if(mysqli_num_rows($run_query) > 0){
-        $i=1;
-		while($row = mysqli_fetch_array($run_query)){
-            
-			$bid = $row["id_marca_forzz"];
-			$brand_name = $row["nombre_marca_forzz"];
-            $sql = "SELECT COUNT(*) AS count_items FROM productos_forzz WHERE marca_pro_forzz=$i";
-            $query = mysqli_query($con,$sql);
-            $row = mysqli_fetch_array($query);
-            $count=$row["count_items"];
-            $i++;
-			echo "
-					
-                    
-                    <div type='button' class='btn navbar-btn selectBrand' bid='$bid'>
-									
-									<a href='#'>
-										<span ></span>
-										$brand_name
-										<small >($count)</small>
-									</a>
-								</div>
-			";
-		}
-		echo "</div>";
-	}
-}
-if(isset($_POST["page"])){
-
-	$sql = "SELECT * FROM productos_forzz	";
-	$run_query = mysqli_query($con,$sql);
-	$count = mysqli_num_rows($run_query);
-	$pageno = ceil($count/9);
-	for($i=1;$i<=$pageno;$i++){
-		echo "
-			<li><a href='#product-row' page='$i' id='page' class='active'>$i</a></li>
-            
-            
-		";
-	}
-}
-
-if(isset($_POST["getProduct"])){
-	$limit = 9;
-	if(isset($_POST["setPage"])){
-		$pageno = $_POST["pageNumber"];
-		$start = ($pageno * $limit) - $limit;
-	}else{
-		$start = 0;
-	}
-	$product_query = "SELECT * FROM productos_forzz as prod inner join fotos as fot on prod.id_img_forzz=fot.id_foto_forzz inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz  LIMIT 9	";
-	$run_query = mysqli_query($con,$product_query);
-	if (!$run_query) {
-		printf("Error: %s\n", mysqli_error($con));
-		exit();
-	}
-	if(mysqli_num_rows($run_query) > 0){
-		while($row = mysqli_fetch_array($run_query)){
-			$pro_id    = $row['sku_producto_id'];
-			$pro_cat   = $row['categoria_prod'];
-			$pro_brand = $row['marca_pro_forzz'];
-			$pro_title = $row['nombre_prod_forzz'];
-			$pro_price = $row['precio_prod_forzz'];
-			$pro_image = $row['ruta_forzz'];
-            
-            $cat_name = $row["nombre_categoria_forzz"];
-			echo "
-				
-                        
-                          <div class='col-md-4 col-xs-6' >
-								<a href='product.php?p=$pro_id'><div class='product'>
-									<div class='product-img'>
-										<img src='product_images/$pro_image' style='max-height: 170px;' alt=''>
-										<div class='product-label'>
-											<span class='sale'>-30%</span>
-											<span class='new'>NEW</span>
-										</div>
-									</div></a>
-									<div class='product-body'>
-										<p class='product-category'>$cat_name</p>
-										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price header-cart-item-info'>$pro_price<del class='product-old-price'>$990.00</del></h4>
-										<div class='product-rating'>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-										</div>
-										<div class='product-btns'>
-											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare en action!</span></button>
-											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
-										</div>
-									</div>
-									<div class='add-to-cart'>
-										<button pid='$pro_id' id='product' class='add-to-cart-btn block2-btn-towishlist' href='#'><i class='fa fa-shopping-cart'></i> add to cart</button>
-									</div>
-								</div>
-							</div>
-                        
-			";
-		}
-	}
-}
-
-
-if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
-	if(isset($_POST["get_seleted_Category"])){
-		$id = $_POST["cat_id"];
-		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE categoria_prod = '".$id."' AND categoria_prod=cat.id_cat_forzz";
-        
-	}else if(isset($_POST["selectBrand"])){
-		$id = $_POST["brand_id"];
-		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE categoria_prod = '".$id."' AND categoria_prod=cat.id_cat_forzz	";
-	}else {
-        
-		$keyword = $_POST["keyword"];
-        header('Location:store.php');
-		//$sql = "SELECT * FROM productos_forzz,categories WHERE product_cat=cat_id AND product_keywords LIKE '%$keyword%'";
-		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE  product_keywords LIKE '%$keyword%'";
-	}
-	
-	$run_query = mysqli_query($con,$sql);
-		if (!$run_query) {
-			printf("Error: %s\n", mysqli_error($con));
-			exit();
-		}
-	while($row=mysqli_fetch_array($run_query)){
-			$pro_id    = $row['sku_producto_id'];
-			$pro_cat   = $row['categoria_prod'];
-			$pro_brand = $row['marca_pro_forzz'];
-			$pro_title = $row['nombre_prod_forzz'];
-			$pro_price = $row['precio_prod_forzz'];
-			$pro_image = $row['ruta_forzz'];
-            $cat_name = $row["nombre_categoria_forzz"];
-			echo "
-					
-                        
-                        <div class='col-md-4 col-xs-6'>
-								<a href='product.php?p=$pro_id'><div class='product'>
-									<div class='product-img'>
-										<img  src='product_images/$pro_image'  style='max-height: 170px;' alt=''>
-										<div class='product-label'>
-											<span class='sale'>-30%</span>
-											<span class='new'>NEW</span>
-										</div>
-									</div></a>
-									<div class='product-body'>
-										<p class='product-category'>$cat_name</p>
-										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price header-cart-item-info'>$pro_price<del class='product-old-price'>$990.00</del></h4>
-										<div class='product-rating'>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-											<i class='fa fa-star'></i>
-										</div>
-										<div class='product-btns'>
-											<button class='add-to-wishlist' tabindex='0'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
-											<button class='quick-view' ><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
-										</div>
-									</div>
-									<div class='add-to-cart'>
-										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
-									</div>
-								</div>
-							</div>
-			";
-		}
-}
 	
 //-------------------------------SE AREGA CARRO A LA BASE DE DATOS Y DESPLIEGA EN EL DROPDOWN---------------------------------
 
@@ -311,10 +129,10 @@ if (isset($_POST["count_item"])) {
 }
 //Count User cart item
 
-//----------------------------------------Aca rellena el carrito con los elementos guardados en la base de datos.
 
-if (isset($_POST["ingreso"])) {
+ //--------------------------------------------------------------ingresos se llama para crear la sql de acuerdo a la session iniciada
 
+if (isset($_POST["ingreso"])) {  
 	
 	
 	
@@ -339,10 +157,11 @@ if (isset($_POST["ingreso"])) {
 		exit();	
 
 	}
-    $query = mysqli_query($con,$sql);
+    
   
 
-    //------------------------------------------RELLENA EL CARRO CON TODOS LOS REGISTROS DESDE LA BASE DE DATOS.------------
+	//------------------------------------------RELLENA EL CARRO CON TODOS LOS REGISTROS DESDE LA BASE DE DATOS.------------
+	$query = mysqli_query($con,$sql);
 	if (isset($_POST["getCartItem"])) {
 		//display cart item in dropdown menu
 		
@@ -552,7 +371,7 @@ if (isset($_POST["ingreso"])) {
 							</table></div></div>    
 								';
 				}
-			}
+		}
 	}
 	
 	

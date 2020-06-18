@@ -114,3 +114,22 @@ function irtransferencia(){
 }
 
 //------------------------------------------------FIN CAMBIO COLOR-----------------------------------------
+
+
+//---------------------------------------------  Carga listado Productos desde BD---------------------------
+ checkOutDetails();
+    function checkOutDetails(){
+    
+        
+        $.ajax({    
+           
+           url : "action.php",
+           method : "POST",
+           data : {ingreso:1,checkOutDetails:1},
+           success : function(data){
+             $('.overlay').hide();
+             $("#cart_checkout").html(data);
+               net_total();
+           }
+        })
+    }

@@ -210,6 +210,9 @@
             </div>
 
             <!-- Inicio row con datos de producto individual  -->
+            <div id="listadoproductos">
+            
+            </div> 
             <?php
                         $i=1;
                         $total=0;
@@ -263,6 +266,7 @@
         </div>
 
         <div class="contenedormediosdepago">
+          
           <div class="mediosdepagoorden">
             <div class="cuadritowebpay">
               <div class="cuadritoradiowebpay">
@@ -378,6 +382,6 @@
 
 
 
-<script src="js\checkout.js"></script>
+<script src="js/checkout.js"></script>
 
 </html>

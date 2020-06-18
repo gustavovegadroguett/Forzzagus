@@ -11,7 +11,7 @@ include("db.php");
 <head>
 
     <?php 
-               include 'header2.php';           
+               include 'header.php';           
         $oe = $_GET['oe']; 
         
         //if($stmt = $conexion->prepare("SELECT Zcodigos.Pro_ACod  , Zcodigos.Pro_ADes , Zcodigos.ProPrecioVenta  , Zcodigos.Pro_Imagen  FROM Zcodigos where Zcodigos.Pro_ACod = ?   ")){
@@ -291,7 +291,7 @@ include("db.php");
     </div> -->
 
     <?php // include 'footer.php';?>
-
+    <script src="js/vista_pre.js"></script>
 
     <div id="WAButton"></div>
    

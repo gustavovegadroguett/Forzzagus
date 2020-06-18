@@ -1,0 +1,66 @@
+if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
+	if(isset($_POST["get_seleted_Category"])){
+		$id = $_POST["cat_id"];
+		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE categoria_prod = '".$id."' AND categoria_prod=cat.id_cat_forzz";
+        
+	}else if(isset($_POST["selectBrand"])){
+		$id = $_POST["brand_id"];
+		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE categoria_prod = '".$id."' AND categoria_prod=cat.id_cat_forzz	";
+	}else {
+        
+		$keyword = $_POST["keyword"];
+        header('Location:store.php');
+		//$sql = "SELECT * FROM productos_forzz,categories WHERE product_cat=cat_id AND product_keywords LIKE '%$keyword%'";
+		$sql = "SELECT * FROM productos_forzz as prod inner join categoria_forzz as cat on prod.categoria_prod=cat.id_cat_forzz inner join fotos on prod.id_img_forzz=fotos.id_foto_forzz WHERE  product_keywords LIKE '%$keyword%'";
+	}
+	
+	$run_query = mysqli_query($con,$sql);
+		if (!$run_query) {
+			printf("Error: %s\n", mysqli_error($con));
+			exit();
+		}
+	while($row=mysqli_fetch_array($run_query)){
+			$pro_id    = $row['sku_producto_id'];
+			$pro_cat   = $row['categoria_prod'];
+			$pro_brand = $row['marca_pro_forzz'];
+			$pro_title = $row['nombre_prod_forzz'];
+			$pro_price = $row['precio_prod_forzz'];
+			$pro_image = $row['ruta_forzz'];
+            $cat_name = $row["nombre_categoria_forzz"];
+			echo "
+					
+                        
+                        <div class='col-md-4 col-xs-6'>
+								<a href='product.php?p=$pro_id'><div class='product'>
+									<div class='product-img'>
+										<img  src='product_images/$pro_image'  style='max-height: 170px;' alt=''>
+										<div class='product-label'>
+											<span class='sale'>-30%</span>
+											<span class='new'>NEW</span>
+										</div>
+									</div></a>
+									<div class='product-body'>
+										<p class='product-category'>$cat_name</p>
+										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
+										<h4 class='product-price header-cart-item-info'>$pro_price<del class='product-old-price'>$990.00</del></h4>
+										<div class='product-rating'>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+										</div>
+										<div class='product-btns'>
+											<button class='add-to-wishlist' tabindex='0'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
+											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
+											<button class='quick-view' ><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+										</div>
+									</div>
+									<div class='add-to-cart'>
+										<button pid='$pro_id' id='product' href='#' tabindex='0' class='add-to-cart-btn'><i class='fa fa-shopping-cart'></i>  action carro add to cart</button>
+									</div>
+								</div>
+							</div>
+			";
+		}
+}

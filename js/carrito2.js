@@ -119,6 +119,7 @@
 
 
   checkOutDetails();  //se ejecuta en cada carga de pagina nueva.
+  
   function checkOutDetails(){
     $('.overlay').show();
     
@@ -134,6 +135,7 @@
        }
      })
    }
+   
    
    /*
 		whenever user click on .remove class we will take product id of that row 
@@ -208,41 +210,7 @@
   })
   
   //end
-    $("body").delegate(".update","click",function(event){
-      var update = $(this).parent().parent().parent();
-      var update_id = update.find(".update").attr("update_id");
-      var qty = update.find(".qty").val();
-      $.ajax({
-        url	:	"action.php",
-        method	:	"POST",
-        data	:	{updateCartItem:1,update_id:update_id,qty:qty},
-        success	:	function(data){
-          
-          $("#cart_msg").html(data);
-          
-          checkOutDetails();
-          
-        }
-      })
-
-
-    })
-    $("body").delegate("#aumento","click",function(event){
-      var cantidad=$("#cantidad_prod").val();
-      cantidad= parseInt(cantidad) + 1;
-      $("#cantidad_prod").val(cantidad);    
-
-    })
-    $("body").delegate("#disminuye","click",function(event){
-      var cantidad=$("#cantidad_prod").val();
-      if(cantidad > 1){
-      cantidad= parseInt(cantidad) - 1;
-      }
-      $("#cantidad_prod").val(cantidad);    
-
-    })
-
-  
-  
+    
+    
    })
    ();
