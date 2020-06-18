@@ -210,7 +210,7 @@
             </div>
 
             <!-- Inicio row con datos de producto individual  -->
-            <div id="listadoproductos">
+            <div id="listadoproducto">
             
             </div> 
             <?php

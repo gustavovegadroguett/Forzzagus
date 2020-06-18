@@ -40,7 +40,7 @@ if (isset($_POST["ingreso"])) {
      // --------------------------------------   Detalles en checkout ----------------------------------------
     
 
-     if(isset($_POST["detallecheck"])){
+     if(isset($_POST["listaproducto"])){
         echo 'adasdasdasd';
 
 

@@ -117,19 +117,20 @@ function irtransferencia(){
 
 
 //---------------------------------------------  Carga listado Productos desde BD---------------------------
- checkOutDetails();
+ 
     function checkOutDetails(){
-    
+      
         
         $.ajax({    
            
-           url : "action.php",
+           url : "actioncheckout.php",
            method : "POST",
-           data : {ingreso:1,checkOutDetails:1},
+           data : {ingreso:1,listaproducto:1},
            success : function(data){
-             $('.overlay').hide();
-             $("#cart_checkout").html(data);
+             //$('.overlay').hide();
+             $("#listadoproducto").html(data);
                net_total();
            }
         })
     }
+    checkOutDetails();
