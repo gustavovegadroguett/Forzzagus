@@ -38,10 +38,46 @@ if (isset($_POST["ingreso"])) {
     
 
      // --------------------------------------   Detalles en checkout ----------------------------------------
-    
+		$query=mysqli_query($con,$sql);
+		)
 
      if(isset($_POST["listaproducto"])){
-        echo 'adasdasdasd';
+		echo 'Nueva estructura con ajax';
+		$i=1;
+		$total=0;
+		$total_count=$_POST['total_count'];
+		while($i<=$total_count){
+
+			$item_name_ = $_POST['item_name_'.$i];
+			$amount_ = $_POST['amount_'.$i];
+			$quantity_ = $_POST['quantity_'.$i];
+			$subtotal=$amount_*$quantity_;
+			$total=$total+$subtotal;
+			
+			$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
+			$query = mysqli_query($con,$sql);
+			$row=mysqli_fetch_array($query);
+			$product_id=$row["sku_producto_id"];
+			
+			echo "	
+			<input type='hidden' name='prod_id_$i' value='$product_id'>
+			<input type='hidden' name='prod_price_$i' value='$amount_'>
+			<input type='hidden' name='prod_qty_$i' value='$quantity_'>
+			<input type='hidden' name='prod_sub_$i' value='$subtotal'>
+			
+			<div class='itemDetalle' name='linea_$i'>
+			<div class='cantidadProd'>$quantity_</div>
+			<div class='nombreProducto'>$item_name_</div>
+			<div class='preunittxxx'>$amount_</div>
+			<div class='subtotalxxx'>$subtotal</div>
+			
+			</div><!-- FIN row con datos de producto individual  -->
+			";
+			$i++;
+		}
+		$totalWebPay=intval($total/1.05);
+		$totalTransferencia=intval($total/1.03);
+               ?>
 
 
 
