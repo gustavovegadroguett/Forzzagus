@@ -134,3 +134,5 @@ function irtransferencia(){
         })
     }
     checkOutDetails();
+
+//------------------------Termino carga productos en checkout--------------
