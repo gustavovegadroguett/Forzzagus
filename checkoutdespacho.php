@@ -5,38 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css\checkcout.css">
-
+  
   <title>CHECKOUT</title>
+  <?php include 'header.php'  ;  ?>
 </head>
 
 <body class="body">
-  <?php include 'header.php';
-        require_once "./vendor/autoload.php";
-        use Transbank\Webpay\Configuration;
-        use Transbank\Webpay\Webpay;
-        $transaction = (new Webpay(Configuration :: forTestingWebpayPlusNormal()))
-               ->getNormalTransaction();   
-        $ip_usuario=getenv("REMOTE_ADDR");
-        $amount=(int)$_POST['total_compra'];
-        $sessionId='sessionId';
-        $buyOrder = strval(rand(10000,9999999));
-        $urlReturn= 'http://192.168.0.138/forzza/retornoTransbank.php';
-        $urlFinal= 'http://192.168.0.138/forzza/final.php';
 
-        $initResult= $transaction->initTransaction(
-            $amount,$sessionId,$buyOrder,$urlReturn,$urlFinal
-        );
-        
-        $formAction= $initResult->url;
-        $tokenWs=$initResult->token;
-
-
-        ?>
+  
 
   <div class="contencheckout">
     <div class="contenedorgris">
-      <form id=form-checkout action="<?php echo $formAction ?>" method="POST" class="was-validated">
-        <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>">
+      <form id="form-checkout" action="" method="POST" class="was-validated">
+        <input type="hidden" id="token_ws" name="token_ws" value="">
         <div class="quedocumentonecesita">
           <p class="documentonecesita">¿QUÉ DOCUMENTO NECESITA?</p>
         </div>
@@ -177,29 +158,7 @@
           <div class="detalleamarillo">
             <p>DETALLE</p>
           </div>
-          <?php
-                        $i=1;
-                        $total=0;
-                        $total_count=$_POST['total_count'];
-                        while($i<=$total_count){
-
-                            $item_name_ = $_POST['item_name_'.$i];
-                            $amount_ = $_POST['amount_'.$i];
-                            $quantity_ = $_POST['quantity_'.$i];
-                            $total=$total+$amount_ ;
-                            $sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
-                            $query = mysqli_query($con,$sql);
-                            $row=mysqli_fetch_array($query);
-                            $product_id=$row["sku_producto_id"];
-                           
-                            echo "	
-                            <input type='hidden' name='prod_id_$i' value='$product_id'>
-                            <input type='hidden' name='prod_price_$i' value='$amount_'>
-                            <input type='hidden' name='prod_qty_$i' value='$quantity_'>
-                            ";
-                            $i++;
-                        }
-      ?>
+         
 
           <div class="contdetalle">
             <div class="cajaletrascantde">
@@ -209,57 +168,22 @@
               <div class="contsubtotal">SUB TOTAL</div>
             </div>
 
-            <!-- Inicio row con datos de producto individual  -->
+            <!-----------Insercion de datos desde respueta metodo AJAX en checkout.js -->
             <div id="listadoproducto">
             
             </div> 
-            <?php
-                        $i=1;
-                        $total=0;
-                        $total_count=$_POST['total_count'];
-                        while($i<=$total_count){
-
-                            $item_name_ = $_POST['item_name_'.$i];
-                            $amount_ = $_POST['amount_'.$i];
-                            $quantity_ = $_POST['quantity_'.$i];
-                            $subtotal=$amount_*$quantity_;
-                            $total=$total+$subtotal;
-                            
-                            $sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
-                            $query = mysqli_query($con,$sql);
-                            $row=mysqli_fetch_array($query);
-                            $product_id=$row["sku_producto_id"];
-                           
-                            echo "	
-                            <input type='hidden' name='prod_id_$i' value='$product_id'>
-                            <input type='hidden' name='prod_price_$i' value='$amount_'>
-                            <input type='hidden' name='prod_qty_$i' value='$quantity_'>
-                            <input type='hidden' name='prod_sub_$i' value='$subtotal'>
-                            
-                            <div class='itemDetalle' name='linea_$i'>
-                            <div class='cantidadProd'>$quantity_</div>
-                            <div class='nombreProducto'>$item_name_</div>
-                            <div class='preunittxxx'>$amount_</div>
-                            <div class='subtotalxxx'>$subtotal</div>
-                            
-                            </div><!-- FIN row con datos de producto individual  -->
-                            ";
-                            $i++;
-                        }
-                        $totalWebPay=intval($total/1.05);
-                        $totalTransferencia=intval($total/1.03);
-               ?>
-
-          </div>
-        </div>
-
-        <div class="cajatotalll">
+            <div class="cajatotalll">
 
 
           <p>TOTAL:&nbsp</p>
-          <div class="totalsillo"> <?php echo" <div>$total</div> "  ?> </div>
 
+            <div id="totalpago" class="totalsillo"></div>
+
+            </div>
+          </div>
         </div>
+
+        
 
         <div class="amarillomediodepago">
           <p>SELECCIONA MEDIO DE PAGO</p>
@@ -292,11 +216,6 @@
             </div>
           </div>
 
-
-
-
-
-
           <div class="conterminosycondi">
             <div class="checkboxcondiciones"><input type="checkbox" id="terminos" name="terminos" value="1"></div>
             <div class="terminoscondiciones">Declaro conocer y aceptar los <a href="#"> términos y
@@ -309,13 +228,10 @@
 
  
         <div class="contedorbonotesdepago">
-          <?php
-        $ip=$_SERVER['REMOTE_ADDR'];
-       
-        ?>
+          
           <div> <button type="button" class="volver btn-info" onclick="window.location.href='http://localhost/forzza/cart.php'">Volver</a></button></div>
          
-          <div id="botonenvio"> </input></div>
+          <div id="botonenvio" class="botonenvio"> </input></div>
          
 
         </div>
@@ -335,40 +251,7 @@
 
 
 
-  <!--<div class="lineaamarillaconnumeros">
-
-    <div class="cuadrovacio">
-
-    </div>
-    <div class="mesacentral">
-      <p class="letraarriba">MESA CENTRAL<p>
-          <p class="numerotelefonooo">+569425555<p>
-    </div>
-
-
-    <div class="ventasss">
-      <p class="letraarriba">VENTAS<p>
-          <p class="numerotelefonooo">+569425555<p>
-    </div>
-
-
-    <div class="postventasss">
-
-      <p class="letraarriba">POST VENTA<p>
-          <p class="numerotelefonooo">+569425555<p>
-    </div>
-
-    <div class="soportetecnico">
-      <p class="letraarriba">SOPORTE TECNICO<p>
-          <p class="numerotelefonooo">+569425555<p>
-    </div>
-
-    <div class="cuadrovacio">
-
-    </div>
-
-
-  </div>               -->                     
+                   
   </div>
 
 

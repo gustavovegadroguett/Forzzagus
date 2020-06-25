@@ -216,7 +216,7 @@ if (isset($_POST["ingreso"])) {
 		}
 	}
 	
-    // --------------------------------------   CONTENIDO DEL CARRITO VERTIDO EN CART.PHP----------------------------------------
+    // -------------------------------------- CONTENIDO DEL CARRITO VERTIDO EN CART.PHP----------------------------------------
     
     if (isset($_POST["checkOutDetails"])) {
 			$num;
@@ -249,7 +249,7 @@ if (isset($_POST["ingreso"])) {
 					$product_descrip= $row["descripcion_pro_forzz"];
 					$product_price = $row["precio_prod_forzz"];
 					$product_image = $row["ruta_forzz"];
-					$cart_item_id = $row["id"];
+					//$cart_item_id = $row["id"];
 					$qty = $row["qty"];
 
 					echo 
@@ -273,8 +273,7 @@ if (isset($_POST["ingreso"])) {
 							</td>
 							<td><p>'.$product_descrip.'</p></td>
                             <input type="hidden" name="product_id[]" value="'.$product_id.'"/>
-				            <input type="hidden" name="" value="'.$cart_item_id.'"/>
-							<td data-th="Price"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></td>
+				          	<td data-th="Price"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></td>
 							<td data-th="Quantity">
 								<input type="text" class="form-control qty" value="'.$qty.'" >
 							</td>

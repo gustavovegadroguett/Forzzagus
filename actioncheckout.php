@@ -6,7 +6,6 @@ include "db.php";
 
 
 
-
 //--------------------------------------------------------------ingresos se llama para crear la sql de acuerdo a la session iniciada
 
 if (isset($_POST["ingreso"])) {  
@@ -39,36 +38,27 @@ if (isset($_POST["ingreso"])) {
 
      // --------------------------------------   Detalles en checkout ----------------------------------------
 		$query=mysqli_query($con,$sql);
-		)
+		
 
-     if(isset($_POST["listaproducto"])){
-		echo 'Nueva estructura con ajax';
+	if(isset($_POST["listaproducto"])){
 		$i=1;
 		$total=0;
-		$total_count=$_POST['total_count'];
-		while($i<=$total_count){
-
-			$item_name_ = $_POST['item_name_'.$i];
-			$amount_ = $_POST['amount_'.$i];
-			$quantity_ = $_POST['quantity_'.$i];
-			$subtotal=$amount_*$quantity_;
+		
+		while($row=mysqli_fetch_array($query)){
+			$product_id=$row["sku_producto_id"];
+			$product_title = $row["nombre_prod_forzz"];
+			$product_descrip= $row["descripcion_pro_forzz"];
+			$product_price = $row["precio_prod_forzz"];
+			$qty = $row["qty"];
+			$subtotal=$qty*$product_price;
 			$total=$total+$subtotal;
 			
-			$sql = "SELECT sku_producto_id FROM productos_forzz WHERE nombre_prod_forzz='$item_name_'";
-			$query = mysqli_query($con,$sql);
-			$row=mysqli_fetch_array($query);
-			$product_id=$row["sku_producto_id"];
-			
 			echo "	
-			<input type='hidden' name='prod_id_$i' value='$product_id'>
-			<input type='hidden' name='prod_price_$i' value='$amount_'>
-			<input type='hidden' name='prod_qty_$i' value='$quantity_'>
-			<input type='hidden' name='prod_sub_$i' value='$subtotal'>
 			
-			<div class='itemDetalle' name='linea_$i'>
-			<div class='cantidadProd'>$quantity_</div>
-			<div class='nombreProducto'>$item_name_</div>
-			<div class='preunittxxx'>$amount_</div>
+			<div class='item_detalle' name='$product_descrip'>
+			<div class='cantidad_prod'>$qty</div>
+			<div class='nombre_producto'>$product_title</div>
+			<div class='precio_unitario'>$product_price</div>
 			<div class='subtotalxxx'>$subtotal</div>
 			
 			</div><!-- FIN row con datos de producto individual  -->
@@ -77,11 +67,40 @@ if (isset($_POST["ingreso"])) {
 		}
 		$totalWebPay=intval($total/1.05);
 		$totalTransferencia=intval($total/1.03);
-               ?>
+       
+	}
+	if(isset($_POST["neto"])){
+		$i=1;
+		$total=0;
+		
+		while($row=mysqli_fetch_array($query)){
+			/*$product_id=$row["sku_producto_id"];
+			$product_title = $row["nombre_prod_forzz"];
+			$product_descrip= $row["descripcion_pro_forzz"];*/
+			$product_price = $row["precio_prod_forzz"];
+			$qty = $row["qty"];
+			$subtotal=$qty*$product_price;
+			$total=$total+$subtotal;
+			
+			
+			$i++;
+		}
+		echo "	$total";
+		$totalWebPay=intval($total/1.05);
+		$totalTransferencia=intval($total/1.03);
+       
+	}
+	if(isset($_POST["almacenaje"])){
+		$comprobar;
+		$total= $_POST["almacenaje"];
+		$_SESSION['total']=$total;
+		$comprobar=isset($_SESSION['total']);
+		echo $_SESSION['total'];
+	}
+
+	 
+}		
+	 
 
 
-
-
-     }
-}
 ?>

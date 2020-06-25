@@ -1,3 +1,4 @@
+
 (function () {
 
   //-------------------------Codigo para aparcer y desaparecer seccion de facturacion-----------------------------------
@@ -67,9 +68,9 @@ var cambioboton=document.querySelector('#terminos');
 var divpago = document.getElementById('botonenvio');
 var radiowebpay = document.getElementById('radiowebpay');
 var codigobotonweb =
-  '<input type="submit" id="envio" class="pagar bg-danger" name="pago" value="WEBPAY" disabled="true"></input>';
+  '<input type="button" id="envio" class="pagar bg-danger" name="pago" value="WEBPAY" disabled="true"></input>';
 var codigobotontrans =
-  '<input type="button" id="envio" class="pagar bg-danger" name="pago" value="TRANSFERENCIA" disabled="true" onclick="irtransferencia()"></input>';
+  '<input type="button" id="envio" class="pagar bg-danger" name="pago" value="TRANSFERENCIA" disabled="true" ></input>';
 radios3.forEach(radio => radio.addEventListener('change', function () {
   tipopago();
 }));
@@ -115,24 +116,110 @@ function irtransferencia(){
 
 //------------------------------------------------FIN CAMBIO COLOR-----------------------------------------
 
+//-------------Suma de valores de subtotales  ycarga de ellos en checkout.------------------------------
+
+function totalNeto(){
+  var dato;
+  $.ajax({    
+     
+    url : "actioncheckout.php",
+    method : "POST",
+    data : {ingreso:1,neto:1},
+    success : function(data){
+      dato=data;
+      $("#totalpago").html(data);
+      almacenatotal(data);
+      
+    } 
+ })
+
+}
+//-----------Fin de funcion para cargar los valor sumado de subtotales.
+
+//--------Almacenado del total a pagar por parte de servidor en una session---------------
+function almacenatotal(totalrecibido){
+  alert("almacena total"+totalrecibido);
+  
+  $.ajax({    
+    url : "actioncheckout.php",
+    method : "POST",
+    data : {ingreso:1,almacenaje:totalrecibido},
+    success : function(data){
+     alert(" datos dentro success " + data);
+    }
+ })
+}
+//-------------------------------Fin almacenado de total en session-------------------------
 
 //---------------------------------------------  Carga listado Productos desde BD---------------------------
- 
-    function checkOutDetails(){
+function carroEnCheckout(){
       
         
-        $.ajax({    
-           
-           url : "actioncheckout.php",
-           method : "POST",
-           data : {ingreso:1,listaproducto:1},
-           success : function(data){
-             //$('.overlay').hide();
-             $("#listadoproducto").html(data);
-               net_total();
-           }
-        })
-    }
-    checkOutDetails();
+  $.ajax({    
+     
+     url : "actioncheckout.php",
+     method : "POST",
+     data : {ingreso:1,listaproducto:1},
+     success : function(data){
+       
+       $("#listadoproducto").html(data);
+       totalNeto();
+     }
+  })
+}
+carroEnCheckout();
 
-//------------------------Termino carga productos en checkout--------------
+//-----------------------------------------------Termino carga productos en checkout---------------------------
+
+
+//------------------------Ejecucion de submit para utilizar php que crea token y URL que dirije a webpay......
+
+
+function enviarWebpay(valorprod){
+ var datos;
+  valor= valorprod;
+  $.ajax({
+    url:"creaciontoken.php",
+    method:"POST",
+    data: {valorprod:valor},
+    success : function(data){
+        
+       
+        datos=JSON.parse(data);
+        alert("post json"+datos.url);
+        $("#form-checkout").attr('action',datos.url);
+        $("#token_ws").attr('value',datos.token);  
+        $("#form-checkout").submit();
+        
+        
+    }
+
+  })
+   
+}
+ 
+
+$("#botonenvio").click(function (e){
+    
+    var condicion= $('#radiowebpay').is(':checked');
+    var valor= $('#totalpago').html();
+   
+    if( condicion ){
+     
+     enviarWebpay(valor);
+     //alert("revisando si return de 'enviarwebpay'funciona "+ datos)
+     
+
+      
+    }else{
+
+      alert ("entro al  else");
+      $("#form-checkout").attr('action','transbancaria.php');
+     
+    }
+
+    
+    
+})
+
+

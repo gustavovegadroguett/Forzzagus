@@ -600,10 +600,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 55%;
     height: 30px;
-    /*border: dashed 1px blue;*/
 
 }
 
@@ -629,7 +626,7 @@ input {
     align-items: center;
 }
 
-.itemDetalle {
+.item_detalle {
     display: grid;
     grid-template-columns: 15% 50% 20% 1fr;
 
@@ -657,13 +654,13 @@ input {
 
 }
 
-.cantidadProd {
+.cantidad_prod {
     width: 15%;
     justify-content: center;
     display: flex;
 }
 
-.nombreProducto {
+.nombre_producto {
 
     width: 85%;
     height: 30px;
@@ -704,7 +701,7 @@ input {
 
 
 
-.preunittxxx {
+.precio_unitario {
 
 
     height: 30px;
@@ -781,7 +778,8 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    pointer-events: none;
+}
 }
 
 

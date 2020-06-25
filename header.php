@@ -16,8 +16,8 @@ include("db.php");
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/fontello.css">
-  <link rel="stylesheet" type="text/css" href="modalnewletter.css">
+ 
+ 
   <title>Document</title>
 </head>
 
