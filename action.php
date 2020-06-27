@@ -226,14 +226,26 @@ if (isset($_POST["ingreso"])) {
 			echo '<div class="main ">	
 			<div class="table-responsive">
 			<form method="post" action="login_form.php">
-			
+				
+					<div class="cajaletrascantde">
+						<div class="contcantidad">Producto</div>
+						<div class="contnombrepro">Descripcion de articulo/producto</div>
+						<div class="contpreciouni">Precio</div>
+						<div class="contsubtotal">-</div>
+						<div class="contsubtotal">Cantidad</div>
+						<div class="contsubtotal">+</div>
+						<div class="contsubtotal">Eliminar</div>
+			  
+				</div>
 	               <table id="cart" class="table table-hover table-condensed" id="">
     				<thead>
 						<tr>
-							<th style="width:35%">Producto</th>
+							<th style="width:15%">Producto</th>
 							<th style="width:40%">Descripcion Producto</th>
-							<th style="width:10%">PRECIO</th>
+							<th style="width:5%">PRECIO</th>
+							<th style="width:3%">-</th>
 							<th style="width:3%">CANT</th>
+							<th style="width:3%">-</th>
 							<th style="width:7%" class="text-center"> SUB</th>
 							
 						</tr>
@@ -258,17 +270,13 @@ if (isset($_POST["ingreso"])) {
 						<tr>
 							<td data-th="Product" >
 								<div class="row">
-								
 									<div class="col-sm-4 "><img src="images'.$product_image.'" style="height: 100px;width:200px;"/>
 									<h4 class="nomargin product-name header-cart-item-name"><a href="vista_pre.php?oe='.$product_id.'">'.$product_title.'</a></h4>
 									</div>
 									<div class="col-sm-6">
 										<div style="max-width=50px;">
-										
 										</div>
 									</div>
-									
-									
 								</div>
 							</td>
 							<td><p>'.$product_descrip.'</p></td>

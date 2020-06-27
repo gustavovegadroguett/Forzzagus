@@ -1,0 +1,11 @@
+
+.cajaletrascantde {
+    display: grid;
+    grid-template-columns:15% 45% 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+
+    /*  border: dashed green 2px;  */
+
+    align-items: center;
+    justify-content: center;
+}

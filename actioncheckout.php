@@ -90,14 +90,23 @@ if (isset($_POST["ingreso"])) {
 		$totalTransferencia=intval($total/1.03);
        
 	}
-	if(isset($_POST["almacenaje"])){
-		$comprobar;
+	if(isset($_POST["almacenaje"], $_POST["opcion"])){
+		$opcion=$_POST["opcion"];
 		$total= $_POST["almacenaje"];
-		$_SESSION['total']=$total;
-		$comprobar=isset($_SESSION['total']);
-		echo $_SESSION['total'];
+		if($opcion==1){
+			
+			$_SESSION['total']=$total;
+			echo $_SESSION['total'];
+		}else if($opcion==2){
+			echo $_SESSION['total'];
+		}
+		else{
+			echo $opcion,$total;
+		}
+		
 	}
 
+	
 	 
 }		
 	 
