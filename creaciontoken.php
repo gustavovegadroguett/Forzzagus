@@ -14,8 +14,8 @@
             $amount=$valor;
             $sessionId='sessionId';
             $buyOrder = strval(rand(10000,9999999));
-            $urlReturn= 'http://192.168.0.138/forzza/retornoTransbank.php';
-            $urlFinal= 'http://192.168.0.138/forzza/final.php';
+            $urlReturn= 'http://localhost/forzzagus/retornoTransbank.php';
+            $urlFinal= 'http://localhost/forzzagus/final.php';
 
             $initResult= $transaction->initTransaction(
                 $amount,$sessionId,$buyOrder,$urlReturn,$urlFinal

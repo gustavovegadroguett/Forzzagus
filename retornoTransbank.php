@@ -12,7 +12,7 @@ if($output->responseCode==0){  //transaccion aprobada
     echo '<script>window.localStorage.clear(); </script>';
     echo '<script>window.localStorage.setItem("authorizationCode",'. $output->authorizationCode .')</script>';
     echo '<script>window.localStorage.setItem("amount",'. $output->amount .')</script>';
-    echo '<script>window.localStorage.setItem("responseCode",'. $output->responseCode .')</script>' ;
+    echo '<script>window.localStorage.setItem("responseCode",'. $output->responseCode .')</script>' ;   
 }
 
 
@@ -26,3 +26,4 @@ if($output->responseCode==0){  //transaccion aprobada
     document.getElementById('return-form').submit();
 </script>
 <?php endif; ?>
+ 
