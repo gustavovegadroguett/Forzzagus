@@ -7,136 +7,68 @@
 
 
 .contenedorcarro{
+    display:grid;
     background: #f9f9f9;
     border:  2px goldenrod dashed;
     width: 100%;
-  
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    height: 100%;
+    
+}
+
+    
+
+
+
+.contedoramarilloproducto{
+display: grid;
+grid-template-columns: 150px 55% 1fr 1fr;
+margin-top: 10px;
+background: #fed202;
+
+width: 100%;
+padding-left: 50px;
+padding-right: 50px;
+border-radius: 25px;
+
+justify-content: space-evenly;
     align-items: center;
-    }
+}
 
-
-
-    
-
-.contenedorradio{
-
-    height: 110px;
-    
-    max-width: 1000px;
-    width: 100%;
-    
-    border: green 1px dashed;
-    display: flex;
-    justify-content:space-evenly;
-   
-   align-items: center;
-   padding-left: 100px;
-   padding-right: 100px;
-    
-    }
-
-    .divradiodomicilio{
-
-
-    width: 286px;
-    height: 40px;
-    border-radius: 20px;
-    background:white ;
-    border: dashed 1px blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.imagenespro{
+    width: 100px;
+    height: 100px;
 
 
 }
-
-.divradiodomicilio label{
-
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-
-.divradioretiro{
-    width: 286px;
-    height: 40px;
-    border-radius: 20px;
-    background:white ;
-    border: dashed 1px blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    }
-    
-    .divradioretiro label{
-
-        margin-left: 5px;
-        margin-top: 10px;
-
-    }
-
-
-
-    .contedortodoretiro{
-        
-        border: dashed 1px blue;
-        height: 100%;
-        display: flex;
-        align-items: center;
-
-        flex-direction: column;
-    }
-
-    .contenedorproductoscarros{
-        height: 300px;
-        max-width: 1000px;
-        width: 100%;
-        border: forestgreen 2px dashed;
-        display: flex;
-      
-       flex-direction: column;
-      }
-
-
-
-
-      .contedoramarilloproducto{
-        margin-top: 10px;
-          background: #fed202;
-          max-width: 1000px;
-          width: 100%;
-            padding-left: 50px;
-            padding-right: 50px;
-          height: 140px;
-          border-radius: 25px;
-        display: flex;
-        justify-content: space-evenly;
-          align-items: center;
-        }
-
-        .imagenespro{
-            width: 100px;
-            height: 100px;
-
-
-        }
 
 
 .datosletras{
+    display: grid;
     height: 100%;
     width: 30%;
     border: red dashed 1px;
-    display: flex;
-    flex-direction: column;
+    
+    
     margin-left: 10px;
     line-height: 10px;
     padding-top: 10px;
+}
+.datosletras div{
+    margin-top: 20px;
+	color: #fff;
+	font-size: 1.4em;
+}
+
+.eliminar {
+
+    width: 200px;
+    height: 38px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
 }
 
 .divprecioycantidad{
