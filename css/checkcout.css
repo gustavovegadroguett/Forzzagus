@@ -720,7 +720,7 @@ input {
     width: 15%;
     /*border: dashed 1px grey;  */
     height: 100%;
-
+    font-size: larger;
     display: flex;
     justify-content: center;
     align-items: center;

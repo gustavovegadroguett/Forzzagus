@@ -3,7 +3,7 @@
 ?>
 
 <section class="section">
-    
+<link rel="stylesheet" href="css/carro.css">
 <div class="container-fluid">	
     <div id="cart_checkout">
     

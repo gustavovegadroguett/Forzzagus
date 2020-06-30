@@ -223,89 +223,77 @@ if (isset($_POST["ingreso"])) {
 		if ($num=mysqli_num_rows($query) > 0) {
 			//display user cart item with "Ready to checkout" button if user is not login
 			
-			echo '<div class="main ">	
-			<div class="table-responsive">
-			<form method="post" action="login_form.php">
-				
-					<div class="cajaletrascantde">
-						<div class="contcantidad">Producto</div>
-						<div class="contnombrepro">Descripcion de articulo/producto</div>
-						<div class="contpreciouni">Precio</div>
-						<div class="contsubtotal">-</div>
-						<div class="contsubtotal">Cantidad</div>
-						<div class="contsubtotal">+</div>
-						<div class="contsubtotal">Eliminar</div>
-			  
-				</div>
-	               <table id="cart" class="table table-hover table-condensed" id="">
-    				<thead>
-						<tr>
-							<th style="width:15%">Producto</th>
-							<th style="width:40%">Descripcion Producto</th>
-							<th style="width:5%">PRECIO</th>
-							<th style="width:3%">-</th>
-							<th style="width:3%">CANT</th>
-							<th style="width:3%">-</th>
-							<th style="width:7%" class="text-center"> SUB</th>
-							
-						</tr>
-					</thead>
-					<tbody>
-                    ';
-				$n=0;
-				
-				while ($row=mysqli_fetch_array($query)) {
-					$n++;
-					$product_id = $row["sku_producto_id"];
-					$product_title = $row["nombre_prod_forzz"];
-					$product_descrip= $row["descripcion_pro_forzz"];
-					$product_price = $row["precio_prod_forzz"];
-					$product_image = $row["ruta_forzz"];
-					//$cart_item_id = $row["id"];
-					$qty = $row["qty"];
-
-					echo 
-						'
-                             
-						<tr>
-							<td data-th="Product" >
-								<div class="row">
-									<div class="col-sm-4 "><img src="images'.$product_image.'" style="height: 100px;width:200px;"/>
-									<h4 class="nomargin product-name header-cart-item-name"><a href="vista_pre.php?oe='.$product_id.'">'.$product_title.'</a></h4>
-									</div>
-									<div class="col-sm-6">
-										<div style="max-width=50px;">
-										</div>
-									</div>
-								</div>
-							</td>
-							<td><p>'.$product_descrip.'</p></td>
-                            <input type="hidden" name="product_id[]" value="'.$product_id.'"/>
-				          	<td data-th="Price"><input type="text" class="form-control price" value="'.$product_price.'" readonly="readonly"></td>
-							<td data-th="Quantity">
-								<input type="text" class="form-control qty" value="'.$qty.'" >
-							</td>
-							<td data-th="Subtotal" class="text-center"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></td>
-							<td class="actions" data-th="">
-							<div class="btn-group">
-								<a href="#" class="btn btn-info btn-sm update" update_id="'.$product_id.'"><i class="fa fa-refresh"></i></a>
-								
-								<a href="#" class="btn btn-danger btn-sm remove" remove_id="'.$product_id.'"><i class="fa fa-trash-o"></i></a>		
-							</div>							
-							</td>
-						</tr>
+			echo '<div class="main">	
 					
-                            
-                            ';
-				}
+					<form method="post" action="login_form.php">
+						
+							
+					';
+						$n=0;
+						
+						$total=0;
+						while ($row=mysqli_fetch_array($query)) {
+							$n++;
+							$subtotal_carro=0;
+							$product_id = $row["sku_producto_id"];
+							$product_title = $row["nombre_prod_forzz"];
+							$product_descrip= $row["descripcion_pro_forzz"];
+							$product_price = $row["precio_prod_forzz"];
+							$product_image = $row["ruta_forzz"];
+							$cart_item_id = $row["id"];
+							$qty = $row["qty"];
+							$subtotal_carro=$qty*$product_price;
+						
+							echo '
+									
+							<div class="contedoramarilloproducto">
 
+								<div class="imagenespro">
+
+									<img src="./img/alicate.png">
+
+								</div>
+
+								<div class="datosletras">
+									<DIV>MARCA</DIV>
+									<div></div>
+									<DIV>NOMBRE: </DIV>
+									<div class="nombreprod">'.$product_title.'</div>
+									<DIV>CODIGO</DIV>
+									<div class="codigoprod">'.$product_id.'</div>
+									<DIV>DESCRIPCION</DIV>
+									<div class="descripcionprod">'.$product_descrip.'</div>
+									<div class="botoneliminar"><button type="button" class="eliminar btn-danger">Eliminar producto</button> </div>
+
+								</div>
+
+
+								
+									<div class="cantidad">
+										<div class="ordencontroles">
+											<div class="precioprod">$ '.$product_price.'
+											</div>
+											<div class="controlescantidad" id="control_cant_general">
+												<button type="button" class="control_cantidad" id="disminuye" value="-"> - </button>
+												<input type="text" class="cantidad_prod" id="cantidad_prod" value="'.$qty.'"> </input>
+												<button type="button" class="control_cantidad" id="aumento" value="+"> + </button>
+											</div>
+										</div>
+
+									</div>
+								
+								<div class="precioso">
+										<div class="subtotal">$ '.$subtotal_carro.'</div>
+
+								</div>
+
+							</div>';
+						}
+							
 
 
 				$BackToMyPage = $_SERVER['HTTP_REFERER'];   //Boton para volver a comprar desde el carrito
-				echo '</tbody>
-				<tfoot>
-					
-					<tr>
+				echo '
 						<td><a href="lista_pro_vista.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra.</a></td>
 						<td colspan="3" class="hidden-xs"></td>
 						<td class="hidden-xs text-center" style="width:10%"><b class="net_total" ></b></td>
@@ -375,7 +363,7 @@ if (isset($_POST["ingreso"])) {
 									
 									</tfoot>
 									
-							</table></div></div>    
+							</table></div>  
 								';
 				}
 		}

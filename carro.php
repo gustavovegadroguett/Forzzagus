@@ -19,21 +19,24 @@
 <body>
     <div class="contenedorcarro">
 
-
+ 
         <div class="contedoramarilloproducto">
 
             <div class="imagenespro">
 
                 <img src="./img/alicate.png">
 
-
             </div>
 
             <div class="datosletras">
                 <DIV>MARCA</DIV>
+                <div></div>
                 <DIV>NOMBRE</DIV>
+                <div></div>
                 <DIV>CODIGO</DIV>
+                <div></div>
                 <DIV>DESCRIPCION</DIV>
+                <div></div>
                 <div><button type="button" class="eliminar btn-danger">Eliminar producto</button> </div>
 
             </div>
@@ -53,10 +56,6 @@
                     <h1>$ 100.000<h1>
 
                 </div>
-
-
-
-
 
         </div>
 
