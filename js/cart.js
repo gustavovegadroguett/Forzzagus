@@ -35,13 +35,17 @@ $('body').on('click','.control_cantidad',function(){
   var cantidad=buscar.find('#cantidad_prod').attr('value');
   var id=buscar.find('#cantidad_prod').attr('id_update');
   
-  if(operacion== '+' ){
+  if(operacion == '+' ){
     cantidad= parseInt(cantidad) + 1;
-  }else if (operacion== '-'){
+  }else if (operacion== '-' && cantidad>1){
     cantidad= parseInt(cantidad)-1;
+  }else{
+    return false;
   }
+  
+  buscar.find("#cantidad_prod").attr('value',cantidad); 
   actualizarcantidad(id,cantidad,buscarenviado);
-  buscar.find("#cantidad_prod").attr('value',cantidad);    
+    
   actualizartotal();
 })
 
