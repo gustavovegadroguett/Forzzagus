@@ -105,7 +105,7 @@
 	
 
 
-  checkOutDetails();  //se ejecuta en cada carga de pagina nueva.
+  /*checkOutDetails();  //se ejecuta en cada carga de pagina nueva.
   
   function checkOutDetails(){
     $('.overlay').show();
@@ -131,7 +131,7 @@
       
 		})
 		$('.net_total').html(net_total);
-  }
+  }*/
    $("body").delegate(".update","click",function(event){
     var update = $(this).parent().parent().parent();
     var update_id = update.find(".update").attr("update_id");

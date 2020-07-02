@@ -218,7 +218,7 @@ if (isset($_POST["ingreso"])) {
 	
     // -------------------------------------- CONTENIDO DEL CARRITO VERTIDO EN CART.PHP----------------------------------------
     
-    if (isset($_POST["checkOutDetails"])) {
+   /* if (isset($_POST["checkOutDetails"])) {
 			$num;
 		if ($num=mysqli_num_rows($query) > 0) {
 			//display user cart item with "Ready to checkout" button if user is not login
@@ -311,26 +311,9 @@ if (isset($_POST["ingreso"])) {
 							
 							';
 
-				/*if (!isset($_SESSION["uid"])) {//En caso de que el usuario quiera avanzar pero no este logeado, pedira registro o iniciar sesion
-					echo '
-					
-							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Realizar compra</a></td>
-								
-							</div>';
-                }else  if(isset($_SESSION["uid"])){
-						
-					//Paypal checkout form
-					echo '
-					</form>
-					
-						<form action="checkoutdespacho.php" method="post">
-						
-									<input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Listo para Checkout">
-									</form></div>  
-								';
-				}*/
+			
 		}
-	}
+	}*/
 	
 	
 }
