@@ -225,7 +225,7 @@ if (isset($_POST["ingreso"])) {
 			
 			echo '<div class="main">	
 					
-					<form method="post" action="login_form.php">
+				<form method="post" action="checkoutdespacho.php">
 						
 							
 					';
@@ -243,6 +243,7 @@ if (isset($_POST["ingreso"])) {
 							$cart_item_id = $row["id"];
 							$qty = $row["qty"];
 							$subtotal_carro=$qty*$product_price;
+							$total=$total+$subtotal_carro;
 						
 							echo '
 									
@@ -263,27 +264,27 @@ if (isset($_POST["ingreso"])) {
 									<div class="codigoprod">'.$product_id.'</div>
 									<DIV>DESCRIPCION</DIV>
 									<div class="descripcionprod">'.$product_descrip.'</div>
-									<div class="botoneliminar"><button type="button" class="eliminar btn-danger">Eliminar producto</button> </div>
+									<div class="botoneliminar"><button type="button" id_remove="'.$product_id.'" class="eliminar btn-danger">Eliminar</button> </div>
 
 								</div>
 
 
 								
-									<div class="cantidad">
-										<div class="ordencontroles">
-											<div class="precioprod">$ '.$product_price.'
-											</div>
-											<div class="controlescantidad" id="control_cant_general">
-												<button type="button" class="control_cantidad" id="disminuye" value="-"> - </button>
-												<input type="text" class="cantidad_prod" id="cantidad_prod" value="'.$qty.'"> </input>
-												<button type="button" class="control_cantidad" id="aumento" value="+"> + </button>
-											</div>
+								<div class="cantidad">
+								
+									<div class="ordencontroles">
+										<div class="precioprod">'.$product_price.'</div>
+										<div class="controlescantidad" id="control_cant_general">
+											<button type="button" class="control_cantidad" id="disminuye" value="-"> - </button>
+											<input type="text" class="cantidad_prod" id_update="'.$product_id.'" id="cantidad_prod" value="'.$qty.'" readonly> </input>
+											<button type="button" class="control_cantidad" id="aumento" value="+"> + </button>
 										</div>
-
 									</div>
+
+								</div>
 								
 								<div class="precioso">
-										<div class="subtotal">$ '.$subtotal_carro.'</div>
+									<div class="subtotal1"><b>$ </b><b class="subtotal">'.$subtotal_carro.'</b></div>
 
 								</div>
 
@@ -294,22 +295,28 @@ if (isset($_POST["ingreso"])) {
 
 				$BackToMyPage = $_SERVER['HTTP_REFERER'];   //Boton para volver a comprar desde el carrito
 				echo '
-						<td><a href="lista_pro_vista.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra.</a></td>
-						<td colspan="3" class="hidden-xs"></td>
-						<td class="hidden-xs text-center" style="width:10%"><b class="net_total" ></b></td>
-						<div id="issessionset"></div>
-                        <td>
+					<div class="totales">
+						<div class="vuelta"><a href="index.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue su compra .</a></div>
+						
+					
+							<div class="hidden-xs text-center total" id="total">
+							<b>TOTAL COMPRA $	</b>
+							<b class="net_total"></b>
+							</div>
+						
+						<div> <input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Ir a Pagar >"</div>  
+					</div>
+				</form>
+			</div>			
 							
 							';
 
-				if (!isset($_SESSION["uid"])) {//En caso de que el usuario quiera avanzar pero no este logeado, pedira registro o iniciar sesion
+				/*if (!isset($_SESSION["uid"])) {//En caso de que el usuario quiera avanzar pero no este logeado, pedira registro o iniciar sesion
 					echo '
 					
 							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Realizar compra</a></td>
-								</tr>
-							</tfoot>
-				
-							</table></div></div>';
+								
+							</div>';
                 }else  if(isset($_SESSION["uid"])){
 						
 					//Paypal checkout form
@@ -318,54 +325,10 @@ if (isset($_POST["ingreso"])) {
 					
 						<form action="checkoutdespacho.php" method="post">
 						
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="business" value="shoppingcart@puneeth.com">
-							<input type="hidden" name="upload" value="1">';
-							  
-							$x=0;
-							$sql = "SELECT sku_producto_id,nombre_prod_forzz,precio_prod_forzz,id_img_forzz,id,qty 
-							FROM productos_forzz as prod inner join cart on prod.sku_producto_id = cart.p_id 
-							WHERE cart.user_id = $_SESSION[uid] AND cart.ip_add = '".$ip_add."'";
-
-							$query = mysqli_query($con,$sql);
-							if(!$query){
-								printf(" ERROR %s\n", mysqli_error($con));
-								exit();
-							}
-										
-							$total=0;
-							$acumulado=0;
-							while($row=mysqli_fetch_array($query)){
-								$x++;
-								$acumulado=$row["qty"]*$row["precio_prod_forzz"];
-								$total=$total+$acumulado;
-								echo  	
-
-									'<input type="hidden" name="total_count" value="'.$x.'">
-									<input type="hidden" name="total_compra" value="'.$total.'">
-									<input type="hidden" name="item_name_'.$x.'" value="'.$row["nombre_prod_forzz"].'">
-								  	 <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
-								     <input type="hidden" name="amount_'.$x.'" value="'.$row["precio_prod_forzz"].'">
-									 <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
-									 
-								}
-							  
-							echo   
-								'<input type="hidden" name="return" value="http://localhost/myfiles/public_html/payment_success.php"/>
-					                <input type="hidden" name="notify_url" value="http://localhost/myfiles/public_html/payment_success.php">
-									<input type="hidden" name="cancel_return" value="http://localhost/myfiles/public_html/cancel.php"/>
-									<input type="hidden" name="currency_code" value="CLP"/>
-									<input type="hidden" name="custom" value="$_SESSION[uid]"/>
 									<input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Listo para Checkout">
-									</form></td>
-									
-									</tr>
-									
-									</tfoot>
-									
-							</table></div>  
+									</form></div>  
 								';
-				}
+				}*/
 		}
 	}
 	

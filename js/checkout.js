@@ -60,7 +60,7 @@
   }
   aparece();
 
-})(); //----------------------FIN OTRO RETIRO-------------------------------------------
+ //----------------------FIN OTRO RETIRO-------------------------------------------
 
 //------------------------------Comienzo cambio boton webpay o tranferencia----------------
 var radios3 = document.querySelectorAll('input[type=radio][name=medio]');
@@ -227,7 +227,7 @@ function enviarWebpay(valorprod){
 }
 
  
-
+})();
 
 
 

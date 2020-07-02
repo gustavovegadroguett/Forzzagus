@@ -229,7 +229,7 @@
  
         <div class="contedorbonotesdepago">
           
-          <div> <button type="button" class="volver btn-info" onclick="window.location.href='http://localhost/forzza/cart.php'">Volver</a></button></div>
+          <div> <button type="button" class="volver btn-info" onclick="window.location.href='http://localhost/forzzagus/cart.php'">Volver</button></div>
           
           <div id="botonenvio" class="botonenvio"> </input></div>
          

@@ -4,21 +4,20 @@
 include("db.php"); 
 error_reporting(0);
 ?>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<?php  include 'header.php';?>
 
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forzza index</title>
-        <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="stylesheet" href="estilos/slider.css">
-    <link rel="stylesheet" href="estilos/footer.css">
-    <script src="https://kit.fontawesome.com/abd8ad106c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+       
+    
+   
+    
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/estilos.css">
+    
     <link rel="stylesheet" href="estilos/slick.css">
 
     <!-- scroll reveal-->
@@ -26,10 +25,9 @@ error_reporting(0);
 
     <link rel="stylesheet" href="./css/floating-wpp.min.css">
 
-</head>
 
 <body>
-    <?php  include 'header.php';?>
+    
     <br>
     <div class="container-all">
 

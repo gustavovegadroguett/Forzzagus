@@ -21,7 +21,7 @@
            
        });
      });
-
+     
      
      $('#cart').click(function(e) {
        e.stopPropagation();
@@ -93,8 +93,7 @@
         
         $(".cart-list").html(data);
        
-          net_total();
-                
+          
 			}
 		})
   }
@@ -103,19 +102,7 @@
     net_total function is used to calcuate total amount of cart item,
     esta muestra el total sumado  del carrito en cart.php
 	*/
-	function net_total(){
-		var net_total = 0;
-		$('.qty').each(function(){
-			var row = $(this).parent().parent();
-			var price  = row.find('.price').val();
-			var total = price * $(this).val()-0;
-			row.find('.total').val(total);
-		})
-		$('.total').each(function(){
-			net_total += ($(this).val()-0);
-		})
-		$('.net_total').html("Total : $ " + net_total);
-  }
+	
 
 
   checkOutDetails();  //se ejecuta en cada carga de pagina nueva.
@@ -135,6 +122,16 @@
        }
      })
    }
+   function net_total(){
+    var net_total=0;
+    net_total=parseInt(net_total);
+		$('.subtotal').each(function(){
+      var precio= parseInt($(this).html());
+      net_total +=precio;
+      
+		})
+		$('.net_total').html(net_total);
+  }
    $("body").delegate(".update","click",function(event){
     var update = $(this).parent().parent().parent();
     var update_id = update.find(".update").attr("update_id");

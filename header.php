@@ -17,13 +17,7 @@ include("db.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/header.css">
   
- 
- 
   <title>Document</title>
-</head>
-
-<body>
-
 
   <div class="contenedor">
 
@@ -134,29 +128,10 @@ include("db.php");
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
   </div>
-
+ 
 
 
 
@@ -223,19 +198,7 @@ include("db.php");
 
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="lupa"><img src="img/lupa.png" alt="Cloudy Sky"></div>
+    <div class="lupa"><img src="img/lupa.png" alt="Cloudy Sky"></div>
       <a href="#" id="cart " style="text-decoration:none">
         <div class="contenedordellaimagencarrito">
           <div class="contenbageyrighx">
@@ -360,33 +323,7 @@ include("db.php");
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+</head>
 </html>
 
 
@@ -439,9 +376,7 @@ include("db.php");
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/carrito2.js"></script>
-
 <script src="./js/core.min.js"></script>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="js/mainnuevoheader.js"></script>
