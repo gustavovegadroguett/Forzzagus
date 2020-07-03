@@ -70,20 +70,17 @@ if (isset($_POST["ingreso"])) {
        
 	}
 	if(isset($_POST["neto"])){
-		$i=1;
-		$total=0;
 		
+		$total=0;
+		 
 		while($row=mysqli_fetch_array($query)){
-			/*$product_id=$row["sku_producto_id"];
-			$product_title = $row["nombre_prod_forzz"];
-			$product_descrip= $row["descripcion_pro_forzz"];*/
 			$product_price = $row["precio_prod_forzz"];
 			$qty = $row["qty"];
 			$subtotal=$qty*$product_price;
 			$total=$total+$subtotal;
 			
 			
-			$i++;
+			
 		}
 		echo "	$total";
 		$totalWebPay=intval($total/1.05);
